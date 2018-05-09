@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Title
+   ========================================================================== */
+
+.shelf-title{
+	margin: 0 0 30px;
+	text-align: center;
+
+	h2, a{
+		@include font-size(1.6);
+		display: inline-block;
+		text-decoration: none;
+		vertical-align: middle;
+		text-transform: uppercase;
+	}
+
+	a{
+		@include font-size(1.2);
+		color: #9d9d9d;
+		margin-left: 10px;
+
+		&:after{
+			content: ">";
+			margin-left: 5px;
+			display: inline-block;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+body.home{
+	main{
+		section{
+			clear: both;
+			overflow: hidden;
+
+			.box-banner{
+				img{
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+
+			&.shelf-colecoes,
+			&.shelf-destaques {
+				margin-top: 40px;
+			}
+
+			&.shelf-destaques,
+			&.banner-faixa,
+			&.shelf-novidades,
+			&.banners-duplos,
+			&.shelf-mais-vendidos,
+			&.banners-triplos,
+			&.shelf-sale,
+			&.banners-duplos-bottom,
+			&.shelf-colecoes{
+				margin-bottom: 40px;
+			}
+		}
+	}
+}

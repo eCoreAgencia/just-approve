@@ -1,0 +1,298 @@
+
+/* ==========================================================================
+   Página de Produto
+   ========================================================================== */
+
+body.produto {
+
+    main{
+        overflow: hidden;
+        margin-top: 1%;
+
+        .product-view{
+            overflow: hidden;
+            clear: both;
+
+            .product-box {
+                position: relative;
+
+                .apresentacao {
+                    #include {
+                        @include mq($screen-md) {
+                            padding-left: 118px;
+                        }
+
+                        a {
+                            display: block;
+                        }
+
+                        .sku-rich-image-main {
+                            display: block;
+                            margin: 0 auto;
+                            width: 100%;
+
+                            @include mq($screen-md) {
+                                width: auto;
+                            }
+                        }
+                    }
+
+                    .zoomPad {
+                        overflow: hidden;
+                        position: relative;
+                        text-align: center;
+
+                        .zoomWindow {
+                            display: none;
+
+                            .zoomWrapperImage {
+                                display: none;
+                            }
+                            
+                            @include mq($screen-md) {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                left: 0 !important;
+                                background: none repeat scroll 0 0 #fff;
+                                
+                                .zoomWrapperImage {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    .thumbs {
+                        margin-top: 10px;
+                        text-align: center;
+                        overflow: hidden;
+
+                        @include mq($screen-md) {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 530px;
+                        }
+
+                        li {
+                            margin: 0 5px 10px;
+                            display: inline-block;
+
+                            @include mq($screen-md) {
+                                display: block;
+                                margin: 0 0 5px;
+                            }
+
+                            &:hover{
+                                opacity: 0.8;
+                            }
+
+                            a{
+                                &.ON{
+                                    img{
+                                        opacity: 0.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buy-box{
+                overflow: hidden;
+
+                @include mq($screen-md) {
+                    padding-left: 5%;
+                }
+
+                .productName{
+                    @include font-size(2);
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                }
+
+                .price-info{
+                    padding: 0;
+
+                    .productPrice{
+                        .descricao-preco{
+                            .valor-de{
+                                @include font-size(1.2);
+                                text-decoration: line-through;
+                                font-style: normal;
+                                color: #757575;
+                            }
+
+                            .valor-por{
+                                @include font-size(0);
+                                font-weight: bolder;
+                                font-style: normal;
+                                display: none;
+                                color: #333;
+                                margin-bottom: 5px;
+
+                                .skuBestPrice{
+                                    @include font-size(3.6);
+                                    display: block;
+                                    font-weight: 900;
+                                }
+                            }
+
+                            .valor-dividido{
+                                @include font-size(2.4);
+                                font-style: normal;
+                                text-transform: uppercase;
+                                font-weight: normal;
+                                color: #333;
+
+                                label, strong{
+                                    font-weight: 900;
+                                }
+                            }
+                        }
+
+                        .preco-a-vista{
+                            display: none !important;
+                        }
+
+                        .economia-de{
+                            display: none !important;
+                        }
+                    }
+                }
+
+                .choose-skus{
+                    overflow: hidden;
+                    margin: 20px 0;
+                    clear: both;
+                    border-bottom: 1px solid #dbd7d7;
+
+                    .sku-selector-container{
+                        ul{
+                            list-style-type: none;
+                            width: 100%;
+                            display: block;
+
+                            @include mq($screen-md) {
+                                display: inline-block;
+                                width: 50%;
+                                vertical-align: top;
+                            }
+
+                            li{
+                                @include font-size(1.4);
+                                text-transform: uppercase;
+                                font-weight: bolder;
+                                display: block;
+                                overflow: hidden;
+                                margin-bottom: 10px;
+
+                                &.skuList{
+                                    input{
+                                        display: none;
+                                    }
+
+                                    label{
+                                        cursor: pointer;
+                                        background-color: #fff;
+                                        padding: 10px 15px;
+                                        color: #201e1e;
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        line-height: 25px;
+                                        border: 1px solid #fff;
+                                        display: inline-block;
+                                        margin-bottom: 10px;
+
+                                        &:hover,
+                                        &.sku-picked{
+                                            border: 1px solid #000;
+                                        }
+
+                                        &:before{
+                                            display: none;
+                                        }
+
+                                        &.item_unavailable{
+                                            background-color: #e6e6e6;
+                                            border: 1px solid #e6e6e6;
+                                            position: relative;
+
+                                            &:after{
+                                                content: "X";
+                                                display: block;
+                                                position: absolute;
+                                                top: 6px;
+                                                left: 24%;
+                                                font-size: 39px;
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.Tamanho{
+                                li.skuList{
+                                    label{
+                                        width: auto;
+                                        height: 40px;
+                                        line-height: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .description,
+                .specification{
+                    margin-bottom: 20px;
+                    
+                    h3{
+                        @include font-size(1.2);
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+
+                    .productDescription{
+                        @include font-size(1.2);
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+
+        .shelfRelacionados {
+            overflow: hidden;
+            clear: both;
+            margin-top: 60px;
+            padding-bottom: 60px;
+
+            .prateleira {
+                h2 {
+                    @include font-size(1.6);
+                    width: 100%;
+                    display: block;
+                    color: #2e2b3e;
+                    line-height: 20px;
+                    text-align: center;
+                    font-weight: normal;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                }
+
+                ul {
+                    li {
+                        width: 100%;
+                        max-width: 290px;
+                    }
+                }
+            }
+        }
+    }
+}

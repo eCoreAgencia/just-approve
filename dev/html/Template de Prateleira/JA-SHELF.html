@@ -1,0 +1,40 @@
+#set($id = $product.Id)
+#set($idSku = $product.productVariantId)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+
+<a title="$escapedName" href="$uri" class="productShelf">
+
+    <span class="principal">$product.GetImageTag(30)</span>
+    <span class="secundario">$product.GetImageTag(30,"verso")</span>
+    
+
+    <article>
+        <h4>$product.Name</h4>
+
+        #if ($product.IsInStock)
+            #if ($product.HasBestPrice)
+                <span class="precos">
+                    <span class="oldPrice">$product.ListPrice</span>
+                    <span class="bestPrice redPrice">$product.BestPrice</span>
+                </span>
+            #else
+                <span class="bestPrice">$product.BestPrice</span>
+            #end
+            <em class="installment">
+                #if ($product.NumbersOfInstallment > 1)
+                    ou <strong>${product.NumbersOfInstallment}X</strong> de <strong>$product.InstallmentValue</strong>
+                #else
+                    <span class="vista">à vista</span>
+                #end
+            </em>
+
+            <article class="action-buttons">
+                <a data-sku="$idSku" data-id="$product.Id" href="$product.Uri" class="btn btn-buy">Comprar</a>
+            </article>
+        #else
+            <span class="outOfStock">Produto esgotado</span>
+        #end
+    </article>
+
+</a>
