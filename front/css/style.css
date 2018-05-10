@@ -247,6 +247,12 @@ header.ha-hidding,
 .modal .close-modal,
 .modal .close-modal:hover,
 .modal .modal-container,
+body.produto main .product-view .buy-box .bt-comprar,
+body.produto main .product-view .buy-box .bt-comprar:hover,
+body.produto main .product-view .buy-box .choose-skus .skuList,
+body.produto main .product-view .buy-box .choose-skus .skuList:hover,
+body.dep-cat-bus .sidebar li a,
+body.dep-cat-bus .sidebar li a:hover,
 body.dep-cat-bus .sidebar .search-multiple-navigator ul.Tamanho li a,
 body.dep-cat-bus .sidebar .search-single-navigator ul.Tamanho li a,
 body.dep-cat-bus .sidebar .search-multiple-navigator ul.Cor li a,
@@ -2197,9 +2203,39 @@ body.produto main .product-view .buy-box {
 	overflow: hidden;
 }
 
+body.produto main .product-view .buy-box .prod-similares {
+	margin-top: 30px;
+}
+
+body.produto main .product-view .buy-box .prod-similares:before {
+	font-size: 14px;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 10px;
+	content: 'CORES/ESTAMPAS';
+}
+
+body.produto main .product-view .buy-box .bt-comprar {
+	color: #fff;
+	width: 100%;
+	height: 46px;
+	display: block;
+	cursor: pointer;
+	max-width: 348px;
+	line-height: 46px;
+	text-align: center;
+	margin-bottom: 20px;
+	background-color: #000;
+	text-transform: uppercase;
+}
+
+body.produto main .product-view .buy-box .bt-comprar:hover {
+	background-color: #666;
+}
+
 body.produto main .product-view .buy-box .productName {
 	font-size: 20px;
-	font-weight: bolder;
+	font-weight: normal;
 	text-transform: uppercase;
 }
 
@@ -2250,11 +2286,86 @@ body.produto main .product-view .buy-box .price-info .productPrice .economia-de 
 	display: none !important;
 }
 
-body.produto main .product-view .buy-box .choose-skus {
+body.produto main .product-view .buy-box .preco {
+	margin-top: 10px;
 	overflow: hidden;
-	margin: 20px 0;
+}
+
+body.produto main .product-view .buy-box .preco em {
+	font-size: 0;
+	margin: 10px 0;
+	display: block;
+	font-style: normal;
+}
+
+body.produto main .product-view .buy-box .preco em.valor-dividido {
+	font-size: 12px;
+	display: block;
+}
+
+body.produto main .product-view .buy-box .preco em.valor-dividido strong {
+	font-weight: bold;
+}
+
+body.produto main .product-view .buy-box .preco em.valor-de {
+	margin-bottom: -10px;
+	text-decoration: line-through;
+}
+
+body.produto main .product-view .buy-box .preco em.valor-por {
+	font-size: 15px;
+}
+
+body.produto main .product-view .buy-box .preco em.valor-por strong {
+	font-size: 15px;
+}
+
+body.produto main .product-view .buy-box .preco strong {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+body.produto main .product-view .buy-box .choose-skus {
 	clear: both;
+	margin: 20px 0;
+	overflow: hidden;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #dbd7d7;
+}
+
+body.produto main .product-view .buy-box .choose-skus:before {
+	font-size: 15px;
+	display: block;
+	font-weight: bold;
+	content: 'TAMANHOS';
+	margin-bottom: 15px;
+}
+
+body.produto main .product-view .buy-box .choose-skus .skuList {
+	padding: 8px;
+	cursor: pointer;
+	text-align: center;
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #959595;
+}
+
+body.produto main .product-view .buy-box .choose-skus .skuList:hover {
+	color: #fff;
+	background-color: #959595;
+}
+
+body.produto main .product-view .buy-box .choose-skus .skuList:last-of-type {
+	margin-right: 0;
+}
+
+body.produto main .product-view .buy-box .choose-skus .skuList a,
+body.produto main .product-view .buy-box .choose-skus .skuList .preco,
+body.produto main .product-view .buy-box .choose-skus .skuList .imageSku,
+body.produto main .product-view .buy-box .choose-skus .skuList .seller-data,
+body.produto main .product-view .buy-box .choose-skus .skuList .portal-notify-me-ref {
+	display: none;
 }
 
 body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul {
@@ -2340,6 +2451,11 @@ body.produto main .product-view .buy-box .specification .productDescription {
 	line-height: 15px;
 }
 
+body.produto main .product-view .buy-box .composicao .main-content {
+	font-size: 12px;
+	line-height: 15px;
+}
+
 body.produto main .shelfRelacionados {
 	overflow: hidden;
 	clear: both;
@@ -2362,6 +2478,46 @@ body.produto main .shelfRelacionados .prateleira h2 {
 body.produto main .shelfRelacionados .prateleira ul li {
 	width: 100%;
 	max-width: 290px;
+}
+
+body.produto .plugin-preco {
+	display: none;
+}
+
+body.produto .tabela {
+	margin-top: 30px;
+	text-align: center;
+	padding: 40px 30px;
+	border-top: 1px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+body.produto .tabela table {
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+body.produto .tabela table tr {
+	display: block;
+	padding-bottom: 10px;
+}
+
+body.produto .tabela table tr.my-thead {
+	padding: 0 10px 10px;
+	text-transform: uppercase;
+}
+
+body.produto .tabela h3 {
+	font-size: 16px;
+	width: 100%;
+	color: #2e2b3e;
+	display: block;
+	font-weight: 400;
+	line-height: 20px;
+	text-align: center;
+	margin-bottom: 15px;
+	text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -2398,7 +2554,13 @@ body.dep-cat-bus .sidebar li {
 
 body.dep-cat-bus .sidebar li a {
 	font-size: 12px;
+	color: #000;
 	line-height: 20px;
+	text-decoration: none;
+}
+
+body.dep-cat-bus .sidebar li a:hover {
+	text-decoration: underline;
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator,
@@ -2417,10 +2579,13 @@ body.dep-cat-bus .sidebar .search-single-navigator .bt-refinar {
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator h3,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4,
 body.dep-cat-bus .sidebar .search-multiple-navigator h5,
 body.dep-cat-bus .sidebar .search-single-navigator h3,
+body.dep-cat-bus .sidebar .search-single-navigator h4,
 body.dep-cat-bus .sidebar .search-single-navigator h5 {
 	font-size: 15px;
+	display: none;
 	color: #232325;
 	font-weight: 900;
 	font-family: 'Cairo', sans-serif;
@@ -2428,9 +2593,32 @@ body.dep-cat-bus .sidebar .search-single-navigator h5 {
 	text-transform: uppercase;
 }
 
+body.dep-cat-bus .sidebar .search-multiple-navigator h3.HideIndicacao,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4.HideIndicacao,
+body.dep-cat-bus .sidebar .search-multiple-navigator h5.HideIndicacao,
+body.dep-cat-bus .sidebar .search-single-navigator h3.HideIndicacao,
+body.dep-cat-bus .sidebar .search-single-navigator h4.HideIndicacao,
+body.dep-cat-bus .sidebar .search-single-navigator h5.HideIndicacao {
+	font-size: 0;
+	display: block;
+}
+
+body.dep-cat-bus .sidebar .search-multiple-navigator h3.HideIndicacao:before,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4.HideIndicacao:before,
+body.dep-cat-bus .sidebar .search-multiple-navigator h5.HideIndicacao:before,
+body.dep-cat-bus .sidebar .search-single-navigator h3.HideIndicacao:before,
+body.dep-cat-bus .sidebar .search-single-navigator h4.HideIndicacao:before,
+body.dep-cat-bus .sidebar .search-single-navigator h5.HideIndicacao:before {
+	font-size: 15px;
+	display: block;
+	content: 'Gênero';
+}
+
 body.dep-cat-bus .sidebar .search-multiple-navigator h3 a,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4 a,
 body.dep-cat-bus .sidebar .search-multiple-navigator h5 a,
 body.dep-cat-bus .sidebar .search-single-navigator h3 a,
+body.dep-cat-bus .sidebar .search-single-navigator h4 a,
 body.dep-cat-bus .sidebar .search-single-navigator h5 a {
 	font-size: 15px;
 	display: block;
@@ -2458,11 +2646,9 @@ body.dep-cat-bus .sidebar .search-single-navigator h4 a {
 	font-weight: 600;
 }
 
-body.dep-cat-bus .sidebar .search-multiple-navigator ul,
-body.dep-cat-bus .sidebar .search-single-navigator ul {
-	padding-bottom: 15px;
-	display: block;
-	overflow: hidden;
+body.dep-cat-bus .sidebar .search-multiple-navigator ul.Marca,
+body.dep-cat-bus .sidebar .search-single-navigator ul.Marca {
+	display: none;
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator ul li,
@@ -2481,6 +2667,11 @@ body.dep-cat-bus .sidebar .search-single-navigator ul h5 {
 	font-family: 'Cairo', sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 5px !important;
+}
+
+body.dep-cat-bus .sidebar .search-multiple-navigator ul h5.Marca,
+body.dep-cat-bus .sidebar .search-single-navigator ul h5.Marca {
+	display: none;
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator ul label,

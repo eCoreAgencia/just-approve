@@ -107,9 +107,41 @@ body.produto {
                     padding-left: 5%;
                 }
 
+                .prod-similares {
+                    margin-top: 30px;
+
+                    &:before {
+                        @include font-size(1.4);
+                        display: block;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                        content: 'CORES/ESTAMPAS';
+                    }
+                }
+
+                .bt-comprar {
+                    @extend .transition;
+                    color: #fff;
+                    width: 100%;
+                    height: 46px;
+                    display: block;
+                    cursor: pointer;
+                    max-width: 348px;
+                    line-height: 46px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    background-color: #000;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        @extend .transition;
+                        background-color: #666;
+                    }
+                }
+
                 .productName{
                     @include font-size(2);
-                    font-weight: bolder;
+                    font-weight: normal;
                     text-transform: uppercase;
                 }
 
@@ -163,11 +195,89 @@ body.produto {
                     }
                 }
 
-                .choose-skus{
+                .preco {
+                    margin-top: 10px;
                     overflow: hidden;
-                    margin: 20px 0;
+
+                    em {
+                        font-size: 0;
+                        margin: 10px 0;
+                        display: block;
+                        font-style: normal;
+
+                        &.valor-dividido {
+                            @include font-size(1.2);
+                            display: block;
+
+                            strong {
+                                font-weight: bold;
+                            }
+                        }
+
+                        &.valor-de {
+                            margin-bottom: -10px;
+                            text-decoration: line-through;
+                        }
+
+                        &.valor-por {
+                            @include font-size(1.5);
+
+                            strong {
+                                @include font-size(1.5);
+                            }
+                        }
+                    }
+
+                    strong {
+                        @include font-size(1.2);
+                        font-weight: normal;
+                    }
+                }
+
+                .choose-skus{
                     clear: both;
+                    margin: 20px 0;
+                    overflow: hidden;
+                    padding-bottom: 20px;
                     border-bottom: 1px solid #dbd7d7;
+
+                    &:before {
+                        @include font-size(1.5);
+                        display: block;
+                        font-weight: bold;
+                        content: 'TAMANHOS';
+                        margin-bottom: 15px;
+                    }
+
+
+                    .skuList {
+                        @extend .transition;
+                        padding: 8px;
+                        cursor: pointer;
+                        text-align: center;
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        border: 1px solid #959595;
+
+                        &:hover {
+                            @extend .transition;
+                            color: #fff;
+                            background-color: #959595;
+                        }
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+
+                        a,
+                        .preco,
+                        .imageSku,
+                        .seller-data,
+                        .portal-notify-me-ref {
+                            display: none;
+                        }
+                    }
 
                     .sku-selector-container{
                         ul{
@@ -259,7 +369,14 @@ body.produto {
                         margin-bottom: 10px;
                     }
 
-                    .productDescription{
+                    .productDescription {
+                        @include font-size(1.2);
+                        line-height: 15px;
+                    }
+                }
+
+                .composicao {
+                    .main-content {
                         @include font-size(1.2);
                         line-height: 15px;
                     }
@@ -293,6 +410,46 @@ body.produto {
                     }
                 }
             }
+        }
+    }
+
+    .plugin-preco {
+        display: none;
+    }
+
+    .tabela {
+        margin-top: 30px;
+        text-align: center;
+        padding: 40px 30px;
+        border-top: 1px solid #d2d2d2;
+        border-bottom: 1px solid #d2d2d2;
+
+        table {
+            @include font-size(1.2);
+            display: inline-block;
+            vertical-align: middle;
+
+            tr {
+                display: block;
+                padding-bottom: 10px;
+                
+                &.my-thead {
+                    padding: 0 10px 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        h3 {
+            @include font-size(1.6);
+            width: 100%;
+            color: #2e2b3e;
+            display: block;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;            
         }
     }
 }

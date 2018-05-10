@@ -33,12 +33,20 @@ body.dep-cat-bus{
 			display: none;
 		}
 
-		li{
+		li {
 			list-style-type: none;
 
-			a{
+			a {
 				@include font-size(1.2);
+				@extend .transition;
+				color: #000;
 				line-height: 20px;
+				text-decoration: none;
+
+				&:hover {
+					@extend .transition;
+					text-decoration: underline;
+				}
 			}
 		}
 
@@ -50,34 +58,31 @@ body.dep-cat-bus{
 				display: none;
 			}
 
-			// h3, h4, input {
-			// 	display: none;
-			// }
-
-			// &:before {
-			// 	@include font-size(1.5);
-			// 	display: block;
-			// 	color: #232325;
-			// 	content: 'Subcategorias';
-			// 	margin-bottom: 10px;
-			// 	padding-bottom: 10px;
-			// 	text-transform: uppercase;
-			// 	font-family: 'Cairo', sans-serif;
-			// 	font-weight: 900;
-			// }
-
 			.bt-refinar {
 				display: none;
 			}
 
 			h3,
+			h4,
 			h5 {
 				@include font-size(1.5);
+				display: none;
 				color: #232325;
 				font-weight: 900;
 				font-family: 'Cairo', sans-serif;
 				margin: 20px 0 10px;
 				text-transform: uppercase;
+
+				&.HideIndicacao {
+					font-size: 0;
+					display: block;
+
+					&:before {
+						@include font-size(1.5);
+						display: block;
+						content: 'Gênero';
+					}
+				}
 
 				a{
 					@include font-size(1.5);
@@ -108,9 +113,10 @@ body.dep-cat-bus{
 			}
 
 			ul{
-			    padding-bottom: 15px;
-			    display: block;
-			    overflow: hidden;
+
+			    &.Marca {
+			    	display: none;
+			    }
 
 				li {
 					margin-bottom: 15px;
@@ -126,6 +132,10 @@ body.dep-cat-bus{
 					font-family: 'Cairo', sans-serif;
 					text-transform: uppercase;
 					margin-bottom: 5px !important;
+
+					&.Marca {
+						display: none;
+					}
 				}
 
 				label {

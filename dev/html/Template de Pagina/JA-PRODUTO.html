@@ -28,27 +28,47 @@
 
                     <section class="buy-box col-xs-12 col-md-7">
                         <vtex.cmc:productName />
-                        <vtex.cmc:skuPrice/>
+
+                        <div class="prod-similares">
+                            <vtex:contentPlaceHolder id="Similares" />
+                        </div><!-- prod-similares END -->
 
                         <div class="choose-skus">
                             <vtex.cmc:skuRichSelection changeImage="1" />
                         </div>
 
-                        <vtex.cmc:BuyButton/>
+                        <a id="sku-not-add" class="bt-comprar">Adicionar ao Carrinho</a>
 
                         <div class="description">
                             <h3>Descrição do produto</h3>
                             <vtex.cmc:ProductDescription/>
                         </div>
 
-                        <div class="specification">
+                        <div class="specification composicao">
                             <h3>Composição</h3>
-                            <vtex.cmc:productSpecification/>
+                            <div class="main-content"></div>
                         </div>
                     </section><!-- buy-box END -->
                 </section><!-- product-view END -->
 
-                <section class="tabela row"></section>
+                <section class="tabela row">
+                    <h3>Tabela de Medidas</h3>
+                    <table class="comprimento">
+                        <tr class="my-thead">
+                            <th>Comprimento (A)</th>
+                        </tr>
+                    </table>
+                    <table class="quadril">
+                        <tr class="my-thead">
+                            <th>Quadril (B)</th>
+                        </tr>
+                    </table>
+                    <table class="cintura">
+                        <tr class="my-thead">
+                            <th>Cintura (C)</th>
+                        </tr>
+                    </table>
+                </section>
 
                 <section class="shelf shelfRelacionados">
                     <vtex:contentPlaceHolder id="voce-vai-gostar" />
@@ -59,6 +79,7 @@
 
         <vtex:template id="JA-FOOTER" />
         <vtex:template id="JA-COMMONSCRIPTS" />
+        <script type="text/javascript" src="/arquivos/product-v1.js"></script>
 
     </body>
 </html>

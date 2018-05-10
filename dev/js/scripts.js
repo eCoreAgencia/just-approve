@@ -117,11 +117,6 @@ $(function() {
 		});
 	// submenu fundo //
 
-	// Condicao tabela //
-		if ($('.conteudo-tabela img').length < 1) {
-			$('.tabela').remove();
-		}
-	// Condicao tabela //
 
   	// Voltar ao Topo //
 		$(window).scroll(function() {
@@ -158,38 +153,40 @@ $(function() {
 	// Slider //
 
 	// slideShelf //
-	    $('.slideShelf').find('ul').slick({
-			dots: false,
-			arrows: true,
-			draggable: true,
-			touchMove: true,
-			autoplay: false,
-			slidesToShow: 2,
-			mobileFirst: true,
-			slidesToScroll: 1,
-			adaptiveHeight: true,
-			responsive: [
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 2,
-						dots: true
-					}
-				},
-				{
-					breakpoint: 767,
-					settings: {
-						slidesToShow: 3
-					}
-				},
-				{
-					breakpoint: 991,
-					settings: {
-						slidesToShow: 4
-					}
-				},
-			]
-	    });
+		if($('body.home').length > 0){
+		    $('.slideShelf').find('ul').slick({
+				dots: false,
+				arrows: true,
+				draggable: true,
+				touchMove: true,
+				autoplay: false,
+				slidesToShow: 2,
+				mobileFirst: true,
+				slidesToScroll: 1,
+				adaptiveHeight: true,
+				responsive: [
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 2,
+							dots: true
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+							slidesToShow: 3
+						}
+					},
+					{
+						breakpoint: 991,
+						settings: {
+							slidesToShow: 4
+						}
+					},
+				]
+		    });
+		}
 	// slideShelf //
 
 	// Frete Gratis Aberto //
@@ -251,40 +248,6 @@ $(function() {
 		}
 	// Smart Research //
 
-    // Scripts Pagina de Produto //
-	    if (pagProduto.length > 0) {
-			try {
-				$document.ready(function() {
-				// Script Quantidade de Produtos END. Pego a quantidade de produtos pelo val e jogo na URL do botao.
-					$('.qtd .more').click(function(){
-						var $input = $(this).prev();
-						$input.val( +$input.val() + 1 );
-						var opt_value = $input.val();
-						var link = $(this).next();
-						var currentURL = $('.buy-button').attr('href');
-						var nomedoproduto = currentURL.split(/\&/)[0];
-						$('.buy-button').removeAttr('href');
-						$('.buy-button').attr('href', nomedoproduto + '&qty=' + opt_value + '&seller=1&redirect=true&sc=1');
-					});
-
-					$('.qtd .less').click(function(){
-						var $input = $(this).next();
-						$input.val( +$input.val() - 1 );
-						var opt_value = $input.val();
-						var encontraInput = $(this).next();
-						var currentURL = $('.buy-button').attr('href');
-						var nomedoproduto = currentURL.split(/\&/)[0];
-
-						$('.buy-button').removeAttr('href');
-						$('.buy-button').attr('href', nomedoproduto + '&qty=' + opt_value + '&seller=1&redirect=true&sc=1');
-					});
-		        // Script Quantidade de Produtos END
-
-				});
-			} catch(e) {}
-	    }
-    // Scripts Pagina de Produto //
-
 
   	// Scripts Departamento //
 		if($(depCatBus).length > 0){
@@ -297,34 +260,6 @@ $(function() {
 		}
   	// Scripts Departamento //
 
-
-// Scripts Modal //
-    // Open Modal //
-	    // Open Modal //
-	        $('.call_modal').click(function() {
-	            $('.tabelas').fadeIn(200);
-	            $('.bg_modal').fadeIn(600);
-	            $('body').addClass('modal_active');
-	        });
-	        // Open Modal //
-
-	        // Close Modal //
-	        $('.close_modal, .bg_modal').click(function() {
-	            $('.tabelas').fadeOut(600);
-	            $('.bg_modal').fadeOut(600);
-	            $('body').removeClass('modal_active');
-	            $('.modal_loader').remove(); // remove o conteudo do modal ao fechar
-	        });
-	        $(document).keyup(function(ev) {
-	            if (ev.keyCode == 27)
-	                $('.tabelas').fadeOut(500);
-	                $('.bg_modal').fadeOut(600);
-	            $('body').removeClass('modal_active');
-	            $('.modal_loader').remove(); // remove o conteudo do modal ao fechar
-	            $('#parcelamentoModal').removeClass('active');
-	        });
-	    // Close Modal //
-	// Scripts Modal //
 
     // Remocao Loading Meus Pedidos//
 		try {

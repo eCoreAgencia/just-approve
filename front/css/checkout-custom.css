@@ -825,8 +825,7 @@ header .main-header {
   header .main-header .logo {
     text-align: center;
     border-top: 5px solid #2e2b3e;
-    border-bottom: 1px solid #2e2b3e;
-    padding: 15px 0; }
+    border-bottom: 1px solid #2e2b3e; }
 
 /* ==========================================================================
    Footer
@@ -835,52 +834,21 @@ footer {
   border-top: 1px solid #2e2b3e;
   clear: both;
   overflow: hidden; }
+  footer .extensions-checkout-buttons-container {
+    display: none; }
   footer .main-footer {
     overflow: hidden;
     padding: 20px; }
     footer .main-footer .info-footer {
       display: block;
       width: 100%; }
-      footer .main-footer .info-footer h3 {
-        line-height: 22px; }
-      footer .main-footer .info-footer .pagamento,
-      footer .main-footer .info-footer .selos,
       footer .main-footer .info-footer .creditos {
-        display: inline-block;
-        vertical-align: middle; }
-      footer .main-footer .info-footer .pagamento {
-        width: 100%; }
-        footer .main-footer .info-footer .pagamento img {
-          width: 100%; }
-          @media (min-width: 1170px) {
-            footer .main-footer .info-footer .pagamento img {
-              width: auto; } }
-        @media (min-width: 1170px) {
-          footer .main-footer .info-footer .pagamento {
-            width: 60%; } }
-      footer .main-footer .info-footer .selos {
-        overflow: hidden;
-        margin-top: 20px;
-        text-align: center;
-        width: 100%; }
-        @media (min-width: 1170px) {
-          footer .main-footer .info-footer .selos {
-            margin-top: 10px;
-            text-align: left;
-            width: 20%; } }
-        footer .main-footer .info-footer .selos ul li {
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: 10px; }
-      footer .main-footer .info-footer .creditos {
-        text-align: center;
+        float: left;
+        max-width: 50%;
+        text-align: left;
         margin-top: 10px;
-        width: 100%; }
-        @media (min-width: 1170px) {
-          footer .main-footer .info-footer .creditos {
-            float: right;
-            text-align: right;
-            width: 19%; } }
+        padding-left: 50px;
+        margin-bottom: 15px; }
         footer .main-footer .info-footer .creditos ul li {
           display: inline-block;
           vertical-align: middle; }
@@ -981,3 +949,33 @@ h1#orderform-title {
   text-align: center;
   border-radius: 5px;
   border-bottom: 3px solid #85b236; }
+
+.disclaimer {
+  clear: both;
+  background-color: #000;
+  overflow: hidden;
+  padding: 2% 0; }
+  .disclaimer p {
+    font-size: 10px;
+    color: #fff;
+    line-height: 15px; }
+  .disclaimer .empresas {
+    text-align: center; }
+    .disclaimer .empresas span {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      display: block;
+      margin-bottom: 5px;
+      text-align: left; }
+    .disclaimer .empresas li {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 10px; }
+      .disclaimer .empresas li a {
+        display: block;
+        overflow: hidden; }
+        .disclaimer .empresas li a svg {
+          margin-left: 0;
+          width: 110px;
+          height: 60px; }
