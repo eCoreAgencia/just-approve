@@ -3,6 +3,39 @@ $(document).ready(function(){
         $('.choose-skus .skuList:first-child .preco').insertBefore('.choose-skus');
         $('.valor-dividido br').remove();
     // Remanegement Pricing //
+
+    // Manipulating BuyButton //
+        // Sku's Not Choice //
+            $('#sku-not-add').click(function(){
+                window.alert('É preciso escolher uma variação de Tamanho para poder finalizar a compra.');
+            });
+        // Sku's Not Choice //
+
+
+        // Find Empty Skus //
+            var emptyParent = $('.portal-notify-me-ref').parent();
+            var emptyParentOne = $(emptyParent).addClass('inactive');
+        // Find Empty Skus //
+
+
+        // Pick SKU //
+            $('.skuList.inactive').click(function(){
+                window.alert('Esse produto está temporariamente sem estoque.');
+                $('.buy-box .bt-comprar').attr('id', 'sku-not-add');
+            });
+
+            $('.skuList .nomeSku').each(function(){
+                $(this).click(function(){
+                    // Save myLink //
+                    var myLink = $(this).next().attr('href');
+                    
+                    // Removing ID attr and change Buy Button URL
+                    $('.buy-box .bt-comprar').removeAttr('id');
+                    $('.buy-box .bt-comprar').attr('href', myLink);
+                });
+            });
+        // Pick SKU //
+    // Manipulating BuyButton //
 });
 
 // Specifications Catch //

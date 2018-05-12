@@ -196,7 +196,6 @@ body.produto {
                 }
 
                 .preco {
-                    margin-top: 10px;
                     overflow: hidden;
 
                     em {
@@ -260,14 +259,28 @@ body.produto {
                         vertical-align: middle;
                         border: 1px solid #959595;
 
-                        &:hover {
-                            @extend .transition;
-                            color: #fff;
-                            background-color: #959595;
+                        &.inactive {
+                            color: #eaeaea;
+                            position: relative;
+
+                            &:after {
+                                top: -8px;
+                                right: -4px;
+                                color: #000;
+                                content: 'x';
+                                display: block;
+                                position: absolute;
+                            }
                         }
 
                         &:last-of-type {
                             margin-right: 0;
+                        }
+
+                        &:hover {
+                            @extend .transition;
+                            color: #fff;
+                            background-color: #959595;
                         }
 
                         a,
@@ -419,8 +432,9 @@ body.produto {
 
     .tabela {
         margin-top: 30px;
+        overflow: hidden;
         text-align: center;
-        padding: 40px 30px;
+        padding: 20px 30px 40px;
         border-top: 1px solid #d2d2d2;
         border-bottom: 1px solid #d2d2d2;
 
@@ -428,6 +442,56 @@ body.produto {
             @include font-size(1.2);
             display: inline-block;
             vertical-align: middle;
+
+            &.comprimento {
+                tr {
+                    position: relative;
+
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        &:after {
+                            top: 0;
+                            left: -30px;
+                            display: block;
+                            font-weight: bold;
+                            position: absolute;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        &:after {
+                            content: 'PP';
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        &:after {
+                            content: 'P';
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        &:after {
+                            content: 'M';
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        &:after {
+                            content: 'G';
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        &:after {
+                            content: 'GG';
+                        }
+                    }
+                }
+            }
 
             tr {
                 display: block;
@@ -441,11 +505,10 @@ body.produto {
         }
 
         h3 {
-            @include font-size(1.6);
+            @include font-size(1.2);
             width: 100%;
             color: #2e2b3e;
             display: block;
-            font-weight: 400;
             line-height: 20px;
             text-align: center;
             margin-bottom: 15px;

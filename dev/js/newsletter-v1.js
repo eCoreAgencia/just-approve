@@ -1,9 +1,10 @@
-function masterDataNewsletter(){
+function newsLetterFooter(){
     var jsonSaveDadosUser = {
-        "email": $("#cl_email").val()
+        "email": $("#cl_email").val(),
+        "nome": $("#cl_nome").val()
     };
 
-    var urlSaveDadosUser = 'http://api.vtexcrm.com.br/zipnautica/dataentities/NL/documents/';
+    var urlSaveDadosUser = 'http://api.vtexcrm.com.br/justapproveinfra/dataentities/NL/documents/';
 
     $.ajax({
         headers: {
@@ -17,11 +18,12 @@ function masterDataNewsletter(){
           console.log(data);
           $("div#messageSuccess").removeClass("hide");
           $("#cl_email").val("");
-          alert("E-mail cadastrado com sucesso!");
+          $("#cl_nome").val("");
+          alert("Dados cadastrados com sucesso!");
         },
         error: function (data) {
           console.log(data);
-          alert("Houve um erro ao cadastrar seu e-mail. Tente novamente mais tarde");
+          alert("Houve um erro ao cadastrar . Tente novamente mais tarde");
         }
     });
 }

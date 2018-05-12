@@ -19,6 +19,42 @@ header{
 		}
 	}
 
+	.tool-tip-element {
+		position: relative;
+
+		&:hover {
+			.tool-tip {
+				@extend .transition;
+				opacity: 1;
+				display: block;
+			}
+		}
+
+		.tool-tip {
+			@include font-size(1.2);
+			@extend .transition;
+			top: 35px;
+			opacity: 0;
+			left: 120px;
+			color: #fff;
+			padding: 20px;
+			position: absolute;
+			text-align: center;
+			z-index: 9999999999;
+			background-color: #000;
+
+			&:before {
+				font-size: 110px;
+				left: 45px;
+				top: -18px;
+				color: #000;
+				content: 'ˆ';
+				display: block;
+				position: absolute;
+			}
+		}
+	}
+
 	.top-box{
 		background-color: #000;
 		padding: 6px 0;

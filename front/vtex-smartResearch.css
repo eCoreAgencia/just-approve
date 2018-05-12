@@ -1,0 +1,18 @@
+/* Extensão */
+.vtexSr-overlay {display:none; width:100%; height:100%; left:0; position:absolute; top:0; z-index:10; background:#FFF url("/arquivos/ajax-loader.gif") center center no-repeat;}
+
+/* Controles */
+.search-multiple-navigator {visibility:hidden;}
+
+/* Return to top */
+#returnToTop {display:none !important;}
+#returnToTop span {display: none;}
+#returnToTop .text {display: none;}
+#returnToTop .text2 {display: none;}
+#returnToTop .arrowToTop {display: none;}
+
+/* SCROLL INFINITO */
+#scrollLoading {border:#FFD324 solid 2px; margin:20px auto; line-height:20px; padding:5px; width:100px; background:url("/arquivos/ajax-loader2.gif") no-repeat right center #FFF6BF;}
+
+/* Chilli Beans */
+.resultItemsWrapper {position:relative;}

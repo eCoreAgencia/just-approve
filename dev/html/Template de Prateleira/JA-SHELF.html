@@ -29,9 +29,18 @@
                 #end
             </em>
 
-            <article class="action-buttons">
-                <a data-sku="$idSku" data-id="$product.Id" href="$product.Uri" class="btn btn-buy">Comprar</a>
-            </article>
+            <div class="action-buttons">
+                <div class="item-list hidden-xs hidden-sm">
+                    <span></span>
+                    $product.QuickView
+                </div>
+                <div class="item-list">
+                    <a class="btn btn-fast-buy">
+                        <span>Compra rápida</span>
+                        <section id_produto="$product.Id" class="produto-cor"></section>
+                    </a>
+                </div>
+            </div>
         #else
             <span class="outOfStock">Produto esgotado</span>
         #end

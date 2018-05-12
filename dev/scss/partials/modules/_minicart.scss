@@ -251,3 +251,19 @@
 .sta-cart .sta-cart-close svg{
 	fill: #fff;
 }
+
+.sta-cart-items {
+	li {
+		&.fake-insert {
+			.sta-cart-pdt-info p,
+			.sta-cart-pdt-info h4,
+			.sta-cart-pdt-image img {
+				display: none;
+
+				&:first-of-type {
+					display: block;
+				}
+			}
+		}
+	}
+}
