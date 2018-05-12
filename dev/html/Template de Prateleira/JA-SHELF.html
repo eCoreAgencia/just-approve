@@ -5,10 +5,14 @@
 
 <a title="$escapedName" href="$uri" class="productShelf">
 
-    <span class="principal">$product.GetImageTag(30)</span>
-    <span class="secundario">$product.GetImageTag(30,"verso")</span>
-    
-
+    <span class="principal">
+        <span class="label-Feminino">$product.GetImageTag(30,"principalfeminino")</span>
+        <span class="label-Masculino">$product.GetImageTag(30,"principalmasculino")</span>
+    </span>
+    <span class="secundario">
+        <span class="label-Feminino">$product.GetImageTag(30,"versofeminino")</span>
+        <span class="label-Masculino">$product.GetImageTag(30,"versomasculino")</span>
+    </span>
     <article>
         <h4>$product.Name</h4>
 
@@ -29,10 +33,9 @@
                 #end
             </em>
 
-            <div class="action-buttons">
+            <div class="action-buttons hidden-xs hidden-sm"">
                 <div class="item-list hidden-xs hidden-sm">
-                    <span></span>
-                    $product.QuickView
+                    <a class="product-url" href="$uri">Ver Produto</a>
                 </div>
                 <div class="item-list">
                     <a class="btn btn-fast-buy">

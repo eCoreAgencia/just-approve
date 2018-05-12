@@ -205,14 +205,6 @@
 			helper.removeItem(index);
 		});
 
-		$('.sta-cart-resume a').on('click', function(){
-			if($(this).hasClass('disabled')){
-				return false;
-			} else { 
-				return true;
-			}
-		});
-
 		$('.sta-cart-freight button').click(function(){
 			$(this).hide();
 			$('.sta-cart-freight input').show();

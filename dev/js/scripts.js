@@ -72,12 +72,107 @@ var body = $('body'),
 
 $(function() {
 
+	var depCatBus = $('.dep-cat-bus');
+	var shelf = $('.prateleira');
+
+
+	// Verificacao Genero Departamento-Categoria-Busca //
+		if($(depCatBus).length > 0){
+			var myGen = $('.bread-crumb .last a').text();
+			shelf.addClass(myGen);
+
+			var fem = $('.prateleira.Feminino');
+			var masc = $('.prateleira.Masculino');
+			
+			fem.each(function(){
+				$(this).find('.principal span.label-Masculino').remove();
+				$(this).find('.secundario span.label-Masculino').remove();
+			
+				var myRealLink = $(this).find('li a.productShelf').attr('href');
+				var myParam = myRealLink+'?lid=f777d960-5de6-496f-825e-c417d3012f69###';
+			
+				$('li a.productShelf').attr('href', myParam+'/#');
+				$('li a.product-url').attr('href', myParam+'/#');
+			});
+
+			masc.each(function(){
+				$(this).find('.principal span.label-Feminino').remove();
+				$(this).find('.secundario span.label-Feminino').remove();
+
+				var myRealLink = $(this).find('li a.productShelf').attr('href');
+				var myParam = myRealLink+'?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d###';
+
+				$('li a.productShelf').attr('href', myParam+'/#');
+				$('li a.product-url').attr('href', myParam+'/#');
+			});
+		}
+	// Verificacao Genero Departamento-Categoria-Busca //
+
+
+	// Verificacao Genero Produto Experiencia de acordo com o genero //
+		if($(pagProduto).length > 0){
+
+			// Controller Image Thumbs, Featured and SuperZoom //
+				$("#___rc-p-id").each(function(index) {
+					var id = $(this).attr("value");
+					var data = "/api/catalog_system/pub/products/search/?fq=productId:"+id+"";
+
+					$.getJSON(data, function(data) {
+						$.each(data, function(key, val) {
+							$('.thumbs li').remove();
+							var elements = val.items[0].images;
+							$(elements).each(function(data, val){
+								// Take Image Thumbs //
+									var myLabel = val.imageLabel;
+									var myImageID = val.imageId;
+									var myImageName = val.imageText;
+									$('<li class="'+myLabel+'"><a id="botaoZoom" href="javascript:void(0);" title="Zoom" rel="/arquivos/ids/'+myImageID+'-1000-1000/'+myImageName+'.jpg" zoom><img src="/arquivos/ids/'+myImageID+'-80-80/'+myImageName+'.jpg" /></a></li>').appendTo('ul.thumbs');
+								// Take Image Thumbs //
+							
+								// Masc Rules //
+									$('body.masc-experience').find('.thumbs li.feminino, .thumbs li.versofeminino, .thumbs li.principalfeminino').remove();
+								// Masc Rules //
+
+								// Fem Rules //
+									$('body.fem-experience').find('.thumbs li.masculino, .thumbs li.versomasculino, .thumbs li.principalmasculino').remove();
+								// Fem Rules //
+							});
+						});
+					});
+				});
+			// Controller Image Thumbs, Featured and SuperZoom //
+		}
+	// Verificacao Genero Produto Experiencia de acordo com o genero //
+
+
 	// Ajuste Meus Pedidos //
 		if (orderList.length > 0) {
 			orderList.find('link').remove();
 			orderList.find('.page-header').unwrap('.container');
 		}
 	// Ajuste Meus Pedidos //
+
+
+    // Scripts Modal //
+        // Close Modal //
+        $('.close-modal, .opacity-modal').click(function(event) {
+            $('body').removeClass('modal-active');
+            $('body').removeClass('newsletter-active');
+            $('body').removeClass('product-popup');
+            $('.new-modal-content').remove();
+        });
+
+        $(document).keyup(function(ev) {
+            if (ev.keyCode == 27)
+            $('body').removeClass('modal-active');
+            $('body').removeClass('newsletter-active');
+            $('body').removeClass('product-popup');
+            $('.new-modal-content').remove();
+            $('#parcelamentoModal').removeClass('active');
+        });
+    	// Close Modal //
+	// Scripts Modal //
+
 
 	// Menu Persistente Begin //
 		$(window).scroll(function() {
@@ -196,6 +291,33 @@ $(function() {
 			});
 		} catch(e) {}
 	// Frete Gratis Aberto //
+
+
+	// Prateleira Hover Actions //
+
+		$('.prateleira li .principal').each(function(){
+			var me = $(this);
+			var pics =  $(this).find('span');
+			var lastPics = pics.last();
+			var qtd = $(this).length;
+
+			if($(qtd).length < 2){
+				me.find(lastPics).addClass('forced');
+			}
+		});
+
+		$('.prateleira li .secundario').each(function(){
+			var me = $(this);
+			var myImg = $(this).find('img');
+			$(myImg).parent().addClass('exist');
+
+			if($(me).hasClass('exist')){
+				// do nothing //
+			} else {
+				$(this).remove();
+			}
+		});
+	// Prateleira Hover Actions //
 
 
 	// Compra Rapida //

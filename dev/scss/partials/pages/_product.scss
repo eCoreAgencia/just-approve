@@ -277,7 +277,8 @@ body.produto {
                             margin-right: 0;
                         }
 
-                        &:hover {
+                        &:hover,
+                        &.sku-picked {
                             @extend .transition;
                             color: #fff;
                             background-color: #959595;

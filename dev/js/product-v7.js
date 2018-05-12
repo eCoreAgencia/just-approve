@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    // Not Adding Sku //
+        $('.buy-box .bt-comprar').attr('id', 'sku-not-add');
+    // Not Adding Sku //
+
     // Remanegement Pricing //
         $('.choose-skus .skuList:first-child .preco').insertBefore('.choose-skus');
         $('.valor-dividido br').remove();
@@ -7,7 +12,9 @@ $(document).ready(function(){
     // Manipulating BuyButton //
         // Sku's Not Choice //
             $('#sku-not-add').click(function(){
-                window.alert('É preciso escolher uma variação de Tamanho para poder finalizar a compra.');
+                $('.modal-container').remove('.new-modal-content');
+                $('<div class="new-modal-content news-element error-add"><h3>É preciso escolher uma variação de Tamanho para poder finalizar a compra.</h3></div>').appendTo('.modal-container');
+                $('body').addClass('modal-active product-popup');
             });
         // Sku's Not Choice //
 
@@ -20,15 +27,26 @@ $(document).ready(function(){
 
         // Pick SKU //
             $('.skuList.inactive').click(function(){
-                window.alert('Esse produto está temporariamente sem estoque.');
+                $('.modal-container').remove('.new-modal-content');
+                $('<div class="new-modal-content news-element error-add"><h3>Esse produto está temporariamente sem estoque.</h3></div>').appendTo('.modal-container');
+                $('body').addClass('modal-active product-popup');
+                $('.inactive-modal').addClass('modal-box');
+                $('.modal-box').removeClass('inactive-modal');
                 $('.buy-box .bt-comprar').attr('id', 'sku-not-add');
             });
 
             $('.skuList .nomeSku').each(function(){
                 $(this).click(function(){
+
+                    $('.skuList').removeClass('sku-picked');
+                    $(this).addClass('sku-picked');
+                    
                     // Save myLink //
                     var myLink = $(this).next().attr('href');
                     
+                    $('.modal-box').addClass('inactive-modal');
+                    $('.inactive-modal').removeClass('modal-box');
+
                     // Removing ID attr and change Buy Button URL
                     $('.buy-box .bt-comprar').removeAttr('id');
                     $('.buy-box .bt-comprar').attr('href', myLink);
