@@ -22,11 +22,13 @@
                 </section>
 
                 <section class="product-view row">
-                    <section class="product-box col-xs-12 col-md-5">
-                        <vtex.cmc:ProductImage zoom="on" />
+                    <section class="product-box col-xs-12 col-md-6">
+                        <!-- Mounting With API -->
+                        <ul class="thumbnails"></ul>
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
                     </section><!-- product-box END -->
 
-                    <section class="buy-box col-xs-12 col-md-7">
+                    <section class="buy-box col-xs-12 col-md-6">
                         <vtex.cmc:productName />
 
                         <div class="prod-similares">
@@ -83,8 +85,9 @@
         </main>
 
         <vtex:template id="JA-FOOTER" />
+        <script type="text/javascript" src="/arquivos/easyzoom.js"></script>
         <vtex:template id="JA-COMMONSCRIPTS" />
-        <script type="text/javascript" src="/arquivos/product-v7.js"></script>
+        <script type="text/javascript" src="/arquivos/product-v9.js"></script>
 
     </body>
 </html>

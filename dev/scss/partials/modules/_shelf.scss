@@ -22,6 +22,8 @@
 		img {
 			width: 100%;
 			height: auto;
+			min-width: 440px;
+			margin-left: -94px;
 		}
 
 		a {
@@ -47,14 +49,6 @@
 					transition: all 0.3s ease-in-out;
 					opacity: 1;
 				}
-			}
-
-			span.forced {
-				display: none;
-			}
-
-			span:first-of-type {
-				display: block;
 			}
 
 			span.secundario {
@@ -219,7 +213,7 @@
 		.action-buttons {
 			@extend .transition;
 			left: 0;
-			width: 98%;
+			width: 100%;
 			bottom: 97px;
 			opacity: 0.9;
 			padding: 10px 20px;
@@ -304,19 +298,45 @@
 	}
 }
 
+body.dep-cat-bus {
+	li {
+		a.productShelf{
+			display: block;
+			position: relative;
+
+			span.secundario {
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+				opacity: 1;
+				width: 260px;
+				top: inherit;
+				height: auto;
+				left: inherit;
+				position: inherit;
+			}
+		}
+	}
+}
+
 .prod-similares {
 	.prateleira {
 		li {
+			padding: 0;
 			width: 65px;
 			height: 65px;
 			margin-bottom: 0;
 
 			span {
 				&.principal {
-					margin-bottom: 0;
+					margin-bottom: 0 !important;
 			
 					img {
-						width: auto;
+						width: 100%;
+						min-width: auto;
+						margin-left: 0;
 					}
 				}
 			}

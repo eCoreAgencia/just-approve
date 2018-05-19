@@ -1047,6 +1047,8 @@ footer .disclaimer .empresas li a svg {
 .prateleira li img {
 	width: 100%;
 	height: auto;
+	min-width: 440px;
+	margin-left: -94px;
 }
 
 .prateleira li a {
@@ -1066,14 +1068,6 @@ footer .disclaimer .empresas li a svg {
 .prateleira li a.productShelf:hover span.secundario {
 	transition: all 0.3s ease-in-out;
 	opacity: 1;
-}
-
-.prateleira li a.productShelf span.forced {
-	display: none;
-}
-
-.prateleira li a.productShelf span:first-of-type {
-	display: block;
 }
 
 .prateleira li a.productShelf span.secundario {
@@ -1225,7 +1219,7 @@ footer .disclaimer .empresas li a svg {
 
 .prateleira li .action-buttons {
 	left: 0;
-	width: 98%;
+	width: 100%;
 	bottom: 97px;
 	opacity: 0.9;
 	padding: 10px 20px;
@@ -1295,18 +1289,36 @@ footer .disclaimer .empresas li a svg {
 	background-color: #666;
 }
 
+body.dep-cat-bus li a.productShelf {
+	display: block;
+	position: relative;
+}
+
+body.dep-cat-bus li a.productShelf span.secundario {
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
+	width: 260px;
+	top: inherit;
+	height: auto;
+	left: inherit;
+	position: inherit;
+}
+
 .prod-similares .prateleira li {
+	padding: 0;
 	width: 65px;
 	height: 65px;
 	margin-bottom: 0;
 }
 
 .prod-similares .prateleira li span.principal {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 .prod-similares .prateleira li span.principal img {
-	width: auto;
+	width: 100%;
+	min-width: auto;
+	margin-left: 0;
 }
 
 body.home .prateleira li {
@@ -2466,6 +2478,20 @@ body.produto main .product-view .product-box {
 	position: relative;
 }
 
+body.produto main .product-view .product-box .my-video-position {
+	top: 0;
+	right: 18px;
+	width: 480px;
+	z-index: 999;
+	height: 700px;
+	position: absolute;
+	background-color: #fff;
+}
+
+body.produto main .product-view .product-box .my-video-position.inactive {
+	display: none;
+}
+
 body.produto main .product-view .product-box .apresentacao #include a {
 	display: block;
 }
@@ -2490,23 +2516,34 @@ body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow 
 	display: none;
 }
 
-body.produto main .product-view .product-box .apresentacao .thumbs {
-	margin-top: 10px;
-	text-align: center;
-	overflow: hidden;
-}
-
-body.produto main .product-view .product-box .apresentacao .thumbs li {
-	margin: 0 5px 10px;
+body.produto main .product-view .thumbnails {
+	vertical-align: top;
 	display: inline-block;
 }
 
-body.produto main .product-view .product-box .apresentacao .thumbs li:hover {
-	opacity: 0.8;
+body.produto main .product-view .thumbnails li.hover-video {
+	width: 70px;
+	height: 90px;
+	overflow: hidden;
+	position: relative;
 }
 
-body.produto main .product-view .product-box .apresentacao .thumbs li a.ON img {
-	opacity: 0.8;
+body.produto main .product-view .thumbnails li.hover-video video {
+	height: 80px;
+	margin-left: 9px;
+	margin-top: -12px;
+	width: 64px !important;
+}
+
+body.produto main .product-view .thumbnails li.hover-video span {
+	top: 0;
+	left: 0;
+	width: 72px;
+	height: 87px;
+	z-index: 99999;
+	display: block;
+	cursor: pointer;
+	position: absolute;
 }
 
 body.produto main .product-view .buy-box {
@@ -4336,6 +4373,73 @@ body.account .slider .address-display-block {
 	background-color: #fff;
 }
 
+/**
+ * EasyZoom core styles
+ */
+
+.easyzoom {
+	max-width: 490px;
+	position: relative; /* 'Shrink-wrap' the element */
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.easyzoom img {
+	vertical-align: bottom;
+}
+
+.easyzoom.is-loading img {
+	cursor: progress;
+}
+
+.easyzoom.is-ready img {
+	cursor: crosshair;
+}
+
+.easyzoom.is-error img {
+	cursor: not-allowed;
+}
+
+.easyzoom-notice {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 150;
+	width: 10em;
+	margin: -1em 0 0 -5em;
+	line-height: 2em;
+	text-align: center;
+	background: #FFF;
+	box-shadow: 0 0 10px #888;
+}
+
+.easyzoom-flyout {
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	background: #FFF;
+}
+
+/**
+ * EasyZoom layout variations
+ */
+
+.easyzoom--overlay .easyzoom-flyout {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.easyzoom--adjacent .easyzoom-flyout {
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	margin-left: 20px;
+}
+
 /*
 Base Style
 ========================================================================== */
@@ -4350,6 +4454,81 @@ html {
 
 * {
 	box-sizing: inherit;
+}
+
+.ajax-temp {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	position: fixed;
+}
+
+.ajax-temp .opacity-modal {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.97;
+	position: absolute;
+	z-index: 999999999999;
+	background-color: #fff;
+}
+
+.ajax-temp #loader {
+	width: 130px;
+	height: 150px;
+	border-radius: 10px;
+	position: fixed;
+	left: 50%;
+	margin: 15% auto 0 -65px;
+	padding: 15px;
+	z-index: 9999999999999999999;
+}
+
+.ajax-temp #text {
+	width: 100%;
+	font-size: 14px;
+	font-family: arial;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.ajax-temp #circuleExtern {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background: #000;
+	position: relative;
+	margin: 20px auto 0;
+	animation: scales 0.9s ease-in infinite alternate;
+}
+
+.ajax-temp #circuleMedium {
+	width: 70px;
+	height: 70px;
+	top: 50%;
+	left: 50%;
+	margin-top: -35px;
+	margin-left: -35px;
+	border-radius: 70px;
+	background: #666;
+	position: absolute;
+	animation: scales 0.8s ease-out infinite alternate;
+}
+
+.ajax-temp #circuleCenter {
+	width: 50px;
+	height: 50px;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+	border-radius: 50px;
+	background: #fff;
+	position: absolute;
+	animation: scales 1.2s ease-in-out infinite alternate;
 }
 
 @media screen and (min-width: 414px) {
@@ -5012,22 +5191,6 @@ body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow 
 	display: block;
 }
 
-body.produto main .product-view .product-box .apresentacao .thumbs {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 530px;
-}
-
-body.produto main .product-view .product-box .apresentacao .thumbs li {
-	display: block;
-	margin: 0 0 5px;
-}
-
-body.produto main .product-view .buy-box {
-	padding-left: 5%;
-}
-
 body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul {
 	display: inline-block;
 	width: 50%;
@@ -5445,6 +5608,18 @@ td.visible-xs {
 
 body.account .modal-body {
 	height: calc(100vh - 90px - 70px);
+}
+
+}
+
+@keyframes scales {
+
+from {
+	transform: scale(0.8);
+}
+
+to {
+	transform: scale(1.1);
 }
 
 }

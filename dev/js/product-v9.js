@@ -54,23 +54,6 @@ $(document).ready(function(){
             });
         // Pick SKU //
     // Manipulating BuyButton //
-
-
-    // Instantiate EasyZoom instances
-    var $easyzoom = $('.easyzoom').easyZoom();
-    var myFirst = $('.thumbnails li').first();
-    myFirst.addClass('active');
-    $('.thumbnails li.active a').simulateClick('click');
-
-    // Setup thumbnails example
-    var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
-    $('.thumbnails').on('click', 'a', function(e) {
-        var $this = $(this);
-        e.preventDefault();
-        // Use EasyZoom's `swap` method
-        api1.swap($this.data('standard'), $this.attr('href'));
-    });
-    
 });
 
 // Specifications Catch //

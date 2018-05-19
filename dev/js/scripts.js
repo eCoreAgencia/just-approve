@@ -85,6 +85,7 @@ $(function() {
 			var masc = $('.prateleira.Masculino');
 			
 			fem.each(function(){
+				$(this).find('.secundario').remove();
 				$(this).find('.principal span.label-Masculino').remove();
 				$(this).find('.secundario span.label-Masculino').remove();
 			
@@ -96,6 +97,7 @@ $(function() {
 			});
 
 			masc.each(function(){
+				$(this).find('.principal').remove();
 				$(this).find('.principal span.label-Feminino').remove();
 				$(this).find('.secundario span.label-Feminino').remove();
 
@@ -119,25 +121,60 @@ $(function() {
 
 					$.getJSON(data, function(data) {
 						$.each(data, function(key, val) {
-							$('.thumbs li').remove();
 							var elements = val.items[0].images;
+							var myVideo = val.MeuVideo;
+							var myPosition = val.Posicao;
+							var myIdVideo = val.IdDocumento;
+
 							$(elements).each(function(data, val){
 								// Take Image Thumbs //
 									var myLabel = val.imageLabel;
 									var myImageID = val.imageId;
 									var myImageName = val.imageText;
-									$('<li class="'+myLabel+'"><a id="botaoZoom" href="javascript:void(0);" title="Zoom" rel="/arquivos/ids/'+myImageID+'-1000-1000/'+myImageName+'.jpg" zoom><img src="/arquivos/ids/'+myImageID+'-80-80/'+myImageName+'.jpg" /></a></li>').appendTo('ul.thumbs');
+									$('<li class="'+myLabel+'"><a href="/arquivos/ids/'+myImageID+'-1000-1500/'+myImageName+'.jpg" data-standard="/arquivos/ids/'+myImageID+'-467-700/'+myImageName+'.jpg"><img src="/arquivos/ids/'+myImageID+'-80-80/'+myImageName+'.jpg" /></a></li>').appendTo('ul.thumbnails');
 								// Take Image Thumbs //
-							
+
 								// Masc Rules //
-									$('body.masc-experience').find('.thumbs li.feminino, .thumbs li.versofeminino, .thumbs li.principalfeminino').remove();
+									$('body.masc-experience').find('.thumbnails li.feminino, .thumbnails li.versofeminino, .thumbnails li.principalfeminino').remove();
 								// Masc Rules //
 
 								// Fem Rules //
-									$('body.fem-experience').find('.thumbs li.masculino, .thumbs li.versomasculino, .thumbs li.principalmasculino').remove();
+									$('body.fem-experience').find('.thumbnails li.masculino, .thumbnails li.versomasculino, .thumbnails li.principalmasculino').remove();
 								// Fem Rules //
+
+								var myFirst = $('.thumbnails li').first();
+								myFirst.addClass('first-thumb');
+
+								var firstThumbStand = $('.thumbnails li.first-thumb a').attr('data-standard');
+								var firstThumbLink = $('.thumbnails li.first-thumb a').attr('href');
+								var firstThumbEx = $('<a href="'+firstThumbLink+'"><img src="'+firstThumbStand+'"/></a>');
+								firstThumbEx.appendTo('.easyzoom');
+								$('.easyzoom a:first-of-type').nextAll().remove();
+
+								// Instantiate EasyZoom instances
+								var $easyzoom = $('.easyzoom').easyZoom();
+
+								// Setup thumbnails example
+								var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+								$('.thumbnails').on('click', 'a', function(e) {
+									var $this = $(this);
+									e.preventDefault();
+									$('.my-video-position').addClass('inactive');
+									// Use EasyZoom's `swap` method
+									api1.swap($this.data('standard'), $this.attr('href'));
+								});
+							});
+
+							$('<li class="hover-video"><span></span><video width="80" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
+							$('<div class="my-video-position inactive"><video width="470" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></div>').insertBefore('.easyzoom');
+						
+							$('.hover-video span').on('click', function(e){
+								$('.my-video-position').removeClass('inactive');
+								var myvideo = $('.my-video-position video');
+								$(myvideo).trigger('play');
 							});
 						});
+
 					});
 				});
 			// Controller Image Thumbs, Featured and SuperZoom //
@@ -288,36 +325,10 @@ $(function() {
 		try {
 			$document.ready(function(){
 				$('.shipping-value').simulateClick('click');
+				$('.ajax-temp').fadeOut(3500);
 			});
 		} catch(e) {}
 	// Frete Gratis Aberto //
-
-
-	// Prateleira Hover Actions //
-
-		$('.prateleira li .principal').each(function(){
-			var me = $(this);
-			var pics =  $(this).find('span');
-			var lastPics = pics.last();
-			var qtd = $(this).length;
-
-			if($(qtd).length < 2){
-				me.find(lastPics).addClass('forced');
-			}
-		});
-
-		$('.prateleira li .secundario').each(function(){
-			var me = $(this);
-			var myImg = $(this).find('img');
-			$(myImg).parent().addClass('exist');
-
-			if($(me).hasClass('exist')){
-				// do nothing //
-			} else {
-				$(this).remove();
-			}
-		});
-	// Prateleira Hover Actions //
 
 
 	// Compra Rapida //

@@ -16,6 +16,20 @@ body.produto {
             .product-box {
                 position: relative;
 
+                .my-video-position {
+                    top: 0;
+                    right: 18px;
+                    width: 480px;
+                    z-index: 999;
+                    height: 700px;
+                    position: absolute;
+                    background-color: #fff;
+
+                    &.inactive {
+                        display: none;
+                    }
+                }
+
                 .apresentacao {
                     #include {
                         @include mq($screen-md) {
@@ -62,50 +76,41 @@ body.produto {
                             }
                         }
                     }
+                }
+            }
 
-                    .thumbs {
-                        margin-top: 10px;
-                        text-align: center;
-                        overflow: hidden;
+            .thumbnails {
+                vertical-align: top;
+                display: inline-block;
 
-                        @include mq($screen-md) {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 530px;
-                        }
+                li.hover-video {
+                    width: 70px;
+                    height: 90px;
+                    overflow: hidden;
+                    position: relative;
 
-                        li {
-                            margin: 0 5px 10px;
-                            display: inline-block;
+                    video {
+                        height: 80px;
+                        margin-left: 9px;
+                        margin-top: -12px;
+                        width: 64px !important;
+                    }
 
-                            @include mq($screen-md) {
-                                display: block;
-                                margin: 0 0 5px;
-                            }
-
-                            &:hover{
-                                opacity: 0.8;
-                            }
-
-                            a{
-                                &.ON{
-                                    img{
-                                        opacity: 0.8;
-                                    }
-                                }
-                            }
-                        }
+                    span {
+                        top: 0;
+                        left: 0;
+                        width: 72px;
+                        height: 87px;
+                        z-index: 99999;
+                        display: block;
+                        cursor: pointer;
+                        position: absolute;
                     }
                 }
             }
 
             .buy-box{
                 overflow: hidden;
-
-                @include mq($screen-md) {
-                    padding-left: 5%;
-                }
 
                 .prod-similares {
                     margin-top: 30px;
