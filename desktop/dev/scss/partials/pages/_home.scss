@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+body.home{
+	main{
+		section{
+			clear: both;
+			overflow: hidden;
+
+			.box-banner{
+				img{
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+
+			&.banner-bottom {
+				.box-banner {
+					img {
+						width: auto;
+					}
+				}
+			}
+
+			&.shelf-colecoes,
+			&.shelf-destaques {
+				margin-top: 40px;
+			}
+
+			&.shelf-destaques,
+			&.banner-faixa,
+			&.shelf-novidades,
+			&.banners-duplos,
+			&.shelf-mais-vendidos,
+			&.banners-triplos,
+			&.shelf-sale,
+			&.banners-duplos-bottom,
+			&.shelf-colecoes{
+				margin-bottom: 40px;
+			}
+		}
+
+		.banner-faixa img,
+		.banners-duplos img,
+		.banners-triplos img {
+			-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+
+			&:hover {
+				-webkit-transform: scale(0.9);
+				-moz-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				-o-transform: scale(0.9);
+				transform: scale(0.9);
+			}
+		}
+	}
+}

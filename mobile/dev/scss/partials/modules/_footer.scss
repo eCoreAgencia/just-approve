@@ -1,0 +1,139 @@
+ 
+ /* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer{
+	clear: both;
+	display: block;
+
+	h4{
+		@include font-size(1.2);
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+
+	.social-footer {
+		padding: 10px 0;
+		margin-top: 1px;
+		overflow: hidden;
+		text-align: center;
+		background-color: #535353;
+
+		.social-menu{
+			ul{
+				display: inline-block;
+
+				li{
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+
+			&:before{
+				@include font-size(1.0);
+				color: #fff;
+				margin-right: 10px;
+				font-weight: bolder;
+				display: inline-block;
+				content: "Redes sociais";
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.main-footer{
+		clear: both;
+		padding: 4% 0;
+		overflow: hidden;
+		text-align: center;
+		background-color: #f5f5f5;
+
+		.item{
+			nav{
+				ul{
+					li{
+						a{
+							@include font-size(1.2);
+							color: #000;
+							text-decoration: none;
+							display: block;
+							margin-bottom: 15px;
+						}
+					}
+				}
+			}
+
+			span, strong, a{
+				@include font-size(1.2);
+				color: #000;
+				text-decoration: none;
+				display: block;
+				margin-bottom: 15px;
+			}
+
+			a:hover{
+				text-decoration: underline;
+			}
+		}
+
+		.atendimento{
+			margin: 20px 0;
+
+			a{
+				font-weight: 600;
+			}
+		}
+
+		.formas-pgto {
+			margin-top: 20px;
+		}
+	}
+
+	.disclaimer{
+		clear: both;
+		background-color: #000;
+		overflow: hidden;
+		padding: 2% 0;
+
+		p{
+			@include font-size(1.2);
+			color: #fff;
+			line-height: 24px;
+			text-align: center;
+		}
+
+		.empresas{
+			margin-top: 30px;
+			text-align: center;
+
+			span{
+				@include font-size(1);
+				text-transform: uppercase;
+				color: #fff;
+				display: block;
+				margin-bottom: 5px;
+				text-align: left;
+			}
+
+			li{
+				display: inline-block;
+				vertical-align: top;
+				margin-left: 10px;
+
+				a{
+					display: block;
+					overflow: hidden;
+
+					svg{
+						margin-left: 0;
+					    width: 110px;
+					    height: 60px;
+					}
+				}
+			}
+		}
+	}
+}

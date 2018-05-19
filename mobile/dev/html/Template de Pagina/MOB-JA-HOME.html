@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+    <head>
+        <title>Just Approve Streat Wear</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="MOB-JA-COMMONSTYLES" />
+    </head>
+    <body>
+
+        <vtex:template id="MOB-JA-HEADER" />
+
+        <main>
+            <section class="slider slide-wrap">
+                <div class="slide">
+                    <vtex:contentPlaceHolder id="banners-slide" />
+                </div>
+            </section>
+
+            <section class="shelf-destaques container">
+                <div class="shelf-title">
+                    <h2 class="main-tlt">Destaques</h2>
+                </div>
+                <div class="slider slide-wrap">
+                    <div class="slideShelf">
+                        <vtex:contentPlaceHolder id="shelf-destaques" />
+                    </div>
+                </div>
+                <a href="/" class="see-all">ver tudo</a>
+            </section>
+
+            <section class="banner-faixa container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <vtex:contentPlaceHolder id="banner-faixa" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="shelf-novidades container">
+                <div class="shelf-title">
+                    <h2 class="main-tlt">Novidades</h2>
+                </div>
+                <div class="slider slide-wrap">
+                    <div class="slideShelf">
+                        <vtex:contentPlaceHolder id="shelf-novidades" />
+                    </div>
+                </div>
+                <a href="/" class="see-all">ver tudo</a>
+            </section>
+
+            <section class="banners-duplos container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <vtex:contentPlaceHolder id="banner-duplo-um" />
+                    </div>
+                    <div class="col-xs-6">
+                        <vtex:contentPlaceHolder id="banner-duplo-dois" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="shelf-mais-vendidos container">
+                <div class="shelf-title">
+                    <h2 class="main-tlt">Mais vendidos</h2>
+                </div>
+                <div class="slider slide-wrap">
+                    <div class="slideShelf">
+                        <vtex:contentPlaceHolder id="shelf-mais-vendidos" />
+                    </div>
+                </div>
+                <a href="/" class="see-all">ver tudo</a>
+            </section>
+
+            <section class="banners-triplos container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-6">
+                            <vtex:contentPlaceHolder id="banner-triplo-um" />
+                        </div>
+                        <div class="col-xs-6">
+                            <vtex:contentPlaceHolder id="banner-triplo-dois" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="padding: 13px;">
+                            <vtex:contentPlaceHolder id="banner-triplo-tres" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="shelf-sale container">
+                <div class="shelf-title">
+                    <h2 class="main-tlt">Sale</h2>
+                </div>
+                <div class="slider slide-wrap">
+                    <div class="slideShelf">
+                        <vtex:contentPlaceHolder id="shelf-sale" />
+                    </div>
+                </div>
+                <a href="/" class="see-all">ver tudo</a>
+            </section>
+
+            <section class="banner-bottom container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-12">
+                            <vtex:contentPlaceHolder id="banner-bottom-one" />
+                        </div>
+                        <div class="col-xs-12">
+                            <vtex:contentPlaceHolder id="banner-bottom-two" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="shelf-colecoes container">
+                <div class="shelf-title">
+                    <h2 class="main-tlt">Coleções</h2>
+                </div>
+                <div class="slider slide-wrap">
+                    <div class="slideShelf">
+                        <vtex:contentPlaceHolder id="shelf-colecoes" />
+                    </div>
+                </div>
+                <a href="/" class="see-all">ver tudo</a>
+            </section>
+
+        </main>
+
+        <vtex:template id="MOB-JA-FOOTER" />
+        <vtex:template id="MOB-JA-COMMONSCRIPTS" />
+        <script type="text/javascript" src="/arquivos/slick.js"></script>
+
+    </body>
+</html>

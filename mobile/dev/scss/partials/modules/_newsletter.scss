@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Newsletter
+   ========================================================================== */
+
+
+.newsletter {
+	padding: 20px 0;
+	overflow: hidden;
+	background-color: #000;
+
+	h4 {
+		@include font-size(1.6);
+		color: #fff;
+		line-height: 21px;
+		text-align: center;
+		font-weight: normal;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+	}
+
+	form {
+		fieldset {
+			&.email {
+				margin-top: 5px;
+			}
+
+			input {
+				@include font-size(1.4);
+				width: 100%;
+				padding: 13px;
+			}
+		}
+
+		button {
+			@include font-size(1.4);
+			@extend .transition;
+			width: 96%;
+			color: #fff;
+			border: none;
+			padding: 15px;
+			margin-top: 5px;
+			cursor: pointer;
+			margin-left: 2%;
+			font-weight: bolder;
+			text-transform: uppercase;
+			background-color: #959595;
+			font-family: 'Montserrat', sans-serif;
+
+			&:hover {
+				@extend .transition;
+				color: #000;
+				background-color: #e0e0e0;
+			}
+		}
+	}
+}

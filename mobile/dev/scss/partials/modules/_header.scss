@@ -1,0 +1,238 @@
+ /* ==========================================================================
+   Header
+   ========================================================================== */
+
+header{
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	position: fixed;
+	background-color: #000;
+
+	svg {
+		fill: #fff !important;
+	}
+
+	a.first-menu:hover {
+		.atropelei-geral {
+			display: block;
+		}
+	}
+
+	.main-header{
+		overflow: hidden;
+
+	    .logo{
+	    	text-align: center;
+
+	    	svg {
+	    		height: 70px;
+	    	}
+	    }
+
+		.menu-header {
+			@extend .transition;
+			top: 96px;
+	        left: -100%;
+			float: left;
+			width: 280px;
+	        z-index: 9999;
+			position: absolute;
+
+		    @include mq($screen-md) {
+		    	left: 0;
+		    	opacity: 1;
+		    	display: inline-block;
+		    	position: relative;
+	    		padding: 30px 0 0;
+	    		background-color: transparent;
+	    		width: 66.6667%;
+	    		text-align: center;
+	    		overflow: visible;
+		    }
+
+		    .container{
+		    	position: relative;
+		    }
+
+		    ul{
+		    	li{
+		    		@extend .transition;
+		    		margin: 0;
+		    		position: relative;
+
+		    		@include mq($screen-md) {
+		    			position: initial;
+		    			display: inline-block;
+		    			vertical-align: middle;
+		    			margin-left: 1%;
+		    		}
+
+		    		a {
+		    			@include font-size(1.2);
+	    				color: #000;
+	    				display: block;
+	    				font-weight: normal;
+	    				padding: 2px 8px 15px;
+	    				text-decoration: none;
+	    				text-transform: uppercase;
+
+						&:before{
+							@include font-size(2.2);
+							content: ".";
+							float: left;
+							font-weight: 400;
+							line-height: 18px;
+							margin-right: 10px;
+						}
+		    		}
+
+			    	&.has-sub{
+			    		.js-open-sub{
+					    	top: 5px;
+					    	right: 0;
+					    	border: 0;
+					    	outline: none;
+					    	background: none;
+					    	position: absolute;
+
+					    	.menu-toggle{
+					    		width: 20px;
+					    		height: 20px;
+					    		display: block;
+					    		margin: 0 auto;
+					    		position: relative;
+					    		pointer-events: none;
+
+					    		@include mq($screen-sm) {
+					    			width: 25px;
+					    			height: 25px;
+					    		}
+
+					    		span {
+					    			@extend .transition;
+									left: 0;
+									opacity: 1;
+									height: 12%;
+									width: 100%;
+									display: block;
+									background: #fff;
+									position: absolute;
+									border-radius: 9px;
+									transform: rotate(0deg);
+									// transition: .25s ease-in-out;
+
+									&:nth-child(1) {
+									  top: 0px;
+									}
+
+									&:nth-child(2) {
+									  top: 9px;
+									}
+
+									&:nth-child(3) {
+									  top: 18px;
+									}
+
+								}
+					    	}
+
+					    	&.active{
+					    		.menu-toggle{
+					    			span{
+					    				&:nth-child(1) {
+											top: 9px;
+											transform: rotate(135deg);
+										}
+
+										&:nth-child(2) {
+											opacity: 0;
+											left: -60px;
+										}
+
+										&:nth-child(3) {
+											top: 9px;
+											transform: rotate(-135deg);
+										}
+					    			}
+					    		}
+					    	}
+					    }
+
+			    		.submenu{
+			    			@extend .transition;
+			    			height: 0;
+			    			opacity: 0;
+			    			padding: 0 15px;
+			    			overflow: hidden;
+			    			background: #f1f1f1;
+			    			pointer-events: none;
+
+				    		&.slideActive{
+				    			opacity: 1;
+				    			height: auto;
+				    			padding-top: 15px;
+				    			position: relative;
+				    			pointer-events: all;
+				    			padding-bottom: 15px;
+				    		}
+
+				    		nav{
+				    			width: 100%;
+
+			    				ul{
+			    					li{
+			    						width: 100%;
+			    						display: inline-block;
+			    					}
+			    				}
+			    			}
+			    		}
+			    	}
+
+			    	&:hover{
+			    		a.first-menu{
+	    					border-bottom: 1px solid #000;
+			    		}
+			    	}
+		    	}
+		    }
+
+		    &.slideActive{
+				left: 0;
+				top: 73px;
+				opacity: 1;
+				height: 720px;
+				background: #fff;
+		        overflow-y: auto;
+				overflow-x: hidden;
+		        padding: 20px 20px 100px;
+
+		        ul{
+		        	li{
+		        		a{
+		        			color: #000;
+		        			line-height: 20px;
+
+		        			&.first-menu{
+	        					border: none !important;
+
+		    					&:before {
+		    						display: none;
+		    					}
+	        				}
+		        		}
+
+		        		&.has-sub{
+		        			.submenu{
+		        				height: auto;
+		        				opacity: 1;
+		        				background-color: #fff;
+		        			}
+		        		}
+		        	}
+		        }
+		    }
+		}
+	}
+}

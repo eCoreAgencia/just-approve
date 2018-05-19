@@ -1,0 +1,116 @@
+/* ========================================================================
+	Menu Persistente
+	======================================================================= */
+	
+header {
+	&.menu-persistente {
+		@extend .transition;
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: fixed;
+		min-height: 60px;
+		z-index: 999999999;
+		background-color: #000;
+		animation: grow .7s;
+		-o-animation: grow .7s;
+		-moz-animation: grow .7s;
+		-webkit-animation: grow .7s;
+		box-shadow: 0 0 50px rgba(#000, .4);
+
+		.main-header {
+			.menu-header {
+				@extend .transition;
+				padding: 22px 0 0;
+			}
+
+			li.has-sub:hover {
+				@extend .transition;
+				background-color: #000;
+
+				a.first-menu {
+					@extend .transition;
+					border-bottom: none !important;
+					background-color: #000 !important;
+				}
+
+				.submenu {
+					@extend .transition;
+					display: none;
+				}
+			}
+		}
+
+		.top-box {
+			@extend .transition;
+			display: none;
+		}
+
+		.container {
+			.row {
+				@extend .transition;
+				padding: 20px 0;
+				overflow: hidden;
+				margin-left: 0 !important;
+				position: inherit !important;
+			}
+		}
+
+		.searchbox {
+			@extend .transition;
+			padding-top: 11px;
+
+			.busca {
+				input.fulltext-search-box {
+					@extend .transition;
+					color: #000;
+					background: #fff;
+				}
+			}
+		}
+
+		.tipbar{
+			@extend .transition;
+			display: none;
+		}
+
+		.main-header{
+			@extend .transition;
+			.logo{
+				svg{
+					@extend .transition;
+					fill: #fff;
+					width: 100px;
+				}
+			}
+		}
+
+		.menu-header{
+			li{
+				a.first-menu{
+					@extend .transition;
+					color: #fff;
+					padding: 0px 8px 0;
+				}
+			}
+		}
+	}
+
+	&.ha-hidding{
+		@extend .transition;
+		top: 0;
+		position: fixed;
+		background: #fff;
+		z-index: 9999999999999;
+		
+		.top-box {
+			@extend .transition;
+			display: none;
+		}
+	}
+
+	&.ha-hide{
+		@extend .transition;
+		top: -100%;
+	}
+}

@@ -1,0 +1,543 @@
+
+/* ==========================================================================
+   Página de Produto
+   ========================================================================== */
+
+body.produto {
+
+    main{
+        overflow: hidden;
+        margin-top: 1%;
+
+        .product-view{
+            overflow: hidden;
+            clear: both;
+
+            .product-box {
+                position: relative;
+
+                .my-video-position {
+                    top: 0px;
+                    left: 0px;
+                    z-index: 1;
+                    width: 100%;
+                    height: 440px;
+                    padding: 20px 0;
+                    text-align: center;
+                    position: absolute;
+                    background-color: #fff;
+
+                    video {
+                        max-width: 280px;
+                    }
+
+                    &.inactive {
+                        display: none;
+                    }
+                }
+
+                .apresentacao {
+                    #include {
+                        @include mq($screen-md) {
+                            padding-left: 118px;
+                        }
+
+                        a {
+                            display: block;
+                        }
+
+                        .sku-rich-image-main {
+                            display: block;
+                            margin: 0 auto;
+                            width: 100%;
+
+                            @include mq($screen-md) {
+                                width: auto;
+                            }
+                        }
+                    }
+
+                    .zoomPad {
+                        overflow: hidden;
+                        position: relative;
+                        text-align: center;
+
+                        .zoomWindow {
+                            display: none;
+
+                            .zoomWrapperImage {
+                                display: none;
+                            }
+                            
+                            @include mq($screen-md) {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                left: 0 !important;
+                                background: none repeat scroll 0 0 #fff;
+                                
+                                .zoomWrapperImage {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .thumbnails {
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                bottom: -1px;
+                padding: 10px;
+                position: absolute;
+                text-align: center;
+                vertical-align: top;
+                display: inline-block;
+                background-color: #fff;
+    
+                li {
+                    vertical-align: top;
+                    display: inline-block;
+                }
+
+                li.hover-video {
+                    width: 70px;
+                    height: 90px;
+                    overflow: hidden;
+                    position: relative;
+
+                    video {
+                        height: 80px;
+                        margin-left: 9px;
+                        margin-top: -12px;
+                        width: 64px !important;
+                    }
+
+                    span {
+                        top: 0;
+                        left: 0;
+                        width: 72px;
+                        height: 87px;
+                        z-index: 99999;
+                        display: block;
+                        cursor: pointer;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .buy-box{
+                overflow: hidden;
+
+                .prod-similares {
+                    margin-top: 30px;
+
+                    &:before {
+                        @include font-size(1.4);
+                        display: block;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                        content: 'CORES/ESTAMPAS';
+                    }
+                }
+
+                .bt-comprar {
+                    @extend .transition;
+                    color: #fff;
+                    width: 100%;
+                    height: 46px;
+                    display: block;
+                    cursor: pointer;
+                    max-width: 348px;
+                    line-height: 46px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    background-color: #000;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        @extend .transition;
+                        background-color: #666;
+                    }
+                }
+
+                .productName{
+                    @include font-size(2);
+                    font-weight: normal;
+                    text-transform: uppercase;
+                }
+
+                .price-info{
+                    padding: 0;
+
+                    .productPrice{
+                        .descricao-preco{
+                            .valor-de{
+                                @include font-size(1.2);
+                                text-decoration: line-through;
+                                font-style: normal;
+                                color: #757575;
+                            }
+
+                            .valor-por{
+                                @include font-size(0);
+                                font-weight: bolder;
+                                font-style: normal;
+                                display: none;
+                                color: #333;
+                                margin-bottom: 5px;
+
+                                .skuBestPrice{
+                                    @include font-size(3.6);
+                                    display: block;
+                                    font-weight: 900;
+                                }
+                            }
+
+                            .valor-dividido{
+                                @include font-size(2.4);
+                                font-style: normal;
+                                text-transform: uppercase;
+                                font-weight: normal;
+                                color: #333;
+
+                                label, strong{
+                                    font-weight: 900;
+                                }
+                            }
+                        }
+
+                        .preco-a-vista{
+                            display: none !important;
+                        }
+
+                        .economia-de{
+                            display: none !important;
+                        }
+                    }
+                }
+
+                .preco {
+                    overflow: hidden;
+
+                    em {
+                        font-size: 0;
+                        margin: 10px 0;
+                        display: block;
+                        font-style: normal;
+
+                        &.valor-dividido {
+                            @include font-size(1.2);
+                            display: block;
+
+                            strong {
+                                font-weight: bold;
+                            }
+                        }
+
+                        &.valor-de {
+                            margin-bottom: -10px;
+                            text-decoration: line-through;
+                        }
+
+                        &.valor-por {
+                            @include font-size(1.5);
+
+                            strong {
+                                @include font-size(1.5);
+                            }
+                        }
+                    }
+
+                    strong {
+                        @include font-size(1.2);
+                        font-weight: normal;
+                    }
+                }
+
+                .choose-skus{
+                    clear: both;
+                    margin: 20px 0;
+                    overflow: hidden;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #dbd7d7;
+
+                    &:before {
+                        @include font-size(1.5);
+                        display: block;
+                        font-weight: bold;
+                        content: 'TAMANHOS';
+                        margin-bottom: 15px;
+                    }
+
+
+                    .skuList {
+                        @extend .transition;
+                        padding: 8px;
+                        cursor: pointer;
+                        text-align: center;
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        border: 1px solid #959595;
+
+                        &.inactive {
+                            color: #eaeaea;
+                            position: relative;
+
+                            &:after {
+                                top: -8px;
+                                right: -4px;
+                                color: #000;
+                                content: 'x';
+                                display: block;
+                                position: absolute;
+                            }
+                        }
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+
+                        &:hover,
+                        &.sku-picked {
+                            @extend .transition;
+                            color: #fff;
+                            background-color: #959595;
+                        }
+
+                        a,
+                        .preco,
+                        .imageSku,
+                        .seller-data,
+                        .portal-notify-me-ref {
+                            display: none;
+                        }
+                    }
+
+                    .sku-selector-container{
+                        ul{
+                            list-style-type: none;
+                            width: 100%;
+                            display: block;
+
+                            @include mq($screen-md) {
+                                display: inline-block;
+                                width: 50%;
+                                vertical-align: top;
+                            }
+
+                            li{
+                                @include font-size(1.4);
+                                text-transform: uppercase;
+                                font-weight: bolder;
+                                display: block;
+                                overflow: hidden;
+                                margin-bottom: 10px;
+
+                                &.skuList{
+                                    input{
+                                        display: none;
+                                    }
+
+                                    label{
+                                        cursor: pointer;
+                                        background-color: #fff;
+                                        padding: 10px 15px;
+                                        color: #201e1e;
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        line-height: 25px;
+                                        border: 1px solid #fff;
+                                        display: inline-block;
+                                        margin-bottom: 10px;
+
+                                        &:hover,
+                                        &.sku-picked{
+                                            border: 1px solid #000;
+                                        }
+
+                                        &:before{
+                                            display: none;
+                                        }
+
+                                        &.item_unavailable{
+                                            background-color: #e6e6e6;
+                                            border: 1px solid #e6e6e6;
+                                            position: relative;
+
+                                            &:after{
+                                                content: "X";
+                                                display: block;
+                                                position: absolute;
+                                                top: 6px;
+                                                left: 24%;
+                                                font-size: 39px;
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.Tamanho{
+                                li.skuList{
+                                    label{
+                                        width: auto;
+                                        height: 40px;
+                                        line-height: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .description,
+                .specification{
+                    margin-bottom: 20px;
+                    
+                    h3{
+                        @include font-size(1.2);
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+
+                    .productDescription {
+                        @include font-size(1.2);
+                        line-height: 15px;
+                    }
+                }
+
+                .composicao {
+                    .main-content {
+                        @include font-size(1.2);
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+
+        .shelfRelacionados {
+            overflow: hidden;
+            clear: both;
+            margin-top: 60px;
+            padding-bottom: 60px;
+
+            .prateleira {
+                h2 {
+                    @include font-size(1.6);
+                    width: 100%;
+                    display: block;
+                    color: #2e2b3e;
+                    line-height: 20px;
+                    text-align: center;
+                    font-weight: normal;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                }
+
+                ul {
+                    li {
+                        width: 100%;
+                        max-width: 290px;
+                    }
+                }
+            }
+        }
+    }
+
+    .plugin-preco {
+        display: none;
+    }
+
+    .tabela {
+        margin-top: 30px;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px 30px 40px;
+        border-top: 1px solid #d2d2d2;
+        border-bottom: 1px solid #d2d2d2;
+
+        table {
+            @include font-size(1.2);
+            display: inline-block;
+            vertical-align: middle;
+
+            &.comprimento {
+                tr {
+                    position: relative;
+
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        &:after {
+                            top: 0;
+                            left: -30px;
+                            display: block;
+                            font-weight: bold;
+                            position: absolute;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        &:after {
+                            content: 'PP';
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        &:after {
+                            content: 'P';
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        &:after {
+                            content: 'M';
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        &:after {
+                            content: 'G';
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        &:after {
+                            content: 'GG';
+                        }
+                    }
+                }
+            }
+
+            tr {
+                display: block;
+                padding-bottom: 10px;
+                
+                &.my-thead {
+                    padding: 0 10px 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        h3 {
+            @include font-size(1.2);
+            width: 100%;
+            color: #2e2b3e;
+            display: block;
+            line-height: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;            
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+	<head>
+        <title>Formulário de Contato | Just Approve</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="MOB-JA-COMMONSTYLES" />
+	</head>
+	<body>
+        
+		<vtex:template id="MOB-JA-HEADER" />
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<section class="content col-xs-12">
+			            <form action="javascript:formContato()" method="POST" class="form-contato" data-module="contato">
+			                <input type="hidden" name="newsInternalPart" value="contato" />
+			                <input type="hidden" name="newsInternalPage" value="_" />
+			                <input type="hidden" name="newsInternalCampaign" value="contato:opt-in" />
+
+			                <fieldset class="name col-xs-12 col-md-5">
+			                    <input type="text" name="contatoClientName" id="co_firstName" class="name contato-client-email" placeholder="Nome" data-validation="required" data-msg-required="seu nome" />
+			                </fieldset>
+
+			                <fieldset class="email col-xs-12 col-md-5">
+			                    <input type="text" name="contatoClientEmail" id="co_email" class="email" placeholder="E-mail" data-validation="required email" data-msg-required="seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
+			                </fieldset>
+
+			                <fieldset class="telefone col-xs-12 col-md-5">
+			                    <input type="text" name="contatoClientTelefone" id="co_telefone" class="telefone" placeholder="Telefone" data-validation="required telefone" data-msg-required="seu telefone" data-msg-email="Insira seu número de telefone" />
+			                </fieldset>
+
+			                <fieldset class="assunto col-xs-12 col-md-5">
+			                    <input type="text" name="contatoClientAssunto" id="co_assunto" class="assunto" placeholder="Assunto" data-validation="required assunto" data-msg-required="seu assunto" data-msg-email="Comente o assunto" />
+			                </fieldset>
+
+			                <fieldset class="mensagem col-xs-12 col-md-5">
+			                    <input type="text" name="contatoClientMensagem" id="co_mensagem" class="mensagem" placeholder="Mensagem" data-validation="required mensagem" data-msg-required="seumensagem" data-msg-email="Insira a sua mensagem" />
+			                </fieldset>
+
+			                <button type="submit" class="contato-button-ok submit col-xs-12 col-md-2">Enviar</button>    
+			            </form>
+					</section>
+				</div>
+			</div>
+		</main><!-- main END -->
+
+        <vtex:template id="MOB-JA-FOOTER" />
+        <vtex:template id="MOB-JA-COMMONSCRIPTS" />
+        <script type="text/javascript" src="/arquivos/md-contato.js"></script>
+    </body>
+</html>

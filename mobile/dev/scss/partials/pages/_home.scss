@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+body.home{
+	main{
+		section{
+			clear: both;
+			overflow: hidden;
+
+			.see-all{
+				@include font-size(1.5);
+				width: 100%;
+				display: block;
+				color: #9d9d9d;
+				text-align: center;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:after{
+					content: ">";
+					margin-left: 5px;
+					display: inline-block;
+				}
+			}
+
+			.box-banner{
+				img{
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+
+			&.banner-bottom {
+				.box-banner {
+					&:first-of-type {
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			&.shelf-colecoes,
+			&.shelf-destaques {
+				margin-top: 40px;
+			}
+
+			&.shelf-destaques,
+			&.banner-faixa,
+			&.shelf-novidades,
+			&.banners-duplos,
+			&.shelf-mais-vendidos,
+			&.banners-triplos,
+			&.shelf-sale,
+			&.banners-duplos-bottom,
+			&.shelf-colecoes{
+				margin-bottom: 30px;
+			}
+		}
+
+		.banner-faixa img,
+		.banners-duplos img,
+		.banners-triplos img {
+			-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+
+			&:hover {
+				-webkit-transform: scale(0.9);
+				-moz-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				-o-transform: scale(0.9);
+				transform: scale(0.9);
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+@-ms-viewport { width: device-width; }
+
+/*
+Dependencies
+========================================================================== */
+
+@import "partials/base/mixins";
+@import "resetv2";
+@import "partials/all";
+
+/*
+Base Style
+========================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+@include mq($screen-sm) {
+	*:focus { outline: none !important; }
+}
+
+html {
+	min-height: 100%;
+	box-sizing: border-box;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-family: 'Montserrat', sans-serif;
+}
+
+* { box-sizing: inherit; }
+
+.ajax-temp {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	position: fixed;
+
+	.opacity-modal {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.97;
+		position: absolute;
+		z-index: 999999999999;
+		background-color: #fff;
+	}
+
+	#loader {
+		width: 130px;
+		height: 150px;
+		border-radius: 10px;
+		position: fixed;
+		left: 50%;
+		margin: 15% auto 0 -65px;
+		padding: 15px;
+		z-index: 9999999999999999999;
+	}
+
+	#text {
+	  width: 100%;
+	  font-size: 14px;
+	  font-family: arial;
+	  text-align: center;
+	  margin-top: 20px;
+	}
+
+	svg {
+	  width: 220px;
+	  height: 120px;
+	  -webkit-animation: scales 0.5s ease-in infinite alternate;
+	  -moz-animation: scales 0.5s ease-in infinite alternate;
+	  animation: scales 0.5s ease-in infinite alternate;
+	}
+
+	@-moz-keyframes scales {
+	  from {
+	    -webkit-transform: scale(0.8);
+	    -moz-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	  to {
+	    -webkit-transform: scale(1.1);
+	    -moz-transform: scale(1.1);
+	    transform: scale(1.1);
+	  }
+	}
+	@-webkit-keyframes scales {
+	  from {
+	    -webkit-transform: scale(0.8);
+	    -moz-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	  to {
+	    -webkit-transform: scale(1.1);
+	    -moz-transform: scale(1.1);
+	    transform: scale(1.1);
+	  }
+	}
+	@-o-keyframes scales {
+	  from {
+	    -webkit-transform: scale(0.8);
+	    -moz-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	  to {
+	    -webkit-transform: scale(1.1);
+	    -moz-transform: scale(1.1);
+	    transform: scale(1.1);
+	  }
+	}
+	@keyframes scales {
+	  from {
+	    -webkit-transform: scale(0.8);
+	    -moz-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	  to {
+	    -webkit-transform: scale(1.1);
+	    -moz-transform: scale(1.1);
+	    transform: scale(1.1);
+	  }
+	}
+}
