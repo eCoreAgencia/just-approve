@@ -150,9 +150,6 @@ $(function() {
 								firstThumbEx.appendTo('.easyzoom');
 								$('.easyzoom a:first-of-type').nextAll().remove();
 
-								// Instantiate EasyZoom instances
-								var $easyzoom = $('.easyzoom').easyZoom();
-
 								// Setup thumbnails example
 								var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
 								$('.thumbnails').on('click', 'a', function(e) {
@@ -250,7 +247,7 @@ $(function() {
 			});
 		}
 	// Slider //
-
+	
 	// slideShelf //
 		if($('body.home').length > 0){
 		    $('.slideShelf').find('ul').slick({
@@ -261,7 +258,7 @@ $(function() {
 				autoplay: false,
 				slidesToShow: 2,
 				mobileFirst: true,
-				slidesToScroll: 2,
+				slidesToScroll: 1,
 				adaptiveHeight: true,
 				responsive: [
 					{

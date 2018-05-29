@@ -654,15 +654,27 @@ header .tool-tip-element {
 	position: relative;
 }
 
+header .tool-tip-element:first-of-type:hover .tool-tip {
+	margin-left: -140px;
+}
+
+header .tool-tip-element:first-of-type:hover span {
+	width: 300px;
+	height: 106px;
+	bottom: -70px;
+	line-height: 20px;
+	padding: 4px 20px;
+}
+
 header .tool-tip-element .tool-tip {
 	display: inline;
 }
 
 header .tool-tip-element .tool-tip span {
 	color: #fff;
-	left: 140px;
+	left: 210px;
 	height: 30px;
-	width: 140px;
+	width: 210px;
 	bottom: -70px;
 	background: #000000;
 	position: absolute;
@@ -768,6 +780,14 @@ header .main-header .menu-header ul li a {
 	text-transform: uppercase;
 }
 
+header .main-header .menu-header ul li.has-sub:first-of-type {
+	text-align: left;
+}
+
+header .main-header .menu-header ul li.has-sub:first-of-type .category-list {
+	padding-left: 29px;
+}
+
 header .main-header .menu-header ul li.has-sub .js-open-sub {
 	top: 5px;
 	right: 0;
@@ -833,8 +853,8 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	opacity: 0;
 	padding: 0 15px;
 	overflow: hidden;
-	background: #f1f1f1;
 	pointer-events: none;
+	background: transparent;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu a:before {
@@ -1445,7 +1465,7 @@ body.home .prateleira li {
 	text-transform: uppercase;
 	position: absolute;
 	right: 8px;
-	bottom: 0;
+	bottom: 0px;
 	padding: 3px 7px;
 }
 
@@ -2131,6 +2151,7 @@ body.dep-cat-bus .breadcrumb {
 	float: left;
 	width: 100%;
 	clear: both;
+	height: 45px;
 	padding: 10px 0;
 	text-align: center;
 	background-color: #f5f5f5;
@@ -2138,8 +2159,8 @@ body.dep-cat-bus .breadcrumb {
 }
 
 .tipbar.fundo-submenu {
+	box-shadow: inset 1px 6px 23px -2px rgba(0, 0, 0, 0.34);
 	background-color: #fff;
-	box-shadow: none;
 }
 
 .tipbar.fundo-submenu div {
@@ -4511,8 +4532,8 @@ html {
 }
 
 .ajax-temp svg {
-	width: 220px;
-	height: 120px;
+	width: 110px;
+	height: 110px;
 	animation: scales 0.5s ease-in infinite alternate;
 }
 
@@ -5121,7 +5142,6 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	margin-top: 0;
 	display: -ms-flexbox;
 	display: flex;
-	background: #fff;
 	overflow: visible;
 	position: absolute;
 	padding: 13px 20px;

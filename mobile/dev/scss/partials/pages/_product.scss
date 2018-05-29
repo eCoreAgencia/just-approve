@@ -141,6 +141,10 @@ body.produto {
                         margin-bottom: 10px;
                         content: 'CORES/ESTAMPAS';
                     }
+
+                    li {
+                        width: 65px !important;
+                    }
                 }
 
                 .bt-comprar {
@@ -444,7 +448,7 @@ body.produto {
                 ul {
                     li {
                         width: 100%;
-                        max-width: 290px;
+                        max-width: 190px;
                     }
                 }
             }

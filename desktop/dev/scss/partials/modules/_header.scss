@@ -22,15 +22,31 @@ header{
 	.tool-tip-element {
 		position: relative;
 
+		&:first-of-type {
+			&:hover {
+				.tool-tip {
+					margin-left: -140px;
+				}
+
+				span {
+					width: 300px;
+					height: 106px;
+					bottom: -70px;
+					line-height: 20px;
+					padding: 4px 20px;
+				}
+			}
+		}
+
 		.tool-tip {
 			display: inline;
 			
 			span {
 				@extend .transition;
 				color: #fff;
-				left: 140px;
+				left: 210px;
 				height: 30px;
-				width: 140px;
+				width: 210px;
 				bottom: -70px;
 				background: #000000;
 				position: absolute;
@@ -53,6 +69,7 @@ header{
 					border-left: 8px solid transparent;
 				}
 			}
+
 		}
 
 		&:hover {
@@ -169,6 +186,14 @@ header{
 		    		}
 
 			    	&.has-sub{
+			    		&:first-of-type {
+			    			text-align: left;
+
+			    			.category-list {
+								padding-left: 29px;
+			    			}
+			    		}
+
 			    		.js-open-sub{
 					    	top: 5px;
 					    	right: 0;
@@ -246,8 +271,8 @@ header{
 			    			opacity: 0;
 			    			padding: 0 15px;
 			    			overflow: hidden;
-			    			background: #f1f1f1;
 			    			pointer-events: none;
+			    			background: transparent;
 
 			    			a{
 			    				&:before{
@@ -263,7 +288,6 @@ header{
 				    			height: auto;
 				    			margin-top: 0;
 				    			display: flex;
-				    			background: #fff;
 				    			overflow: visible;
 			    				position: absolute;
 				    			padding: 13px 20px;
