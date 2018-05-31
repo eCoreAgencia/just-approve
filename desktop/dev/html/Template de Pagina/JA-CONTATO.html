@@ -15,32 +15,33 @@
 			<div class="container">
 				<div class="row">
 					<section class="content col-xs-12">
+						<h2>Formulário de Contato</h2>
 			            <form action="javascript:formContato()" method="POST" class="form-contato" data-module="contato">
 			                <input type="hidden" name="newsInternalPart" value="contato" />
 			                <input type="hidden" name="newsInternalPage" value="_" />
 			                <input type="hidden" name="newsInternalCampaign" value="contato:opt-in" />
 
-			                <fieldset class="name col-xs-12 col-md-5">
+			                <fieldset class="name col-xs-12 col-md-6">
 			                    <input type="text" name="contatoClientName" id="co_firstName" class="name contato-client-email" placeholder="Nome" data-validation="required" data-msg-required="seu nome" />
 			                </fieldset>
 
-			                <fieldset class="email col-xs-12 col-md-5">
+			                <fieldset class="email col-xs-12 col-md-6">
 			                    <input type="text" name="contatoClientEmail" id="co_email" class="email" placeholder="E-mail" data-validation="required email" data-msg-required="seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
 			                </fieldset>
 
-			                <fieldset class="telefone col-xs-12 col-md-5">
+			                <fieldset class="telefone col-xs-12 col-md-6">
 			                    <input type="text" name="contatoClientTelefone" id="co_telefone" class="telefone" placeholder="Telefone" data-validation="required telefone" data-msg-required="seu telefone" data-msg-email="Insira seu número de telefone" />
 			                </fieldset>
 
-			                <fieldset class="assunto col-xs-12 col-md-5">
+			                <fieldset class="assunto col-xs-12 col-md-8">
 			                    <input type="text" name="contatoClientAssunto" id="co_assunto" class="assunto" placeholder="Assunto" data-validation="required assunto" data-msg-required="seu assunto" data-msg-email="Comente o assunto" />
 			                </fieldset>
 
-			                <fieldset class="mensagem col-xs-12 col-md-5">
+			                <fieldset class="mensagem col-xs-12 col-md-12">
 			                    <input type="text" name="contatoClientMensagem" id="co_mensagem" class="mensagem" placeholder="Mensagem" data-validation="required mensagem" data-msg-required="seumensagem" data-msg-email="Insira a sua mensagem" />
 			                </fieldset>
 
-			                <button type="submit" class="contato-button-ok submit col-xs-12 col-md-2">Enviar</button>    
+			                <button type="submit" class="contato-button-ok submit col-xs-12 col-md-12">Enviar</button>    
 			            </form>
 					</section>
 				</div>

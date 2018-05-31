@@ -9,6 +9,23 @@ body.produto {
         overflow: hidden;
         margin-top: 1%;
 
+        #bt-tabela {
+            @include font-size(1.1);
+            right: 20px;
+            bottom: 240px;
+            color: #666;
+            cursor: pointer;
+            line-height: 25px;
+            position: absolute;
+            text-transform: uppercase;
+
+            svg {
+                margin-right: 10px;
+                vertical-align: top;
+                display: inline-block;
+            }
+        }
+
         .product-view{
             overflow: hidden;
             clear: both;

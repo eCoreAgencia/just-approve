@@ -221,8 +221,8 @@ select {
 }
 
 .transition,
-header .tool-tip-element .tool-tip span,
-header .tool-tip-element:hover .tool-tip span,
+header .tool-tip-element,
+header .tool-tip-element .tool-tip,
 header .main-header .menu-header,
 header .main-header .menu-header ul li,
 header .main-header .menu-header ul li.has-sub .js-open-sub .menu-toggle span,
@@ -251,19 +251,19 @@ header .main-header .menu-header ul li.has-sub .submenu nav ul li a:hover,
 #mini-cart #mini-cart-custom .cartFooter .cartCheckout:hover,
 .newsletter form button,
 .newsletter form button:hover,
-header.menu-persistente,
-header.menu-persistente .main-header .menu-header,
-header.menu-persistente .main-header li.has-sub:hover,
-header.menu-persistente .main-header li.has-sub:hover a.first-menu,
-header.menu-persistente .main-header li.has-sub:hover .submenu,
-header.menu-persistente .top-box,
-header.menu-persistente .container .row,
-header.menu-persistente .searchbox,
-header.menu-persistente .searchbox .busca input.fulltext-search-box,
-header.menu-persistente .tipbar,
-header.menu-persistente .main-header,
-header.menu-persistente .main-header .logo svg,
-header.menu-persistente .menu-header li a.first-menu,
+header.sticky,
+header.sticky .main-header .menu-header,
+header.sticky .main-header li.has-sub:hover,
+header.sticky .main-header li.has-sub:hover a.first-menu,
+header.sticky .main-header li.has-sub:hover .submenu,
+header.sticky .top-box,
+header.sticky .container .row,
+header.sticky .searchbox,
+header.sticky .searchbox .busca input.fulltext-search-box,
+header.sticky .tipbar,
+header.sticky .main-header,
+header.sticky .main-header .logo svg,
+header.sticky .menu-header li a.first-menu,
 header.ha-hidding,
 header.ha-hidding .top-box,
 header.ha-hide,
@@ -289,6 +289,7 @@ body.dep-cat-bus .sidebar .search-single-navigator ul.Tamanho li a,
 body.dep-cat-bus .sidebar .search-multiple-navigator ul.Cor li a,
 body.dep-cat-bus .sidebar .search-single-navigator ul.Cor li a,
 body.account [data-toggle="modal"],
+body.institucional main form button,
 body.favoritos main ul#favList li a.productShelf span.prod-image,
 body.favoritos main ul#favList button.remove,
 body.favoritos main ul#favList button.remove:before,
@@ -637,13 +638,9 @@ body.account .address-display-block {
    Header
    ========================================================================== */
 
-header .atropelei-geral {
-	top: 140px;
+header {
+	float: left;
 	width: 100%;
-	height: 44px;
-	display: none;
-	position: absolute;
-	background-color: #fff;
 }
 
 header a.first-menu:hover .atropelei-geral {
@@ -651,60 +648,47 @@ header a.first-menu:hover .atropelei-geral {
 }
 
 header .tool-tip-element {
-	position: relative;
-}
-
-header .tool-tip-element:first-of-type:hover .tool-tip {
-	margin-left: -140px;
-}
-
-header .tool-tip-element:first-of-type:hover span {
-	width: 300px;
-	height: 106px;
-	bottom: -70px;
-	line-height: 20px;
-	padding: 4px 20px;
+	height: 26px;
+	overflow: hidden;
 }
 
 header .tool-tip-element .tool-tip {
-	display: inline;
-}
-
-header .tool-tip-element .tool-tip span {
+	font-size: 12px;
+	top: 35px;
+	left: 90px;
+	opacity: 0;
+	width: 100%;
 	color: #fff;
-	left: 210px;
-	height: 30px;
-	width: 210px;
-	bottom: -70px;
-	background: #000000;
+	padding: 15px;
+	z-index: 9999;
+	max-width: 250px;
+	line-height: 20px;
 	position: absolute;
-	line-height: 30px;
 	text-align: center;
-	visibility: hidden;
-	border-radius: 6px;
-	box-shadow: 0px 0px 2px #1C1A1A;
+	background-color: #666;
 }
 
-header .tool-tip-element .tool-tip span:after {
-	left: 50%;
+header .tool-tip-element .tool-tip:before {
 	width: 0;
 	height: 0;
+	left: 50%;
+	top: -11px;
 	content: '';
-	bottom: 100%;
+	display: block;
+	margin-left: -10px;
 	position: absolute;
-	margin-left: -8px;
-	border-bottom: 8px solid #000000;
-	border-right: 8px solid transparent;
-	border-left: 8px solid transparent;
+	border-style: solid;
+	border-width: 0 15px 30px 15px;
+	border-color: transparent transparent #666 transparent;
 }
 
-header .tool-tip-element:hover .tool-tip span {
-	top: 30px;
-	left: 50%;
-	opacity: 0.8;
-	z-index: 999;
-	margin-left: -60px;
-	visibility: visible;
+header .tool-tip-element:hover {
+	height: auto;
+	overflow: visible;
+}
+
+header .tool-tip-element:hover .tool-tip {
+	opacity: 1;
 }
 
 header .top-box {
@@ -2003,7 +1987,7 @@ body.home .prateleira li {
 	Menu Persistente
 	======================================================================= */
 
-header.menu-persistente {
+header.sticky {
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -2018,53 +2002,53 @@ header.menu-persistente {
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
-header.menu-persistente .main-header .menu-header {
+header.sticky .main-header .menu-header {
 	padding: 22px 0 0;
 }
 
-header.menu-persistente .main-header li.has-sub:hover {
+header.sticky .main-header li.has-sub:hover {
 	background-color: #000;
 }
 
-header.menu-persistente .main-header li.has-sub:hover a.first-menu {
+header.sticky .main-header li.has-sub:hover a.first-menu {
 	border-bottom: none !important;
 	background-color: #000 !important;
 }
 
-header.menu-persistente .main-header li.has-sub:hover .submenu {
+header.sticky .main-header li.has-sub:hover .submenu {
 	display: none;
 }
 
-header.menu-persistente .top-box {
+header.sticky .top-box {
 	display: none;
 }
 
-header.menu-persistente .container .row {
+header.sticky .container .row {
 	padding: 20px 0;
 	overflow: hidden;
 	margin-left: 0 !important;
 	position: inherit !important;
 }
 
-header.menu-persistente .searchbox {
+header.sticky .searchbox {
 	padding-top: 11px;
 }
 
-header.menu-persistente .searchbox .busca input.fulltext-search-box {
+header.sticky .searchbox .busca input.fulltext-search-box {
 	color: #000;
 	background: #fff;
 }
 
-header.menu-persistente .tipbar {
+header.sticky .tipbar {
 	display: none;
 }
 
-header.menu-persistente .main-header .logo svg {
+header.sticky .main-header .logo svg {
 	fill: #fff;
 	width: 100px;
 }
 
-header.menu-persistente .menu-header li a.first-menu {
+header.sticky .menu-header li a.first-menu {
 	color: #fff;
 	padding: 0px 8px 0;
 }
@@ -2082,6 +2066,10 @@ header.ha-hidding .top-box {
 
 header.ha-hide {
 	top: -100%;
+}
+
+.sticky + main {
+	padding-top: 165px;
 }
 
 /* ==========================================================================
@@ -2485,13 +2473,15 @@ body.home main section.shelf-colecoes {
 
 body.home main .banner-faixa img,
 body.home main .banners-duplos img,
-body.home main .banners-triplos img {
+body.home main .banners-triplos img,
+body.home main .banner-bottom img {
 	transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 body.home main .banner-faixa img:hover,
 body.home main .banners-duplos img:hover,
-body.home main .banners-triplos img:hover {
+body.home main .banners-triplos img:hover,
+body.home main .banner-bottom img:hover {
 	-ms-transform: scale(0.9);
 	transform: scale(0.9);
 }
@@ -2503,6 +2493,23 @@ body.home main .banners-triplos img:hover {
 body.produto main {
 	overflow: hidden;
 	margin-top: 1%;
+}
+
+body.produto main #bt-tabela {
+	font-size: 11px;
+	right: 20px;
+	bottom: 240px;
+	color: #666;
+	cursor: pointer;
+	line-height: 25px;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+body.produto main #bt-tabela svg {
+	margin-right: 10px;
+	vertical-align: top;
+	display: inline-block;
 }
 
 body.produto main .product-view {
@@ -3878,6 +3885,39 @@ body.500 main span {
 body.institucional main {
 	overflow: hidden;
 	margin-top: 4%;
+}
+
+body.institucional main form {
+	margin: 30px auto;
+}
+
+body.institucional main form input {
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+}
+
+body.institucional main form .mensagem input {
+	resize: none;
+	height: 140px;
+}
+
+body.institucional main form button {
+	font-size: 14px;
+	color: #fff;
+	width: 200px;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: #272123;
+}
+
+body.institucional main form button:hover {
+	background-color: #000;
 }
 
 body.institucional main .content {

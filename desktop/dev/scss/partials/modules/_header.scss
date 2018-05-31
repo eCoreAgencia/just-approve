@@ -3,16 +3,9 @@
    ========================================================================== */
 
 header{
+	float: left;
+	width: 100%;
 	
-	.atropelei-geral {
-		top: 140px;
-		width: 100%;
-		height: 44px;
-		display: none;
-		position: absolute;
-		background-color: #fff;
-	}
-
 	a.first-menu:hover {
 		.atropelei-geral {
 			display: block;
@@ -20,69 +13,47 @@ header{
 	}
 
 	.tool-tip-element {
-		position: relative;
-
-		&:first-of-type {
-			&:hover {
-				.tool-tip {
-					margin-left: -140px;
-				}
-
-				span {
-					width: 300px;
-					height: 106px;
-					bottom: -70px;
-					line-height: 20px;
-					padding: 4px 20px;
-				}
-			}
-		}
+		@extend .transition;
+		height: 26px;
+		overflow: hidden;
 
 		.tool-tip {
-			display: inline;
-			
-			span {
-				@extend .transition;
-				color: #fff;
-				left: 210px;
-				height: 30px;
-				width: 210px;
-				bottom: -70px;
-				background: #000000;
+			@include font-size(1.2);
+			@extend .transition;
+			top: 35px;
+			left: 90px;
+			opacity: 0;
+			width: 100%;
+			color: #fff;
+			padding: 15px;
+			z-index: 9999;
+			max-width: 250px;
+			line-height: 20px;
+			position: absolute;
+			text-align: center;
+			background-color: #666;
+
+			&:before {
+				width: 0;
+				height: 0;
+				left: 50%;
+				top: -11px;
+				content: '';
+				display: block;
+				margin-left: -10px;
 				position: absolute;
-				line-height: 30px;
-				text-align: center;
-				visibility: hidden;
-				border-radius: 6px;
-				box-shadow: 0px 0px 2px #1C1A1A;
-
-				&:after {
-					left: 50%;
-					width: 0;
-					height: 0;
-					content: '';
-					bottom: 100%;
-					position: absolute;
-					margin-left: -8px;
-					border-bottom: 8px solid #000000;
-					border-right: 8px solid transparent;
-					border-left: 8px solid transparent;
-				}
+				border-style: solid;
+				border-width: 0 15px 30px 15px;
+				border-color: transparent transparent #666 transparent;
 			}
-
 		}
 
 		&:hover {
-			.tool-tip {			
-				span {
-					@extend .transition;
-					top: 30px;
-					left: 50%;
-					opacity: 0.8;
-					z-index: 999;
-					margin-left: -60px;
-					visibility: visible;
-				}
+			height: auto;
+			overflow: visible;
+
+			.tool-tip {
+				opacity: 1;
 			}
 		}
 	}

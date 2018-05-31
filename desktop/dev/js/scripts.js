@@ -212,17 +212,16 @@ $(function() {
 
 
 	// Menu Persistente Begin //
-		$(window).scroll(function() {
-			var scroll = $(window).scrollTop();
-
-			if (scroll >= 5) {
-				$('header').addClass('menu-persistente');
-				$('body').addClass('top-height-active');
-			} else {
-				$('header').removeClass('menu-persistente');
-				$('body').removeClass('top-height-active');
-			}
-		});
+	window.onscroll = function() {myFunction()};
+	var myHeader = document.getElementById("myHeader");
+	var sticky = myHeader.offsetTop;
+	function myFunction() {
+		if (window.pageYOffset >= 1) {
+			myHeader.classList.add("sticky");
+		} else {
+			myHeader.classList.remove("sticky");
+		}
+	}
     // Menu Persistente END //
 
 	// Remocao de Li HelperComplement Prateleira //
@@ -274,8 +273,8 @@ $(function() {
 				autoplay: true,
 				autoplaySpeed: 5000,
 				pauseOnHover: false,
-				arrows: true,
-				dots: false,
+				arrows: false,
+				dots: true,
 				draggable: true,
 				touchMove: true,
 				slidesToShow: 1,
