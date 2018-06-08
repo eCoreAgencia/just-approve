@@ -125,3 +125,39 @@ html {
 	  }
 	}
 }
+.mixBanner {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.promoBox {
+	display: none;
+}
+
+@media screen and (min-width: 1600px){
+	.promoBox {
+		top: 70px;
+		right: 20px;
+		position: absolute;
+		background-size: 100%;
+		width: 180px !important;
+		background-repeat: none;
+		height: 177px !important;
+
+		#img--box {
+			display: none;
+		}
+	
+		#txt--box {
+		 @include font-size(1.3);
+			color: #fff;
+			line-height: 20px;
+			font-weight: bold;
+			text-align: center;
+			padding: 46px 23px 49px;
+			text-transform: uppercase;
+		}
+	}
+}

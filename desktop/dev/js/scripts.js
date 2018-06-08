@@ -75,6 +75,8 @@ $(function() {
 	var depCatBus = $('.dep-cat-bus');
 	var shelf = $('.prateleira');
 
+	var myBg = $('.promoBox #img--box img').attr('src');
+	$('.promoBox').css("background-image", "url("+myBg+")");
 
 	// Verificacao Genero Departamento-Categoria-Busca //
 		if($(depCatBus).length > 0){
@@ -123,8 +125,11 @@ $(function() {
 						$.each(data, function(key, val) {
 							var elements = val.items[0].images;
 							var myVideo = val.MeuVideo;
+							console.log(myVideo);
 							var myPosition = val.Posicao;
+							console.log(myPosition);
 							var myIdVideo = val.IdDocumento;
+							console.log(myIdVideo);
 
 							$(elements).each(function(data, val){
 								// Take Image Thumbs //
@@ -165,8 +170,8 @@ $(function() {
 								});
 							});
 
-							$('<li class="hover-video"><span></span><video width="80" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
-							$('<div class="my-video-position inactive"><video width="470" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></div>').insertBefore('.easyzoom');
+							$('<li class="hover-video"><span></span><video width="80"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
+							$('<div class="my-video-position inactive"><video width="470"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></div>').insertBefore('.easyzoom');
 						
 							$('.hover-video span').on('click', function(e){
 								$('.my-video-position').removeClass('inactive');
