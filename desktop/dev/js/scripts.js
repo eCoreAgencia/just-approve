@@ -72,6 +72,16 @@ var body = $('body'),
 
 $(function() {
 
+	if($('.prod-similares li').length == 0){
+		$('.prod-similares').remove();
+	}
+
+	$('#bt-tabela').on('click', function(event){
+		document.querySelector('#id3').scrollIntoView({ 
+			behavior: 'smooth' 
+		});
+	});
+
 	var depCatBus = $('.dep-cat-bus');
 	var shelf = $('.prateleira');
 
@@ -222,9 +232,11 @@ $(function() {
 	var sticky = myHeader.offsetTop;
 	function myFunction() {
 		if (window.pageYOffset >= 1) {
+			body.addClass('continuous');
 			myHeader.classList.add("sticky");
 		} else {
 			myHeader.classList.remove("sticky");
+			body.removeClass('continuous');
 		}
 	}
     // Menu Persistente END //

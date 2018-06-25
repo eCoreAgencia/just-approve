@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // Anchor Smooth Medidas //
-        $(window).scrollTop($('#bt-tabela').offset().top);]
+        $(window).scrollTop($('#bt-tabela').offset().top);
     // Anchor Smooth Medidas //    
     
     // Not Adding Sku //
