@@ -8,22 +8,58 @@ header {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 80px;
+		height: 3rem;
 		position: fixed;
 		z-index: 999999999;
 		background-color: #000;
-		animation: grow .7s;
-		-o-animation: grow .7s;
-		-moz-animation: grow .7s;
-		-webkit-animation: grow .7s;
 		box-shadow: 0 0 50px rgba(#000, .4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		.main-header {
+			flex: 1;
+			box-shadow: none;
+			transition: all .9s ease;
+			transform-origin: center left;
+			position: relative;
 			.menu-header {
 				@extend .transition;
-				padding: 22px 0 0;
+				padding: 9px 0 0 0;
+				position: initial;
+				ul{
+					li.has-sub{
+						&:first-child{
+							ul{
+								padding-left: 30%;
+							}
+						}
+						&:nth-child(6) {
+							ul{
+								padding-right: 16%;
+							}
+							
+						}
+						.submenu{
+							top:55px;
+							width: 100%;
+							z-index: 1;
+							box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
+						}
+					}
+					li.has-sub:hover{
+						.submenu{
+							width: 100%;
+							top: 55px;
+							transition: none;
+							z-index: 1;
+						}
+					}
+				}
 			}
-
+           .logo{
+			height: 63px;
+		   }
 			a {
 				border: none !important;
 			}
@@ -46,11 +82,15 @@ header {
 		}
 
 		.top-box {
-			@extend .transition;
 			height: 0;
+			opacity: 0;
+			padding: 0;
+			display: none;
+
 		}
 
 		.container {
+			position: initial;
 			.row {
 				@extend .transition;
 				padding: 20px 0;
@@ -94,27 +134,10 @@ header {
 				a.first-menu{
 					@extend .transition;
 					color: #fff;
-					padding: 0px 8px 0;
+					padding: 17px 8px;
 				}
 			}
 		}
 	}
 
-	&.ha-hidding{
-		@extend .transition;
-		top: 0;
-		position: fixed;
-		background: #fff;
-		z-index: 9999999999999;
-		
-		.top-box {
-			@extend .transition;
-			display: none;
-		}
-	}
-
-	&.ha-hide{
-		@extend .transition;
-		top: -100%;
-	}
 }

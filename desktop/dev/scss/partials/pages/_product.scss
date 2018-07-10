@@ -105,6 +105,20 @@ body.produto {
                     height: 90px;
                     overflow: hidden;
                     position: relative;
+                    &::after{
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-left: 25px solid #fff;
+                        border-top: 13px solid transparent;
+                        border-bottom: 13px solid transparent;
+                        position: absolute;
+                        top: 1.2rem;
+                        bottom: 0;
+                        left: 1.7rem;
+                        right: 0;
+                    }
+
 
                     video {
                         height: 80px;

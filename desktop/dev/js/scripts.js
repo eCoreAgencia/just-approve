@@ -183,7 +183,7 @@ $(function() {
 							$('<li class="hover-video"><span></span><video width="80"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
 							$('<div class="my-video-position inactive"><video width="470"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></div>').insertBefore('.easyzoom');
 						
-							$('.hover-video span').on('click', function(e){
+							$('.hover-video span').on('mouseover', function(e){
 								$('.my-video-position').removeClass('inactive');
 								var myvideo = $('.my-video-position video');
 								$(myvideo).trigger('play');
@@ -231,7 +231,7 @@ $(function() {
 	var myHeader = document.getElementById("myHeader");
 	var sticky = myHeader.offsetTop;
 	function myFunction() {
-		if (window.pageYOffset >= 1) {
+		if (window.pageYOffset >= 33) {
 			body.addClass('continuous');
 			myHeader.classList.add("sticky");
 		} else {

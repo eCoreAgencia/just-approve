@@ -5,13 +5,13 @@
 header{
 	float: left;
 	width: 100%;
+	background: initial;
 	
 	a.first-menu:hover {
 		.atropelei-geral {
 			display: block;
 		}
 	}
-
 	.tool-tip-element {
 		@extend .transition;
 		height: 26px;
@@ -62,6 +62,7 @@ header{
 		background-color: #000;
 		padding: 6px 0;
 		overflow: hidden;
+		opacity: 1;
 
 		.social-menu{
 			ul{
@@ -159,7 +160,18 @@ header{
 						border-bottom: 1px solid #fff;
 					}
 
+					.menu-item {
+						border-bottom: 1px solid transparent;
+					}
+
 			    	&.has-sub{
+						&:first-child{
+							ul {
+								display: flex;
+								align-items: flex-start;
+								padding-left: 3rem;
+							}
+						}
 						&.active {
 							.first-menu {
 								border-bottom: 1px solid #000;
@@ -241,7 +253,7 @@ header{
 			    			@extend .transition;
 			    			height: 0;
 			    			opacity: 0;
-			    			padding: 12px 0;
+			    			padding:  0;
 			    			overflow: hidden;
 							background: #fff;
 							pointer-events: none;
@@ -258,11 +270,12 @@ header{
 				    			top: 91px;
 				    			width: 100%;
 				    			z-index: -1;
-				    			height: auto;
+				    			height: 2.6rem;
 				    			margin-top: 0;
 				    			display: flex;
 				    			overflow: visible;
-			    				position: absolute;
+								position: absolute;
+								align-items: center;
 
 				    			a{
 				    				margin-right: 0;
@@ -286,6 +299,7 @@ header{
 				    			width: 100%;
 
 			    				ul{
+
 			    					li{
 			    						margin: 0 11px;
 			    						display: inline-block;
@@ -327,6 +341,10 @@ header{
 			    				@include mq($screen-md){
 			    					top: 91px;
 									pointer-events: all;
+									width: 55rem;
+									height: 2.6rem;
+									display: flex;
+									align-items: center;
 			    				}
 			    			}
 			    		}

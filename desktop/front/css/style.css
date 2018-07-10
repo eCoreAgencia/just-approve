@@ -256,7 +256,6 @@ header.sticky .main-header .menu-header,
 header.sticky .main-header li.has-sub:hover,
 header.sticky .main-header li.has-sub:hover a.first-menu,
 header.sticky .main-header li.has-sub:hover .submenu,
-header.sticky .top-box,
 header.sticky .container .row,
 header.sticky .searchbox,
 header.sticky .searchbox .busca input.fulltext-search-box,
@@ -264,9 +263,6 @@ header.sticky .tipbar,
 header.sticky .main-header,
 header.sticky .main-header .logo svg,
 header.sticky .menu-header li a.first-menu,
-header.ha-hidding,
-header.ha-hidding .top-box,
-header.ha-hide,
 .js-open-mobile-menu .menu-toggle span,
 body.modal-active .modal-box,
 .modal-box,
@@ -641,6 +637,7 @@ body.account .address-display-block {
 header {
 	float: left;
 	width: 100%;
+	background: initial;
 }
 
 header a.first-menu:hover .atropelei-geral {
@@ -695,6 +692,7 @@ header .top-box {
 	background-color: #000;
 	padding: 6px 0;
 	overflow: hidden;
+	opacity: 1;
 }
 
 header .top-box .social-menu ul {
@@ -770,6 +768,18 @@ header .main-header .menu-header ul li a {
 	border-bottom: 1px solid #fff;
 }
 
+header .main-header .menu-header ul li .menu-item {
+	border-bottom: 1px solid transparent;
+}
+
+header .main-header .menu-header ul li.has-sub:first-child ul {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: start;
+	    align-items: flex-start;
+	padding-left: 3rem;
+}
+
 header .main-header .menu-header ul li.has-sub.active .first-menu {
 	border-bottom: 1px solid #000;
 }
@@ -837,7 +847,7 @@ header .main-header .menu-header ul li.has-sub .js-open-sub.active .menu-toggle 
 header .main-header .menu-header ul li.has-sub .submenu {
 	height: 0;
 	opacity: 0;
-	padding: 12px 0;
+	padding: 0;
 	overflow: hidden;
 	background: #fff;
 	pointer-events: none;
@@ -1993,19 +2003,58 @@ header.sticky {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 80px;
+	height: 3rem;
 	position: fixed;
 	z-index: 999999999;
 	background-color: #000;
-	animation: grow .7s;
-	-o-animation: grow .7s;
-	-moz-animation: grow .7s;
-	-webkit-animation: grow .7s;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+}
+
+header.sticky .main-header {
+	-ms-flex: 1;
+	    flex: 1;
+	box-shadow: none;
+	transition: all .9s ease;
+	-ms-transform-origin: center left;
+	    transform-origin: center left;
+	position: relative;
 }
 
 header.sticky .main-header .menu-header {
-	padding: 22px 0 0;
+	padding: 9px 0 0 0;
+	position: initial;
+}
+
+header.sticky .main-header .menu-header ul li.has-sub:first-child ul {
+	padding-left: 30%;
+}
+
+header.sticky .main-header .menu-header ul li.has-sub:nth-child(6) ul {
+	padding-right: 16%;
+}
+
+header.sticky .main-header .menu-header ul li.has-sub .submenu {
+	top: 55px;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
+}
+
+header.sticky .main-header .menu-header ul li.has-sub:hover .submenu {
+	width: 100%;
+	top: 55px;
+	transition: none;
+	z-index: 1;
+}
+
+header.sticky .main-header .logo {
+	height: 63px;
 }
 
 header.sticky .main-header a {
@@ -2027,6 +2076,13 @@ header.sticky .main-header li.has-sub:hover .submenu {
 
 header.sticky .top-box {
 	height: 0;
+	opacity: 0;
+	padding: 0;
+	display: none;
+}
+
+header.sticky .container {
+	position: initial;
 }
 
 header.sticky .container .row {
@@ -2056,22 +2112,7 @@ header.sticky .main-header .logo svg {
 
 header.sticky .menu-header li a.first-menu {
 	color: #fff;
-	padding: 0px 8px 0;
-}
-
-header.ha-hidding {
-	top: 0;
-	position: fixed;
-	background: #fff;
-	z-index: 9999999999999;
-}
-
-header.ha-hidding .top-box {
-	display: none;
-}
-
-header.ha-hide {
-	top: -100%;
+	padding: 17px 8px;
 }
 
 /* ==========================================================================
@@ -2446,6 +2487,10 @@ body.product-popup .modal-container .news-element.error-add h3 {
    Home
    ========================================================================== */
 
+body.home main {
+	margin-top: -3px;
+}
+
 body.home main section {
 	clear: both;
 	overflow: hidden;
@@ -2576,6 +2621,20 @@ body.produto main .product-view .thumbnails li.hover-video {
 	height: 90px;
 	overflow: hidden;
 	position: relative;
+}
+
+body.produto main .product-view .thumbnails li.hover-video::after {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 25px solid #fff;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	position: absolute;
+	top: 1.2rem;
+	bottom: 0;
+	left: 1.7rem;
+	right: 0;
 }
 
 body.produto main .product-view .thumbnails li.hover-video video {
@@ -4876,7 +4935,6 @@ header .main-header .menu-header ul li.has-sub .js-open-sub .menu-toggle {
 .modal-box .modal-container {
 	width: 600px;
 	margin-left: -262px;
-	height: 330px;
 }
 
 body.dep-cat-bus #nav-dep .right {
@@ -5202,12 +5260,14 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	top: 91px;
 	width: 100%;
 	z-index: -1;
-	height: auto;
+	height: 2.6rem;
 	margin-top: 0;
 	display: -ms-flexbox;
 	display: flex;
 	overflow: visible;
 	position: absolute;
+	-ms-flex-align: center;
+	    align-items: center;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu a {
@@ -5221,6 +5281,12 @@ header .main-header .menu-header ul li.has-sub .submenu a:before {
 header .main-header .menu-header ul li.has-sub:hover .submenu {
 	top: 91px;
 	pointer-events: all;
+	width: 55rem;
+	height: 2.6rem;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
 }
 
 .prateleira li .action-buttons {
