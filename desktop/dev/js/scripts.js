@@ -256,14 +256,14 @@ $(function() {
 	// Busca Mob //
 
 	// submenu fundo //
-		$(".menu-header").mouseenter(function() {
-			$(".tipbar").addClass("fundo-submenu");
-		});
+	// 	$(".menu-header").mouseenter(function() {
+	// 		$(".tipbar").addClass("fundo-submenu");
+	// 	});
 
-		$(".menu-header").mouseleave(function() {
-			$(".tipbar").removeClass("fundo-submenu");
-		});
-	// submenu fundo //
+	// 	$(".menu-header").mouseleave(function() {
+	// 		$(".tipbar").removeClass("fundo-submenu");
+	// 	});
+	// // submenu fundo //
 
 
   	// Voltar ao Topo //

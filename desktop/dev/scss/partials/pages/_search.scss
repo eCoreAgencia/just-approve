@@ -521,6 +521,9 @@ body.dep-cat-bus.resultado-busca {
 }
 
 body.busca-vazia{
+	main {
+		padding-top: 5px;
+	}
 	.mainShelf{
 		@include font-size (2);
 	    text-align: center;

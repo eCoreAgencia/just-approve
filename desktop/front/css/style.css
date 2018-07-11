@@ -251,7 +251,6 @@ header .main-header .menu-header ul li.has-sub .submenu nav ul li a:hover,
 #mini-cart #mini-cart-custom .cartFooter .cartCheckout:hover,
 .newsletter form button,
 .newsletter form button:hover,
-header.sticky,
 header.sticky .main-header .menu-header,
 header.sticky .main-header li.has-sub:hover,
 header.sticky .main-header li.has-sub:hover a.first-menu,
@@ -739,6 +738,11 @@ header .main-header .logo .logo-mob {
 	margin-top: 10px;
 }
 
+header .main-header .container {
+	display: -ms-flexbox;
+	display: flex;
+}
+
 header .main-header .menu-header {
 	top: 100%;
 	left: -100%;
@@ -752,6 +756,16 @@ header .main-header .menu-header .container {
 	position: relative;
 }
 
+header .main-header .menu-header ul {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: space-evenly;
+	    justify-content: space-evenly;
+	-ms-flex-align: center;
+	    align-items: center;
+	height: 100%;
+}
+
 header .main-header .menu-header ul li {
 	margin: 0;
 	position: relative;
@@ -760,12 +774,14 @@ header .main-header .menu-header ul li {
 header .main-header .menu-header ul li a {
 	font-size: 12px;
 	color: #000;
-	display: block;
 	font-weight: normal;
 	text-decoration: none;
-	padding: 27px 12px 39px 0;
 	text-transform: uppercase;
-	border-bottom: 1px solid #fff;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	height: 100%;
 }
 
 header .main-header .menu-header ul li .menu-item {
@@ -775,9 +791,17 @@ header .main-header .menu-header ul li .menu-item {
 header .main-header .menu-header ul li.has-sub:first-child ul {
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-align: start;
-	    align-items: flex-start;
-	padding-left: 3rem;
+	-ms-flex-pack: start;
+	    justify-content: flex-start;
+	padding-left: 3.2rem;
+}
+
+header .main-header .menu-header ul li.has-sub:nth-child(6) ul {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: end;
+	    justify-content: flex-end;
+	padding-right: 7rem;
 }
 
 header .main-header .menu-header ul li.has-sub.active .first-menu {
@@ -854,10 +878,6 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	box-shadow: inset 0 8px 16px -9px #ccc;
 }
 
-header .main-header .menu-header ul li.has-sub .submenu a:before {
-	margin-top: 9px;
-}
-
 header .main-header .menu-header ul li.has-sub .submenu.slideActive {
 	opacity: 1;
 	height: auto;
@@ -869,6 +889,8 @@ header .main-header .menu-header ul li.has-sub .submenu.slideActive {
 
 header .main-header .menu-header ul li.has-sub .submenu nav {
 	width: 100%;
+	width: 1150px;
+	margin: 0 auto;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu nav ul li {
@@ -2003,7 +2025,7 @@ header.sticky {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 3rem;
+	height: 5rem;
 	position: fixed;
 	z-index: 999999999;
 	background-color: #000;
@@ -2020,7 +2042,7 @@ header.sticky .main-header {
 	-ms-flex: 1;
 	    flex: 1;
 	box-shadow: none;
-	transition: all .9s ease;
+	transition: background .9s ease;
 	-ms-transform-origin: center left;
 	    transform-origin: center left;
 	position: relative;
@@ -2040,7 +2062,7 @@ header.sticky .main-header .menu-header ul li.has-sub:nth-child(6) ul {
 }
 
 header.sticky .main-header .menu-header ul li.has-sub .submenu {
-	top: 55px;
+	top: 71px;
 	width: 100%;
 	z-index: 1;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
@@ -2048,7 +2070,7 @@ header.sticky .main-header .menu-header ul li.has-sub .submenu {
 
 header.sticky .main-header .menu-header ul li.has-sub:hover .submenu {
 	width: 100%;
-	top: 55px;
+	top: 71px;
 	transition: none;
 	z-index: 1;
 }
@@ -2617,8 +2639,6 @@ body.produto main .product-view .thumbnails {
 }
 
 body.produto main .product-view .thumbnails li.hover-video {
-	width: 70px;
-	height: 90px;
 	overflow: hidden;
 	position: relative;
 }
@@ -2627,21 +2647,26 @@ body.produto main .product-view .thumbnails li.hover-video::after {
 	content: "";
 	width: 0;
 	height: 0;
-	border-left: 25px solid #fff;
-	border-top: 13px solid transparent;
-	border-bottom: 13px solid transparent;
+	border-left: 15px solid #fff;
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
 	position: absolute;
-	top: 1.2rem;
+	top: 1.5rem;
 	bottom: 0;
-	left: 1.7rem;
+	left: 2rem;
 	right: 0;
 }
 
 body.produto main .product-view .thumbnails li.hover-video video {
 	height: 80px;
-	margin-left: 9px;
-	margin-top: -12px;
-	width: 64px !important;
+	width: 80px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 0 14px 0 13px;
+	margin-top: -5px;
+	margin-bottom: -3px;
 }
 
 body.produto main .product-view .thumbnails li.hover-video span {
@@ -3570,6 +3595,10 @@ body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 a {
 	font-weight: normal;
 }
 
+body.busca-vazia main {
+	padding-top: 5px;
+}
+
 body.busca-vazia .mainShelf {
 	font-size: 20px;
 	text-align: center;
@@ -4476,7 +4505,7 @@ body.account .slider .address-display-block {
 .slick-dots {
 	padding: 0;
 	width: auto;
-	right: 10px;
+	right: 46.5%;
 	bottom: 10px;
 	display: block;
 	list-style: none;
@@ -5241,9 +5270,8 @@ header .main-header .menu-header {
 	left: 0;
 	opacity: 1;
 	width: 66.6667%;
-	padding: 12px 0 0;
 	overflow: visible;
-	position: relative;
+	position: initial;
 	text-align: center;
 	display: inline-block;
 	background-color: transparent;
@@ -5253,11 +5281,12 @@ header .main-header .menu-header ul li {
 	position: initial;
 	display: inline-block;
 	vertical-align: middle;
+	height: 100%;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu {
 	left: 0;
-	top: 91px;
+	top: 121px;
 	width: 100%;
 	z-index: -1;
 	height: 2.6rem;
@@ -5268,6 +5297,7 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	position: absolute;
 	-ms-flex-align: center;
 	    align-items: center;
+	opacity: 0;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu a {
@@ -5279,14 +5309,17 @@ header .main-header .menu-header ul li.has-sub .submenu a:before {
 }
 
 header .main-header .menu-header ul li.has-sub:hover .submenu {
-	top: 91px;
+	top: 121px;
 	pointer-events: all;
-	width: 55rem;
+	width: 100%;
 	height: 2.6rem;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
 	    align-items: center;
+	opacity: 1;
+	transition: opacity .5s ease-in-out;
+	padding: 0 21% 0 18%;
 }
 
 .prateleira li .action-buttons {

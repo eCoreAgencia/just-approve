@@ -4,11 +4,11 @@
 	
 header {
 	&.sticky {
-		@extend .transition;
+		
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 3rem;
+		height: 5rem;
 		position: fixed;
 		z-index: 999999999;
 		background-color: #000;
@@ -20,7 +20,7 @@ header {
 		.main-header {
 			flex: 1;
 			box-shadow: none;
-			transition: all .9s ease;
+			transition: background .9s ease;
 			transform-origin: center left;
 			position: relative;
 			.menu-header {
@@ -41,7 +41,7 @@ header {
 							
 						}
 						.submenu{
-							top:55px;
+							top:71px;
 							width: 100%;
 							z-index: 1;
 							box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
@@ -50,7 +50,7 @@ header {
 					li.has-sub:hover{
 						.submenu{
 							width: 100%;
-							top: 55px;
+							top:71px;
 							transition: none;
 							z-index: 1;
 						}
