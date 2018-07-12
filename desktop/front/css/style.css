@@ -273,6 +273,9 @@ body.produto main .product-view .buy-box .bt-comprar:hover,
 body.produto main .product-view .buy-box .choose-skus .skuList,
 body.produto main .product-view .buy-box .choose-skus .skuList:hover,
 body.produto main .product-view .buy-box .choose-skus .skuList.sku-picked,
+body.dep-cat-bus li a.productShelf:hover span.secundario,
+body.dep-cat-bus li a.productShelf:hover span.principal,
+body.dep-cat-bus li a.productShelf span.secundario,
 body.dep-cat-bus .sidebar li a,
 body.dep-cat-bus .sidebar li a:hover,
 body.dep-cat-bus .sidebar .search-multiple-navigator fieldset label,
@@ -793,7 +796,6 @@ header .main-header .menu-header ul li.has-sub:first-child ul {
 	display: flex;
 	-ms-flex-pack: start;
 	    justify-content: flex-start;
-	padding-left: 3.2rem;
 }
 
 header .main-header .menu-header ul li.has-sub:nth-child(6) ul {
@@ -801,7 +803,7 @@ header .main-header .menu-header ul li.has-sub:nth-child(6) ul {
 	display: flex;
 	-ms-flex-pack: end;
 	    justify-content: flex-end;
-	padding-right: 7rem;
+	padding-right: 81px;
 }
 
 header .main-header .menu-header ul li.has-sub.active .first-menu {
@@ -876,6 +878,9 @@ header .main-header .menu-header ul li.has-sub .submenu {
 	background: #fff;
 	pointer-events: none;
 	box-shadow: inset 0 8px 16px -9px #ccc;
+	opacity: 1;
+	height: auto;
+	display: none;
 }
 
 header .main-header .menu-header ul li.has-sub .submenu.slideActive {
@@ -888,8 +893,7 @@ header .main-header .menu-header ul li.has-sub .submenu.slideActive {
 }
 
 header .main-header .menu-header ul li.has-sub .submenu nav {
-	width: 100%;
-	width: 1150px;
+	min-width: 740px;
 	margin: 0 auto;
 }
 
@@ -964,12 +968,6 @@ header .main-header .menu-header.slideActive ul li.has-sub a.first-menu.active:a
 	content: "-";
 	float: right;
 	font-weight: bolder;
-}
-
-header .main-header .menu-header.slideActive ul li.has-sub .submenu {
-	opacity: 1;
-	height: auto;
-	display: none;
 }
 
 header .main-header .menu-header.slideActive ul li.has-sub .submenu ul li a {
@@ -2049,16 +2047,22 @@ header.sticky .main-header {
 }
 
 header.sticky .main-header .menu-header {
-	padding: 9px 0 0 0;
 	position: initial;
 }
 
 header.sticky .main-header .menu-header ul li.has-sub:first-child ul {
-	padding-left: 30%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: start;
+	    justify-content: flex-start;
 }
 
 header.sticky .main-header .menu-header ul li.has-sub:nth-child(6) ul {
-	padding-right: 16%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: end;
+	    justify-content: flex-end;
+	padding-right: 77px;
 }
 
 header.sticky .main-header .menu-header ul li.has-sub .submenu {
@@ -2066,6 +2070,18 @@ header.sticky .main-header .menu-header ul li.has-sub .submenu {
 	width: 100%;
 	z-index: 1;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
+}
+
+header.sticky .main-header .menu-header ul li.has-sub .submenu nav {
+	margin: 0 auto;
+}
+
+header.sticky .main-header .menu-header ul li.has-sub .submenu li {
+	border-bottom: 1px solid transparent;
+}
+
+header.sticky .main-header .menu-header ul li.has-sub .submenu li:hover {
+	border-bottom: 1px solid black;
 }
 
 header.sticky .main-header .menu-header ul li.has-sub:hover .submenu {
@@ -2077,6 +2093,7 @@ header.sticky .main-header .menu-header ul li.has-sub:hover .submenu {
 
 header.sticky .main-header .logo {
 	height: 63px;
+	margin: -6px 0 10px -20px;
 }
 
 header.sticky .main-header a {
@@ -2115,7 +2132,7 @@ header.sticky .container .row {
 }
 
 header.sticky .searchbox {
-	padding-top: 11px;
+	padding-top: 20px;
 }
 
 header.sticky .searchbox .busca input.fulltext-search-box {
@@ -2134,7 +2151,7 @@ header.sticky .main-header .logo svg {
 
 header.sticky .menu-header li a.first-menu {
 	color: #fff;
-	padding: 17px 8px;
+	padding: 34px 8px;
 }
 
 /* ==========================================================================
@@ -3055,6 +3072,25 @@ body.produto .tabela h3 {
    Página de Busca, Categorias e Departamentos
    ========================================================================== */
 
+body.dep-cat-bus li a.productShelf:hover span.secundario {
+	opacity: 1;
+}
+
+body.dep-cat-bus li a.productShelf:hover span.principal {
+	opacity: 0;
+}
+
+body.dep-cat-bus li a.productShelf span.secundario {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+body.dep-cat-bus .prateleira li .action-buttons {
+	bottom: 102px;
+}
+
 body.dep-cat-bus main {
 	overflow: hidden;
 	padding-bottom: 40px;
@@ -3603,18 +3639,14 @@ body.busca-vazia .mainShelf {
 	font-size: 20px;
 	text-align: center;
 	margin: 5% 0;
-	line-height: 8px;
 }
 
 body.busca-vazia .mainShelf h2 {
 	margin-bottom: 20px;
 }
 
-body.busca-vazia .mainShelf span {
-	display: block;
-	overflow: hidden;
-	font-size: 17px;
-	line-height: 30px;
+body.busca-vazia .prateleira li .action-buttons {
+	bottom: 106px;
 }
 
 body.busca-vazia .shelf-vazio {
@@ -5319,7 +5351,7 @@ header .main-header .menu-header ul li.has-sub:hover .submenu {
 	    align-items: center;
 	opacity: 1;
 	transition: opacity .5s ease-in-out;
-	padding: 0 21% 0 18%;
+	padding: 0;
 }
 
 .prateleira li .action-buttons {
@@ -5478,23 +5510,25 @@ body.favoritos main ul#favList li {
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1360px) {
 
 .promoBox {
-	top: 70px;
+	top: 97px;
 	right: 20px;
-	position: absolute;
+	position: fixed;
 	background-size: 100%;
-	width: 180px !important;
-	background-repeat: none;
-	height: 177px !important;
+	width: 150px;
+	background-repeat: no-repeat;
+	height: 150px;
+	display: none;
+	z-index: 999;
 }
 
-.promoBox #img--box {
+#img--box {
 	display: none;
 }
 
-.promoBox #txt--box {
+#txt--box {
 	font-size: 13px;
 	color: #fff;
 	line-height: 20px;

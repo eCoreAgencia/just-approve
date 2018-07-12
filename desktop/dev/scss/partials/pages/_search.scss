@@ -2,78 +2,85 @@
    Página de Busca, Categorias e Departamentos
    ========================================================================== */
 
-body.dep-cat-bus{
-
+body.dep-cat-bus {
+	li a.productShelf{
+		&:hover {
+			span.secundario{
+				opacity: 1;
+				@extend .transition;
+			}
+			span.principal {
+				opacity: 0;
+				@extend .transition;
+			}
+		}
+		span.secundario{
+			position: absolute;
+			top:0;
+			left: 0;
+			opacity: 0;
+			@extend .transition;
+		}
+	} 
+	.prateleira li .action-buttons {
+		bottom: 102px;
+	}
 	main {
 		overflow: hidden;
 		padding-bottom: 40px;
 	}
-
 	.ver-filtros,
 	.pager {
 		display: none !important;
 	}
-
 	.category-spec {
 		@include font-size(1.2);
 		line-height: 20px;
 		margin-bottom: 20px;
-
 		.banner-area {
 			overflow: hidden;
 			text-align: center;
-		    margin-bottom: 20px;
+			margin-bottom: 20px;
 			background-color: #000;
-
 			.box-banner {
 				img {
-				    width: 100%;
-				    height: auto;
+					width: 100%;
+					height: auto;
 				}
 			}
 		}
 	}
-
 	.sidebar {
 		overflow: hidden;
-
 		@include mq($screen-md) {
 			padding-right: 4%;
 		}
-
 		.menu-navegue {
 			display: none;
 		}
-
 		li {
 			list-style-type: none;
-
 			a {
 				@include font-size(1.2);
 				@extend .transition;
 				color: #000;
 				line-height: 20px;
 				text-decoration: none;
-
 				&:hover {
 					@extend .transition;
 					text-decoration: underline;
 				}
 			}
 		}
-
 		.search-multiple-navigator,
 		.search-single-navigator {
 			margin-top: 10px;
-
 			.qtd-filter {
 				display: none;
 			}
-
 			.bt-refinar {
 				display: none;
 			}
-
 			h3,
 			h4,
 			h5 {
@@ -84,8 +91,7 @@ body.dep-cat-bus{
 				font-family: 'Cairo', sans-serif;
 				margin: 20px 0 10px;
 				text-transform: uppercase;
-
-				a{
+				a {
 					@include font-size(1.5);
 					display: block;
 					color: #2e2b3e;
@@ -98,12 +104,10 @@ body.dep-cat-bus{
 					text-decoration: none;
 				}
 			}
-
 			fieldset {
 				&.filtro_marca {
 					display: none;
 				}
-
 				h5 {
 					@include font-size(1.2);
 					color: #fff;
@@ -112,13 +116,10 @@ body.dep-cat-bus{
 					font-weight: normal;
 					background-color: #000;
 				}
-
 				&.filtro_indicacao {
 					display: block;
-
 					h5 {
 						font-size: 0;
-
 						&:after {
 							@include font-size(1.2);
 							display: block;
@@ -127,38 +128,32 @@ body.dep-cat-bus{
 						}
 					}
 				}
-
 				label {
 					@include font-size(1.2);
 					@extend .transition;
 					display: block;
 					margin-bottom: 10px;
-
 					&:hover {
 						@extend .transition;
 						color: #666;
 						cursor: pointer;
 					}
-
 					input {
 						width: 15px;
 						height: 15px;
 						margin: 0 10px 0 0;
 						display: inline-block;
 					}
-
 					&:last-child {
 						margin-bottom: 0;
 					}
 				}
 			}
-
-			ul.productClusterSearchableIds{
+			ul.productClusterSearchableIds {
 				display: none;
 			}
-
-			h4{
-				a{
+			h4 {
+				a {
 					@include font-size(1.4);
 					text-transform: uppercase;
 					color: #2e2b3e;
@@ -166,20 +161,16 @@ body.dep-cat-bus{
 					font-weight: 600;
 				}
 			}
-
-			ul{
-
-			    &.Marca {
-			    	display: none;
-			    }
-
+			ul {
+				&.Marca {
+					display: none;
+				}
 				li {
 					margin-bottom: 15px;
 					list-style-type: none;
 					color: #bebebe;
 					text-transform: uppercase;
 				}
-
 				h5 {
 					@include font-size(1.5);
 					color: #232325;
@@ -187,33 +178,27 @@ body.dep-cat-bus{
 					font-family: 'Cairo', sans-serif;
 					text-transform: uppercase;
 					margin-bottom: 5px !important;
-
 					&.Marca {
 						display: none;
 					}
 				}
-
 				label {
 					@include font-size(1.2);
 					cursor: pointer;
-
 					&.sr_selected {
 						color: #08b6a6;
 					}
 				}
-
 				.ver-filtros {
-				    color: #000;
-				    font-weight: bolder;
-				    text-decoration: none;
+					color: #000;
+					font-weight: bolder;
+					text-decoration: none;
 				}
-
 				&.Tamanho {
-					li{
+					li {
 						display: inline-block;
 						margin-right: 5px;
 						margin-bottom: 5px;
-
 						a {
 							@extend .transition;
 							padding: 0 5px;
@@ -226,7 +211,6 @@ body.dep-cat-bus{
 							background: #ececec none repeat scroll 0 0;
 							text-decoration: none;
 							color: #757575;
-
 							&:hover {
 								color: #fff;
 								background-color: #2e2b3e;
@@ -235,13 +219,11 @@ body.dep-cat-bus{
 						}
 					}
 				}
-
-				&.Cor{
-					li{
+				&.Cor {
+					li {
 						display: inline-block;
 						margin-right: 5px;
 						margin-bottom: 5px;
-
 						a {
 							@extend .transition;
 							display: block;
@@ -251,192 +233,149 @@ body.dep-cat-bus{
 							border: 1px solid #f5f5f5;
 							background: #f5f5f5 none repeat scroll 0 0;
 							font-size: 0;
-
-							&.Amarelo{
-                                background-color: #FCBB23;
-                            }
-
-                            &.Azul{
-                                background-color: #0000ff;
-                            }
-
-                            &.Azul_Claro{
-                                background-color: #658EBC;
-                            }
-
-                            &.Azul_Marinho{
-                                background-color: #0F1D42;
-                            }
-
-                            &.Bege{
-                                background-color: #E2CFAE;
-                            }
-
-                            &.Branco{
-                                background-color: #fff;
-                                border: 1px solid #ccc;
-                            }
-
-                            &.Bronze{
-                                background-color: #895837;
-                            }
-
-                            &.Caqui{
-                                background-color: #856D41;
-                            }
-                            
-                            &.Caramelo{
-                                background-color: #D0822F;
-                            }
-
-                            &.Castanho{
-                                background-color: #3E2101;
-                            }
-
-                            &.Chocolate{
-                                background-color: #57362F;
-                            }
-
-                            &.Cinza{
-                                background-color: #6B6B6B;
-                            }
-
-                            &.Creme{
-                                background-color: #6B6B6B;
-                            }
-
-                            &.Estampado{
-                                background-color: #844345;
-                            }
-
-                            &.Laranja{
-                                background-color: #F73C07;
-                            }
-
-                            &.Lilas{
-                                background-color: #9D8DCB;
-                            }
-
-                            &.Limao{
-                                background-color: #48F86D;
-                            }
-
-                            &.Madeira{
-                                background-color: #644B35;
-                            }
-
-                            &.Marfim{
-                                background-color: #E0B370;
-                            }
-
-                            &.Marrom{
-                                background-color: #301701;
-                            }
-
-                            &.Ocre{
-                                background-color: #272725;
-                            }
-
-                            &.Ouro{
-                                background-color: #BE9B47;
-                            }
-
-                            &.Prata{
-                                background-color: #76757B;
-                            }
-
-                            &.Preto{
-                                background-color: #000;
-                            }
-
-                            &.Rosa{
-                                background-color: #F968A9;
-                            }
-
-                            &.Roxo{
-                                background-color: #8756A1;
-                            }
-
-                            &.Salmao{
-                                background-color: #FD7360;
-                            }
-
-                            &.Tangerina{
-                                background-color: #E8740D;
-                            }
-
-                            &.Turquesa{
-                                background-color: #24C7B1;
-                            }
-
-                            &.Verde{
-                                 background-color: #4ED1C3;
-                            }
-
-                            &.Vermelho{
-                                background-color: #E45049;
-                            }
-
-                            &.Vinho{
-                                background-color: #630015;
-                            }
-
-                            &.Violeta{
-                                background-color: #BA2161;
-                            }
+							&.Amarelo {
+								background-color: #FCBB23;
+							}
+							&.Azul {
+								background-color: #0000ff;
+							}
+							&.Azul_Claro {
+								background-color: #658EBC;
+							}
+							&.Azul_Marinho {
+								background-color: #0F1D42;
+							}
+							&.Bege {
+								background-color: #E2CFAE;
+							}
+							&.Branco {
+								background-color: #fff;
+								border: 1px solid #ccc;
+							}
+							&.Bronze {
+								background-color: #895837;
+							}
+							&.Caqui {
+								background-color: #856D41;
+							}
+							&.Caramelo {
+								background-color: #D0822F;
+							}
+							&.Castanho {
+								background-color: #3E2101;
+							}
+							&.Chocolate {
+								background-color: #57362F;
+							}
+							&.Cinza {
+								background-color: #6B6B6B;
+							}
+							&.Creme {
+								background-color: #6B6B6B;
+							}
+							&.Estampado {
+								background-color: #844345;
+							}
+							&.Laranja {
+								background-color: #F73C07;
+							}
+							&.Lilas {
+								background-color: #9D8DCB;
+							}
+							&.Limao {
+								background-color: #48F86D;
+							}
+							&.Madeira {
+								background-color: #644B35;
+							}
+							&.Marfim {
+								background-color: #E0B370;
+							}
+							&.Marrom {
+								background-color: #301701;
+							}
+							&.Ocre {
+								background-color: #272725;
+							}
+							&.Ouro {
+								background-color: #BE9B47;
+							}
+							&.Prata {
+								background-color: #76757B;
+							}
+							&.Preto {
+								background-color: #000;
+							}
+							&.Rosa {
+								background-color: #F968A9;
+							}
+							&.Roxo {
+								background-color: #8756A1;
+							}
+							&.Salmao {
+								background-color: #FD7360;
+							}
+							&.Tangerina {
+								background-color: #E8740D;
+							}
+							&.Turquesa {
+								background-color: #24C7B1;
+							}
+							&.Verde {
+								background-color: #4ED1C3;
+							}
+							&.Vermelho {
+								background-color: #E45049;
+							}
+							&.Vinho {
+								background-color: #630015;
+							}
+							&.Violeta {
+								background-color: #BA2161;
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-
 	#nav-dep {
 		overflow: hidden;
-
 		.right {
 			overflow: hidden;
-
-			.orderBy{
+			.orderBy {
 				@include font-size(1.2);
 				float: right;
 				text-transform: uppercase;
-
-				label{
+				label {
 					font-family: 'Cairo', sans-serif;
 				}
-
-				select{
-				    @include font-size(1.3);
-				    font-family: 'Cairo', sans-serif;
-				    margin-right: 5px;
+				select {
+					@include font-size(1.3);
+					font-family: 'Cairo', sans-serif;
+					margin-right: 5px;
 				}
 			}
-
-			.select2-container--default{
+			.select2-container--default {
 				display: none;
 			}
-
 			@include mq($screen-sm) {
 				float: none !important;
 			}
 		}
 	}
-
 	.mainShelf {
 		.sub,
 		.searchResultsTime {
 			display: none;
 		}
-
-		.pager{
+		.pager {
 			overflow: hidden;
 			margin: 6% 0;
 			display: block;
 			overflow: hidden;
-
-			ul{
-				li{
+			ul {
+				li {
 					@include font-size(1.6);
 					list-style-type: none;
 					display: inline-block;
@@ -444,50 +383,41 @@ body.dep-cat-bus{
 					padding: 10px;
 					text-transform: uppercase;
 					font-weight: bold;
-
-					&.previous{
+					&.previous {
 						font-size: 0;
-
-						&:after{
+						&:after {
 							@include font-size(1.6);
 							content: "<";
 							display: inline-block;
 							font-weight: bolder;
 						}
 					}
-
-					&.next{
+					&.next {
 						font-size: 0;
-
-						&:after{
+						&:after {
 							@include font-size(1.6);
 							content: ">";
 							display: inline-block;
 							font-weight: bolder;
 						}
 					}
-
-					&.pgCurrent{
+					&.pgCurrent {
 						color: #fff;
 						background-color: #000;
 					}
-
 					&.first,
-					&.last{
+					&.last {
 						display: block;
-
 						@include mq($screen-sm) {
 							display: inline-block;
 						}
 					}
 				}
 			}
-
-			&.top{
+			&.top {
 				display: none;
 			}
-
-			&.bottom{
+			&.bottom {
 				text-align: center;
 			}
 		}
@@ -500,14 +430,12 @@ body.dep-cat-bus.resultado-busca {
 		width: 100%;
 		margin-bottom: 30px;
 	}
-
 	.sidebar {
 		.search-single-navigator {
 			h3 {
 				display: block;
 				padding: 10px 15px;
 				background-color: #000;
-
 				a {
 					@include font-size(1.2);
 					color: #fff;
@@ -520,31 +448,30 @@ body.dep-cat-bus.resultado-busca {
 	}
 }
 
-body.busca-vazia{
+body.busca-vazia {
 	main {
 		padding-top: 5px;
 	}
-	.mainShelf{
+	.mainShelf {
 		@include font-size (2);
-	    text-align: center;
-	    margin: 5% 0;
-	    line-height: 8px;
-
-	    h2{
-	    	margin-bottom: 20px;
-	    }
-
-	    span{
-	    	display: block;
-		    overflow: hidden;
-		    font-size: 17px;
-		    line-height: 30px;
-	    }
+		text-align: center;
+		margin: 5% 0; // line-height: 8px;
+		h2 {
+			margin-bottom: 20px;
+		}
+		span {
+			// line-height: 30px;
+		}
 	}
-
+	.prateleira {
+		li {
+			.action-buttons {
+				bottom: 106px;
+			}
+		}
+	}
 	.shelf-vazio {
 		margin: 40px 0;
-
 		h3 {
 			display: none;
 		}

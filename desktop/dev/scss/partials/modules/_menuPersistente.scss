@@ -1,10 +1,9 @@
 /* ========================================================================
 	Menu Persistente
 	======================================================================= */
-	
+
 header {
 	&.sticky {
-		
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -16,7 +15,6 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		.main-header {
 			flex: 1;
 			box-shadow: none;
@@ -25,70 +23,75 @@ header {
 			position: relative;
 			.menu-header {
 				@extend .transition;
-				padding: 9px 0 0 0;
 				position: initial;
-				ul{
-					li.has-sub{
-						&:first-child{
-							ul{
-								padding-left: 30%;
+				ul {
+					li.has-sub {
+						&:first-child {
+							ul {
+								display: flex;
+								justify-content: flex-start;
 							}
 						}
 						&:nth-child(6) {
-							ul{
-								padding-right: 16%;
+							ul {
+								display: flex;
+								justify-content: flex-end;
+								padding-right: 77px;
 							}
-							
 						}
-						.submenu{
-							top:71px;
+						.submenu {
+							top: 71px;
 							width: 100%;
 							z-index: 1;
 							box-shadow: 0 0 3px rgba(0, 0, 0, 0.702);
+							nav {
+								margin: 0 auto;
+							}
+							li {
+								border-bottom: 1px solid transparent;
+							}
+							li:hover {
+								border-bottom: 1px solid black;
+							}
 						}
 					}
-					li.has-sub:hover{
-						.submenu{
+					li.has-sub:hover {
+						.submenu {
 							width: 100%;
-							top:71px;
+							top: 71px;
 							transition: none;
 							z-index: 1;
 						}
 					}
 				}
 			}
-           .logo{
-			height: 63px;
-		   }
+			.logo {
+				height: 63px;
+				margin: -6px 0 10px -20px;
+			}
 			a {
 				border: none !important;
 			}
-
 			li.has-sub:hover {
 				@extend .transition;
 				background-color: #000;
-
 				a.first-menu {
 					@extend .transition;
 					border-bottom: none !important;
 					background-color: #000 !important;
 				}
-
 				.submenu {
 					@extend .transition;
 					display: none;
 				}
 			}
 		}
-
 		.top-box {
 			height: 0;
 			opacity: 0;
 			padding: 0;
 			display: none;
-
 		}
-
 		.container {
 			position: initial;
 			.row {
@@ -99,11 +102,9 @@ header {
 				position: inherit !important;
 			}
 		}
-
 		.searchbox {
+			padding-top: 20px;
 			@extend .transition;
-			padding-top: 11px;
-
 			.busca {
 				input.fulltext-search-box {
 					@extend .transition;
@@ -112,32 +113,28 @@ header {
 				}
 			}
 		}
-
-		.tipbar{
+		.tipbar {
 			@extend .transition;
 			display: none;
 		}
-
-		.main-header{
+		.main-header {
 			@extend .transition;
-			.logo{
-				svg{
+			.logo {
+				svg {
 					@extend .transition;
 					fill: #fff;
 					width: 150px;
 				}
 			}
 		}
-
-		.menu-header{
-			li{
-				a.first-menu{
+		.menu-header {
+			li {
+				a.first-menu {
 					@extend .transition;
 					color: #fff;
-					padding: 17px 8px;
+					padding: 34px 8px;
 				}
 			}
 		}
 	}
-
 }
