@@ -214,3 +214,20 @@ body.institucional {
 		}
 	}
 }
+
+.troca-facil {
+	&__main-tlt {
+		
+		font-size: 25px;
+		text-transform: uppercase;
+		max-width: 760px;
+		margin: 50px auto 0 auto;
+	}
+	.wrapper {
+		max-width: 760px;
+		margin: 0 auto;
+	}
+	&__tlt{
+		margin-bottom: 10px;
+	}
+}

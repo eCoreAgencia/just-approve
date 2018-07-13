@@ -103,11 +103,12 @@ header {
 			}
 		}
 		.searchbox {
-			padding-top: 20px;
-			@extend .transition;
+			padding: 0;
+			margin: auto 0;
+		
 			.busca {
 				input.fulltext-search-box {
-					@extend .transition;
+					
 					color: #000;
 					background: #fff;
 				}

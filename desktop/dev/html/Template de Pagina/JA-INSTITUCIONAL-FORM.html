@@ -12,8 +12,47 @@
         <vtex:template id="JA-HEADER" />
 
         <main>
+            <h2 class="troca-facil__main-tlt">
+                    TROCAS E DEVOLUÇÃO
+            </h2>
             
-
+            <section class="troca-facil">
+                <div class="wrapper">
+                  
+                    <form action="javascript:formTroca()" method="POST" class="form-troca" >
+        
+                        <fieldset class="troca-facil__name">
+                            <h3 class= "troca-facil__tlt">Nome completo cadastrado no pedido:</h3>
+                            <input type="text" class="name-input" name="trocaClientName" id="cl_firstName"  placeholder="Nome" data-validation="required" data-msg-required="seu nome" />
+                        </fieldset>
+                        <fieldset class="troca-facil__email">
+                            <h3 class= "troca-facil__tlt">E-mail cadastrado no pedido:</h3>
+                            <input type="email" class="email-input" name="trocaClientEmail" id="cl_email"  placeholder="E-mail" data-validation="required email" data-msg-required="seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
+                        </fieldset>
+                        <fieldset class="troca-facil__numero-pedido">
+                            <h3 class= "troca-facil__tlt">Numero do pedido:</h3>
+                            <input type="text" class="pedido-number-input" name="trocaClientOrderNumber" id="cl_orderNumber" placeholder="Digite o número do pedido" data-validation="seu pedido"  />
+                        </fieldset>
+                        <fieldset class="troca-facil__data-recebimento">
+                            <h3 class= "troca-facil__tlt">Data de recebimento do Pedido:</h3>
+                            <input type="text" class="pedido-date-input" name="trocaClientOrderDate" id="cl_orderDateReceive" placeholder="Digite a data de recebimento do Pedido" data-validation="sua data"  />
+                        </fieldset>
+                        <fieldset class="troca-facil__produto-troca">
+                            <h3 class= "troca-facil__tlt">Qual produto deseja trocar:</h3>
+                            <input type="text" class="produto-input" name="trocaClientProduct" id="cl_orderProduct" placeholder="Digite o produto que deseja trocar"  data-msg-required="seu produto"  />
+                        </fieldset>
+                        <fieldset class="troca-facil__opcoes">
+                            <h3 class= "troca-facil__tlt">Três opções de produtos para a troca (verificaremos a disponibilidade ao receber o produto):</h3>
+                            <input type="text" class="opcoes-input" name="trocaClientOptions" id="cl_orderOptions" placeholder="Digite suas opções"  data-msg-required="suas opcoes"  />
+                        </fieldset>
+                        <fieldset class="troca-facil__obs">
+                            <h3 class= "troca-facil__tlt">Observações:</h3>
+                            <input type="text" class="obs-input" name="trocaClientObs" id="cl_orderObs" placeholder="Digite suas observações"  data-msg-required="suas observacoes"  />
+                        </fieldset>
+                        <button type="submit" class="troca-facil__button-ok submit">Enviar</button>    
+                    </form>
+                </div>
+            </section>
 
 
 
@@ -26,6 +65,7 @@
             </div>
         </main>
         <vtex:template id="JA-FOOTER" />
-		<vtex:template id="JA-COMMONSCRIPTS" />
+        <vtex:template id="JA-COMMONSCRIPTS" />
+        <script type="text/javascript" src="/arquivos/md-troca-facil.js"></script>
 	</body>
 </html>
