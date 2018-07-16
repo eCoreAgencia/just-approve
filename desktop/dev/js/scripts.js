@@ -135,11 +135,8 @@ $(function() {
 						$.each(data, function(key, val) {
 							var elements = val.items[0].images;
 							var myVideo = val.MeuVideo;
-							console.log(myVideo);
 							var myPosition = val.Posicao;
-							console.log(myPosition);
 							var myIdVideo = val.IdDocumento;
-							console.log(myIdVideo);
 
 							$(elements).each(function(data, val){
 								// Take Image Thumbs //

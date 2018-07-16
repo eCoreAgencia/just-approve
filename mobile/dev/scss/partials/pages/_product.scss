@@ -5,16 +5,314 @@
 
 body.produto {
 
+    &.opacity-active {
+        .choose-skus {
+            @extend .transition;
+            z-index: 99999;
+            position: relative;
+            background-color: #fff;
+            padding: 10px 10px 20px;
+        }
+    }
+
+    .top-view {
+        padding: 0 10px;
+        line-height: 20px;
+    }
+
+    .preco {
+        padding: 0 11px;
+        overflow: hidden;
+
+        br {
+            display: none;
+        }
+
+        em {
+            font-size: 0;
+            margin: 10px 0;
+            display: block;
+            font-style: normal;
+
+            &.valor-dividido {
+                @include font-size(1.2);
+                display: block;
+
+                strong {
+                    font-weight: bold;
+                }
+            }
+
+            &.valor-de {
+                margin-bottom: -10px;
+                text-decoration: line-through;
+            }
+
+            &.valor-por {
+                @include font-size(1.5);
+                margin-top: 17px;
+
+                strong {
+                    @include font-size(1.5);
+                }
+            }
+        }
+
+        strong {
+            @include font-size(1.2);
+            font-weight: normal;
+        }
+    }
+
+    .choose-skus{
+        clear: both;
+        float: left;
+        width: 100%;
+        margin: 20px 0 0;
+        overflow: hidden;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #dbd7d7;
+
+        &:before {
+            @include font-size(1.5);
+            display: block;
+            font-weight: bold;
+            content: 'TAMANHOS';
+            margin-bottom: 15px;
+        }
+
+
+        .skuList {
+            @extend .transition;
+            padding: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #959595;
+
+            &.inactive {
+                color: #eaeaea;
+                position: relative;
+
+                &:after {
+                    top: -8px;
+                    right: -4px;
+                    color: #000;
+                    content: 'x';
+                    display: block;
+                    position: absolute;
+                }
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &.sku-picked {
+                @extend .transition;
+                color: #fff;
+                background-color: #959595;
+            }
+
+            a,
+            .preco,
+            .imageSku,
+            .seller-data,
+            .portal-notify-me-ref {
+                display: none;
+            }
+        }
+
+        .sku-selector-container{
+            ul{
+                list-style-type: none;
+                width: 100%;
+                display: block;
+
+                @include mq($screen-md) {
+                    display: inline-block;
+                    width: 50%;
+                    vertical-align: top;
+                }
+
+                li{
+                    @include font-size(1.4);
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    display: block;
+                    overflow: hidden;
+                    margin-bottom: 10px;
+
+                    &.skuList{
+                        input{
+                            display: none;
+                        }
+
+                        label{
+                            cursor: pointer;
+                            background-color: #fff;
+                            padding: 10px 15px;
+                            color: #201e1e;
+                            margin-right: 10px;
+                            text-align: center;
+                            line-height: 25px;
+                            border: 1px solid #fff;
+                            display: inline-block;
+                            margin-bottom: 10px;
+
+                            &:hover,
+                            &.sku-picked{
+                                border: 1px solid #000;
+                            }
+
+                            &:before{
+                                display: none;
+                            }
+
+                            &.item_unavailable{
+                                background-color: #e6e6e6;
+                                border: 1px solid #e6e6e6;
+                                position: relative;
+
+                                &:after{
+                                    content: "X";
+                                    display: block;
+                                    position: absolute;
+                                    top: 6px;
+                                    left: 24%;
+                                    font-size: 39px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.Tamanho{
+                    li.skuList{
+                        label{
+                            width: auto;
+                            height: 40px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .close-bt-opacity {
+        @include font-size(2);
+        top: -15px;
+        right: 0px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 999999999999;
+        background-color: red;
+        color: #fff !important;
+        display: none !important;
+
+        &.active {
+            display: block !important;
+        }
+    }
+
+    &.opacity-active {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .opacity-all {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 125%;
+            opacity: 0.5;
+            z-index: 9999;
+            position: absolute;
+            background-color: #000;
+        }
+
+        .sku-section {
+            @extend .transition;
+            padding: 0 10px;
+            z-index: 999999999;
+            position: relative;
+            background-color: #fff;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    .compra-persistente-bt {
+        @include font-size(1.4);
+        @extend .transition;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        width: 100%;
+        height: 60px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        position: fixed;
+        line-height: 59px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #000;
+        text-transform: uppercase;
+        -webkit-overflow-scrolling: touch;
+        z-index: 9999999999999999999999999999999999999;
+
+        &.active {
+            @extend .transition;
+            opacity: 1;
+        }
+    }
+
     main{
         overflow: hidden;
         margin-top: 1%;
 
         .product-view{
-            overflow: hidden;
             clear: both;
+            overflow: hidden;
 
             .product-box {
                 position: relative;
+
+                .ProductImage {
+                    padding: 0;
+                }
+
+                .slick-dots {
+                    bottom: 20px;
+                    position: absolute;
+
+                    li {
+                        width: 10px;
+                        height: 10px;
+
+                        &.slick-active {
+                            button {
+                                background-color: #fff;
+                            }
+                        }
+
+                        button {
+                            width: 10px;
+                            height: 10px;
+                            background-color: #ccc;
+                        }
+                    }
+                }
 
                 .my-video-position {
                     top: 0px;
@@ -158,6 +456,7 @@ body.produto {
                     line-height: 46px;
                     text-align: center;
                     margin-bottom: 20px;
+                    text-decoration: none;
                     background-color: #000;
                     text-transform: uppercase;
 
@@ -219,182 +518,6 @@ body.produto {
 
                         .economia-de{
                             display: none !important;
-                        }
-                    }
-                }
-
-                .preco {
-                    overflow: hidden;
-
-                    em {
-                        font-size: 0;
-                        margin: 10px 0;
-                        display: block;
-                        font-style: normal;
-
-                        &.valor-dividido {
-                            @include font-size(1.2);
-                            display: block;
-
-                            strong {
-                                font-weight: bold;
-                            }
-                        }
-
-                        &.valor-de {
-                            margin-bottom: -10px;
-                            text-decoration: line-through;
-                        }
-
-                        &.valor-por {
-                            @include font-size(1.5);
-
-                            strong {
-                                @include font-size(1.5);
-                            }
-                        }
-                    }
-
-                    strong {
-                        @include font-size(1.2);
-                        font-weight: normal;
-                    }
-                }
-
-                .choose-skus{
-                    clear: both;
-                    margin: 20px 0;
-                    overflow: hidden;
-                    padding-bottom: 20px;
-                    border-bottom: 1px solid #dbd7d7;
-
-                    &:before {
-                        @include font-size(1.5);
-                        display: block;
-                        font-weight: bold;
-                        content: 'TAMANHOS';
-                        margin-bottom: 15px;
-                    }
-
-
-                    .skuList {
-                        @extend .transition;
-                        padding: 8px;
-                        cursor: pointer;
-                        text-align: center;
-                        margin-right: 10px;
-                        display: inline-block;
-                        vertical-align: middle;
-                        border: 1px solid #959595;
-
-                        &.inactive {
-                            color: #eaeaea;
-                            position: relative;
-
-                            &:after {
-                                top: -8px;
-                                right: -4px;
-                                color: #000;
-                                content: 'x';
-                                display: block;
-                                position: absolute;
-                            }
-                        }
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-
-                        &:hover,
-                        &.sku-picked {
-                            @extend .transition;
-                            color: #fff;
-                            background-color: #959595;
-                        }
-
-                        a,
-                        .preco,
-                        .imageSku,
-                        .seller-data,
-                        .portal-notify-me-ref {
-                            display: none;
-                        }
-                    }
-
-                    .sku-selector-container{
-                        ul{
-                            list-style-type: none;
-                            width: 100%;
-                            display: block;
-
-                            @include mq($screen-md) {
-                                display: inline-block;
-                                width: 50%;
-                                vertical-align: top;
-                            }
-
-                            li{
-                                @include font-size(1.4);
-                                text-transform: uppercase;
-                                font-weight: bolder;
-                                display: block;
-                                overflow: hidden;
-                                margin-bottom: 10px;
-
-                                &.skuList{
-                                    input{
-                                        display: none;
-                                    }
-
-                                    label{
-                                        cursor: pointer;
-                                        background-color: #fff;
-                                        padding: 10px 15px;
-                                        color: #201e1e;
-                                        margin-right: 10px;
-                                        text-align: center;
-                                        line-height: 25px;
-                                        border: 1px solid #fff;
-                                        display: inline-block;
-                                        margin-bottom: 10px;
-
-                                        &:hover,
-                                        &.sku-picked{
-                                            border: 1px solid #000;
-                                        }
-
-                                        &:before{
-                                            display: none;
-                                        }
-
-                                        &.item_unavailable{
-                                            background-color: #e6e6e6;
-                                            border: 1px solid #e6e6e6;
-                                            position: relative;
-
-                                            &:after{
-                                                content: "X";
-                                                display: block;
-                                                position: absolute;
-                                                top: 6px;
-                                                left: 24%;
-                                                font-size: 39px;
-                                                font-weight: 500;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            &.Tamanho{
-                                li.skuList{
-                                    label{
-                                        width: auto;
-                                        height: 40px;
-                                        line-height: 20px;
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -530,6 +653,13 @@ body.produto {
                     padding: 0 10px 10px;
                     text-transform: uppercase;
                 }
+            }
+        }
+
+        .pic-tabela {
+            img {
+                width: 100%;
+                height: auto;
             }
         }
 

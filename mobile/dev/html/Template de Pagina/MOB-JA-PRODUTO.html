@@ -14,30 +14,27 @@
         <main>
 
             <div class="container">
-
-                <section class="breadcrumb row">
-                    <div class="col-xs-12">
-                        <vtex.cmc:breadCrumb />
-                    </div>
-                </section>
-
                 <section class="product-view row">
-                    <section class="product-box col-xs-12">
-                        <!-- Mounting With API -->
-                        <ul class="thumbnails"></ul>
-                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
-                    </section><!-- product-box END -->
-
-                    <section class="buy-box col-xs-12 col-md-6">
+                    <section class="top-view">
                         <vtex.cmc:productName />
-
-                        <div class="prod-similares">
-                            <vtex:contentPlaceHolder id="Similares" />
-                        </div><!-- prod-similares END -->
-
                         <div class="choose-skus">
                             <vtex.cmc:skuRichSelection changeImage="1" />
                         </div>
+                    </section>
+                    <section class="product-box col-xs-12">
+                        <div class="ProductImage col-xs-12">
+                            <!-- Mounting With API -->
+                            <div class="slider col-xs-12">
+                                <ul></ul>
+                            </div>
+                        </div><!-- product-box END -->
+                    </section><!-- product-view END -->
+
+                    <a id="id3"></a>
+                    <section class="buy-box col-xs-12 col-md-6">
+                        <div class="prod-similares">
+                            <vtex:contentPlaceHolder id="Similares" />
+                        </div><!-- prod-similares END -->
 
                         <a class="bt-comprar">Adicionar ao Carrinho</a>
 
@@ -80,14 +77,16 @@
                 <section class="shelf shelfRelacionados">
                     <vtex:contentPlaceHolder id="voce-vai-gostar" />
                 </section><!-- shelfRelacionados END -->
-
             </div>
+
+            <span class="compra-persistente-bt">Adicionar ao Carrinho</span>
+            <div class="opacity-all"></div>
         </main>
 
         <vtex:template id="MOB-JA-FOOTER" />
-        <script type="text/javascript" src="/arquivos/easyzoom.js"></script>
         <vtex:template id="MOB-JA-COMMONSCRIPTS" />
-        <script type="text/javascript" src="/arquivos/product-v9.js"></script>
+        <script type="text/javascript" src="/arquivos/slick.js"></script>
+        <script type="text/javascript" src="/arquivos/mob-product-v12.js"></script>
 
     </body>
 </html>

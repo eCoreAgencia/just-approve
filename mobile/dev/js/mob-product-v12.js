@@ -18,6 +18,48 @@ $(document).ready(function(){
             });
         // Sku's Not Choice //
 
+        $('.choose-skus').insertAfter('.ProductImage');
+        $('.preco').insertAfter('.top-view');
+
+        $('.compra-persistente-bt').on('click', function(event){
+            var myBtLink = $('.buy-box .bt-comprar');
+            if($(myBtLink).attr('id') == "sku-not-add" ) {
+                $('.close-bt-opacity').toggleClass('active');
+                $('body').toggleClass('opacity-active');
+                document.querySelector('#id3').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            } else {
+                $('.bt-comprar').simulateClick('click');
+            }
+        });
+
+        $('.close-bt-opacity').on('click', function(event){
+            $('body').removeClass('opacity-active');
+            $(this).removeClass('active');
+        });
+
+        $('.opacity-all').on('click', function(event){
+            $('body').removeClass('opacity-active');
+            $('.close-bt-opacity').removeClass('active');
+        });
+
+        $('.skuList').on('click', function(event){
+            $('body').removeClass('opacity-active');
+            $('.close-bt-opacity').removeClass('active');
+        });
+
+        $(function(){
+            var stickyHeaderTop = $('.top-view').offset().top;
+            $(window).scroll(function(){
+                if( $(window).scrollTop() > stickyHeaderTop-85 ) {
+                    $('.compra-persistente-bt').addClass('active');  
+                } else {
+                    $('.compra-persistente-bt').removeClass('active');
+                }
+            });
+        });
+
 
         // Find Empty Skus //
             var emptyParent = $('.portal-notify-me-ref').parent();
@@ -123,27 +165,3 @@ $("#___rc-p-id").each(function(index) {
     });
 });
 // Specifications Catch //
-
-
-$('.compra-persistente-bt').on('click', function(event){
-    var myBtLink = $('.buy-box .buy-button');
-    if($(myBtLink).attr('href') == "javascript:alert('Por favor, selecione o modelo desejado.');" ) {
-        $('.close-bt-opacity').toggleClass('active');
-        $('body').toggleClass('opacity-active');
-        document.querySelector('#id3').scrollIntoView({ 
-            behavior: 'smooth' 
-        });
-    } else {
-        $('.bt-comprar').simulateClick('click');
-    }
-});
-
-$('.close-bt-opacity').on('click', function(event){
-    $('body').removeClass('opacity-active');
-    $(this).removeClass('active');
-});
-
-$('.opacity-all').on('click', function(event){
-    $('body').removeClass('opacity-active');
-    $('.close-bt-opacity').removeClass('active');
-});

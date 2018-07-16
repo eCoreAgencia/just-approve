@@ -268,11 +268,15 @@ body.modal-active .modal-box,
 .modal-box .close-modal,
 .modal-box .close-modal:hover,
 .modal-box .modal-container,
+body.produto.opacity-active .choose-skus,
+body.produto .choose-skus .skuList,
+body.produto .choose-skus .skuList:hover,
+body.produto .choose-skus .skuList.sku-picked,
+body.produto.opacity-active .sku-section,
+body.produto .compra-persistente-bt,
+body.produto .compra-persistente-bt.active,
 body.produto main .product-view .buy-box .bt-comprar,
 body.produto main .product-view .buy-box .bt-comprar:hover,
-body.produto main .product-view .buy-box .choose-skus .skuList,
-body.produto main .product-view .buy-box .choose-skus .skuList:hover,
-body.produto main .product-view .buy-box .choose-skus .skuList.sku-picked,
 body.dep-cat-bus .sidebar li a,
 body.dep-cat-bus .sidebar li a:hover,
 body.dep-cat-bus .sidebar .search-multiple-navigator fieldset label,
@@ -1349,7 +1353,7 @@ body.home .prateleira li {
 	font-weight: 600;
 	text-transform: uppercase;
 	position: absolute;
-	right: 12px;
+	right: 6px;
 	bottom: 19px;
 	padding: 3px 7px;
 }
@@ -2408,18 +2412,291 @@ body.home main .banners-triplos img:hover {
    Página de Produto
    ========================================================================== */
 
+body.produto.opacity-active .choose-skus {
+	z-index: 99999;
+	position: relative;
+	background-color: #fff;
+	padding: 10px 10px 20px;
+}
+
+body.produto .top-view {
+	padding: 0 10px;
+	line-height: 20px;
+}
+
+body.produto .preco {
+	padding: 0 11px;
+	overflow: hidden;
+}
+
+body.produto .preco br {
+	display: none;
+}
+
+body.produto .preco em {
+	font-size: 0;
+	margin: 10px 0;
+	display: block;
+	font-style: normal;
+}
+
+body.produto .preco em.valor-dividido {
+	font-size: 12px;
+	display: block;
+}
+
+body.produto .preco em.valor-dividido strong {
+	font-weight: bold;
+}
+
+body.produto .preco em.valor-de {
+	margin-bottom: -10px;
+	text-decoration: line-through;
+}
+
+body.produto .preco em.valor-por {
+	font-size: 15px;
+	margin-top: 17px;
+}
+
+body.produto .preco em.valor-por strong {
+	font-size: 15px;
+}
+
+body.produto .preco strong {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+body.produto .choose-skus {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin: 20px 0 0;
+	overflow: hidden;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dbd7d7;
+}
+
+body.produto .choose-skus:before {
+	font-size: 15px;
+	display: block;
+	font-weight: bold;
+	content: 'TAMANHOS';
+	margin-bottom: 15px;
+}
+
+body.produto .choose-skus .skuList {
+	padding: 8px;
+	cursor: pointer;
+	text-align: center;
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #959595;
+}
+
+body.produto .choose-skus .skuList.inactive {
+	color: #eaeaea;
+	position: relative;
+}
+
+body.produto .choose-skus .skuList.inactive:after {
+	top: -8px;
+	right: -4px;
+	color: #000;
+	content: 'x';
+	display: block;
+	position: absolute;
+}
+
+body.produto .choose-skus .skuList:last-of-type {
+	margin-right: 0;
+}
+
+body.produto .choose-skus .skuList:hover,
+body.produto .choose-skus .skuList.sku-picked {
+	color: #fff;
+	background-color: #959595;
+}
+
+body.produto .choose-skus .skuList a,
+body.produto .choose-skus .skuList .preco,
+body.produto .choose-skus .skuList .imageSku,
+body.produto .choose-skus .skuList .seller-data,
+body.produto .choose-skus .skuList .portal-notify-me-ref {
+	display: none;
+}
+
+body.produto .choose-skus .sku-selector-container ul {
+	list-style-type: none;
+	width: 100%;
+	display: block;
+}
+
+body.produto .choose-skus .sku-selector-container ul li {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bolder;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList input {
+	display: none;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList label {
+	cursor: pointer;
+	background-color: #fff;
+	padding: 10px 15px;
+	color: #201e1e;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 25px;
+	border: 1px solid #fff;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList label:hover,
+body.produto .choose-skus .sku-selector-container ul li.skuList label.sku-picked {
+	border: 1px solid #000;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList label:before {
+	display: none;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList label.item_unavailable {
+	background-color: #e6e6e6;
+	border: 1px solid #e6e6e6;
+	position: relative;
+}
+
+body.produto .choose-skus .sku-selector-container ul li.skuList label.item_unavailable:after {
+	content: "X";
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: 24%;
+	font-size: 39px;
+	font-weight: 500;
+}
+
+body.produto .choose-skus .sku-selector-container ul.Tamanho li.skuList label {
+	width: auto;
+	height: 40px;
+	line-height: 20px;
+}
+
+body.produto .close-bt-opacity {
+	font-size: 20px;
+	top: -15px;
+	right: 0px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 999999999999;
+	background-color: red;
+	color: #fff !important;
+	display: none !important;
+}
+
+body.produto .close-bt-opacity.active {
+	display: block !important;
+}
+
+body.produto.opacity-active {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+body.produto.opacity-active .opacity-all {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 125%;
+	opacity: 0.5;
+	z-index: 9999;
+	position: absolute;
+	background-color: #000;
+}
+
+body.produto.opacity-active .sku-section {
+	padding: 0 10px;
+	z-index: 999999999;
+	position: relative;
+	background-color: #fff;
+	-webkit-overflow-scrolling: touch;
+}
+
+body.produto .compra-persistente-bt {
+	font-size: 14px;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	width: 100%;
+	height: 60px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	position: fixed;
+	line-height: 59px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	text-transform: uppercase;
+	-webkit-overflow-scrolling: touch;
+	z-index: 9999999999999999999999999999999999999;
+}
+
+body.produto .compra-persistente-bt.active {
+	opacity: 1;
+}
+
 body.produto main {
 	overflow: hidden;
 	margin-top: 1%;
 }
 
 body.produto main .product-view {
-	overflow: hidden;
 	clear: both;
+	overflow: hidden;
 }
 
 body.produto main .product-view .product-box {
 	position: relative;
+}
+
+body.produto main .product-view .product-box .ProductImage {
+	padding: 0;
+}
+
+body.produto main .product-view .product-box .slick-dots {
+	bottom: 20px;
+	position: absolute;
+}
+
+body.produto main .product-view .product-box .slick-dots li {
+	width: 10px;
+	height: 10px;
+}
+
+body.produto main .product-view .product-box .slick-dots li.slick-active button {
+	background-color: #fff;
+}
+
+body.produto main .product-view .product-box .slick-dots li button {
+	width: 10px;
+	height: 10px;
+	background-color: #ccc;
 }
 
 body.produto main .product-view .product-box .my-video-position {
@@ -2539,6 +2816,7 @@ body.produto main .product-view .buy-box .bt-comprar {
 	line-height: 46px;
 	text-align: center;
 	margin-bottom: 20px;
+	text-decoration: none;
 	background-color: #000;
 	text-transform: uppercase;
 }
@@ -2598,165 +2876,6 @@ body.produto main .product-view .buy-box .price-info .productPrice .preco-a-vist
 
 body.produto main .product-view .buy-box .price-info .productPrice .economia-de {
 	display: none !important;
-}
-
-body.produto main .product-view .buy-box .preco {
-	overflow: hidden;
-}
-
-body.produto main .product-view .buy-box .preco em {
-	font-size: 0;
-	margin: 10px 0;
-	display: block;
-	font-style: normal;
-}
-
-body.produto main .product-view .buy-box .preco em.valor-dividido {
-	font-size: 12px;
-	display: block;
-}
-
-body.produto main .product-view .buy-box .preco em.valor-dividido strong {
-	font-weight: bold;
-}
-
-body.produto main .product-view .buy-box .preco em.valor-de {
-	margin-bottom: -10px;
-	text-decoration: line-through;
-}
-
-body.produto main .product-view .buy-box .preco em.valor-por {
-	font-size: 15px;
-}
-
-body.produto main .product-view .buy-box .preco em.valor-por strong {
-	font-size: 15px;
-}
-
-body.produto main .product-view .buy-box .preco strong {
-	font-size: 12px;
-	font-weight: normal;
-}
-
-body.produto main .product-view .buy-box .choose-skus {
-	clear: both;
-	margin: 20px 0;
-	overflow: hidden;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #dbd7d7;
-}
-
-body.produto main .product-view .buy-box .choose-skus:before {
-	font-size: 15px;
-	display: block;
-	font-weight: bold;
-	content: 'TAMANHOS';
-	margin-bottom: 15px;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList {
-	padding: 8px;
-	cursor: pointer;
-	text-align: center;
-	margin-right: 10px;
-	display: inline-block;
-	vertical-align: middle;
-	border: 1px solid #959595;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList.inactive {
-	color: #eaeaea;
-	position: relative;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList.inactive:after {
-	top: -8px;
-	right: -4px;
-	color: #000;
-	content: 'x';
-	display: block;
-	position: absolute;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList:last-of-type {
-	margin-right: 0;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList:hover,
-body.produto main .product-view .buy-box .choose-skus .skuList.sku-picked {
-	color: #fff;
-	background-color: #959595;
-}
-
-body.produto main .product-view .buy-box .choose-skus .skuList a,
-body.produto main .product-view .buy-box .choose-skus .skuList .preco,
-body.produto main .product-view .buy-box .choose-skus .skuList .imageSku,
-body.produto main .product-view .buy-box .choose-skus .skuList .seller-data,
-body.produto main .product-view .buy-box .choose-skus .skuList .portal-notify-me-ref {
-	display: none;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul {
-	list-style-type: none;
-	width: 100%;
-	display: block;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li {
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: bolder;
-	display: block;
-	overflow: hidden;
-	margin-bottom: 10px;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList input {
-	display: none;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label {
-	cursor: pointer;
-	background-color: #fff;
-	padding: 10px 15px;
-	color: #201e1e;
-	margin-right: 10px;
-	text-align: center;
-	line-height: 25px;
-	border: 1px solid #fff;
-	display: inline-block;
-	margin-bottom: 10px;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label:hover,
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label.sku-picked {
-	border: 1px solid #000;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label:before {
-	display: none;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label.item_unavailable {
-	background-color: #e6e6e6;
-	border: 1px solid #e6e6e6;
-	position: relative;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul li.skuList label.item_unavailable:after {
-	content: "X";
-	display: block;
-	position: absolute;
-	top: 6px;
-	left: 24%;
-	font-size: 39px;
-	font-weight: 500;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul.Tamanho li.skuList label {
-	width: auto;
-	height: 40px;
-	line-height: 20px;
 }
 
 body.produto main .product-view .buy-box .description,
@@ -2871,6 +2990,11 @@ body.produto .tabela table tr {
 body.produto .tabela table tr.my-thead {
 	padding: 0 10px 10px;
 	text-transform: uppercase;
+}
+
+body.produto .tabela .pic-tabela img {
+	width: 100%;
+	height: auto;
 }
 
 body.produto .tabela h3 {
@@ -5092,6 +5216,12 @@ header .main-header .menu-header ul li {
 	margin-left: 268px;
 }
 
+body.produto .choose-skus .sku-selector-container ul {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+}
+
 body.produto main .product-view .product-box .apresentacao #include {
 	padding-left: 118px;
 }
@@ -5110,12 +5240,6 @@ body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow 
 
 body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow .zoomWrapperImage {
 	display: block;
-}
-
-body.produto main .product-view .buy-box .choose-skus .sku-selector-container ul {
-	display: inline-block;
-	width: 50%;
-	vertical-align: top;
 }
 
 body.dep-cat-bus .sidebar {
