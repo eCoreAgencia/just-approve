@@ -47,6 +47,9 @@ jQuery.fn.simulateClick = function() {
 		}
 	});
 }
+$(document).ajaxStop(function(){
+	$('.thumbnails li.first-thumb a').simulateClick('click');
+});
 
 var body = $('body'),
 	htmlBody = $('html, body'),

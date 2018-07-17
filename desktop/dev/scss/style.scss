@@ -142,17 +142,17 @@ body {
 	display: none;
 }
 
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1380px) {
 	.promoBox {
-		top: 30px;
-		right: 20px;
-		position: fixed;
+		top: -5px;
+		left: 202px;
+		position: absolute;
 		background-size: 100%;
-		width: 150px;
+		width: 110px;
 		background-repeat: no-repeat;
-		height: 150px;
+		height: 110px;
 		display: block;
-		z-index: 99999;
+		z-index: 99999
 	}
 	#img--box {
 		display: none;

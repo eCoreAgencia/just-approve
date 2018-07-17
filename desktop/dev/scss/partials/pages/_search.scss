@@ -425,6 +425,7 @@ body.dep-cat-bus {
 }
 
 body.dep-cat-bus.resultado-busca {
+	
 	header {
 		float: left;
 		width: 100%;
@@ -448,6 +449,11 @@ body.dep-cat-bus.resultado-busca {
 	}
 }
 
+.resultado-busca {
+	.prateleira li img:nth-child(2) {
+		display: none;
+	 }
+}
 body.busca-vazia {
 	main {
 		padding-top: 5px;

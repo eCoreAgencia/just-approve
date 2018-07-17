@@ -87,10 +87,22 @@ header {
 			}
 		}
 		.top-box {
-			height: 0;
-			opacity: 0;
-			padding: 0;
-			display: none;
+			width: 100%;
+			position: inherit;
+			z-index: 1;
+			background: transparent;
+			.account-cart {
+				width: auto;
+				position: absolute;
+				right: 0;
+				top: 16px;
+			}
+			.social-menu {
+				height: 0;
+				opacity: 0;
+				padding: 0;
+				display: none;
+			}
 		}
 		.container {
 			position: initial;
@@ -105,10 +117,8 @@ header {
 		.searchbox {
 			padding: 0;
 			margin: auto 0;
-		
 			.busca {
 				input.fulltext-search-box {
-					
 					color: #000;
 					background: #fff;
 				}

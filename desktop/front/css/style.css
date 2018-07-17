@@ -1336,6 +1336,10 @@ footer .disclaimer .empresas li a svg {
 	background-color: #666;
 }
 
+.prateleira li .action-buttons .item-list a.btn-fast-buy .produto-cor a {
+	width: 40px;
+}
+
 body.dep-cat-bus li a.productShelf {
 	display: block;
 	position: relative;
@@ -2114,6 +2118,20 @@ header.sticky .main-header li.has-sub:hover .submenu {
 }
 
 header.sticky .top-box {
+	width: 100%;
+	position: inherit;
+	z-index: 1;
+	background: transparent;
+}
+
+header.sticky .top-box .account-cart {
+	width: auto;
+	position: absolute;
+	right: 0;
+	top: 16px;
+}
+
+header.sticky .top-box .social-menu {
 	height: 0;
 	opacity: 0;
 	padding: 0;
@@ -3631,6 +3649,10 @@ body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 a {
 	margin-bottom: 0;
 	padding-bottom: 0;
 	font-weight: normal;
+}
+
+.resultado-busca .prateleira li img:nth-child(2) {
+	display: none;
 }
 
 body.busca-vazia main {
@@ -5528,16 +5550,16 @@ body.favoritos main ul#favList li {
 
 }
 
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1380px) {
 
 .promoBox {
-	top: 30px;
-	right: 20px;
-	position: fixed;
+	top: -5px;
+	left: 202px;
+	position: absolute;
 	background-size: 100%;
-	width: 150px;
+	width: 110px;
 	background-repeat: no-repeat;
-	height: 150px;
+	height: 110px;
 	display: block;
 	z-index: 99999;
 }
