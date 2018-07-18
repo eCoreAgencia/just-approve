@@ -1098,6 +1098,10 @@ footer .disclaimer .empresas li a svg {
 	margin-left: -84px;
 }
 
+.prateleira li img:nth-child(2) {
+	display: none;
+}
+
 .prateleira li a {
 	text-decoration: none;
 }
@@ -2152,6 +2156,7 @@ header.sticky .container .row {
 header.sticky .searchbox {
 	padding: 0;
 	margin: auto 0;
+	z-index: 99999;
 }
 
 header.sticky .searchbox .busca input.fulltext-search-box {

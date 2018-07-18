@@ -84,45 +84,44 @@ $(function() {
 			behavior: 'smooth' 
 		});
 	});
-
-	var depCatBus = $('.dep-cat-bus');
-	var shelf = $('.prateleira');
-
 	var myBg = $('.promoBox #img--box img').attr('src');
 	$('.promoBox').css("background-image", "url("+myBg+")");
+	
+	
+	
 
 	// Verificacao Genero Departamento-Categoria-Busca //
-		if($(depCatBus).length > 0){
-			var myGen = $('.bread-crumb .last a').text();
-			shelf.addClass(myGen);
+		// if($(depCatBus).length > 0){
+		// 	var myGen = $('.bread-crumb .last a').text();
+		// 	shelf.addClass(myGen);
 
-			var fem = $('.prateleira.Feminino');
-			var masc = $('.prateleira.Masculino');
+		// 	var fem = $('.prateleira.Feminino');
+		// 	var masc = $('.prateleira.Masculino');
 			
-			fem.each(function(){
-				$(this).find('.secundario').remove();
-				$(this).find('.principal span.label-Masculino').remove();
-				$(this).find('.secundario span.label-Masculino').remove();
+		// 	fem.each(function(){
+		// 		$(this).find('.secundario').remove();
+		// 		$(this).find('.principal span.label-Masculino').remove();
+		// 		$(this).find('.secundario span.label-Masculino').remove();
 			
-				var myRealLink = $(this).find('li a.productShelf').attr('href');
-				var myParam = myRealLink+'?lid=f777d960-5de6-496f-825e-c417d3012f69###';
+		// 		var myRealLink = $(this).find('li a.productShelf').attr('href');
+		// 		var myParam = myRealLink+'?lid=f777d960-5de6-496f-825e-c417d3012f69###';
 			
-				$('li a.productShelf').attr('href', myParam+'/#');
-				$('li a.product-url').attr('href', myParam+'/#');
-			});
+		// 		$('li a.productShelf').attr('href', myParam+'/#');
+		// 		$('li a.product-url').attr('href', myParam+'/#');
+		// 	});
 
-			masc.each(function(){
-				$(this).find('.principal').remove();
-				$(this).find('.principal span.label-Feminino').remove();
-				$(this).find('.secundario span.label-Feminino').remove();
+		// 	masc.each(function(){
+		// 		$(this).find('.principal').remove();
+		// 		$(this).find('.principal span.label-Feminino').remove();
+		// 		$(this).find('.secundario span.label-Feminino').remove();
 
-				var myRealLink = $(this).find('li a.productShelf').attr('href');
-				var myParam = myRealLink+'?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d###';
+		// 		var myRealLink = $(this).find('li a.productShelf').attr('href');
+		// 		var myParam = myRealLink+'?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d###';
 
-				$('li a.productShelf').attr('href', myParam+'/#');
-				$('li a.product-url').attr('href', myParam+'/#');
-			});
-		}
+		// 		$('li a.productShelf').attr('href', myParam+'/#');
+		// 		$('li a.product-url').attr('href', myParam+'/#');
+		// 	});
+		// }
 	// Verificacao Genero Departamento-Categoria-Busca //
 
 

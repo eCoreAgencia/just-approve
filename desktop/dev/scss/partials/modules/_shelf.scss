@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .prateleira {
+	
 	h2 {
 		display: none;
 	}
@@ -24,6 +25,9 @@
 			height: auto;
 			min-width: 440px;
 			margin-left: -84px;
+			&:nth-child(2) {
+				display: none;
+			 }
 		}
 
 		a {

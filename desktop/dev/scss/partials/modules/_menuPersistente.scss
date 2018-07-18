@@ -117,6 +117,7 @@ header {
 		.searchbox {
 			padding: 0;
 			margin: auto 0;
+			z-index: 99999;
 			.busca {
 				input.fulltext-search-box {
 					color: #000;
