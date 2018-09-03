@@ -3,13 +3,15 @@
 #set($uri = $product.Uri)
 #set($escapedName = $product.HtmlEscapedName)
 
-<a title="$escapedName" href="$uri" class="productShelf">
+<a title="$escapedName" href="$uri?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d" class="productShelf">
 
     <span class="principal">
-        <span class="label-Masculino">$product.GetImageTag(30,"principalmasculino")</span>
-    </span>
-    <span class="secundario">
-        <span class="label-Masculino">$product.GetImageTag(30,"versomasculino")</span>
+        <span class="label-Feminino">
+            $product.GetImageTag(30,"masculinoprincipal")
+            $product.GetImageTag(30,"masculino")
+            $product.GetImageTag(30,"principal")
+            $product.GetImageTag(30,"verso")
+        </span>
     </span>
     <article>
         <h4>$product.Name</h4>
@@ -31,9 +33,9 @@
                 #end
             </em>
 
-            <div class="action-buttons hidden-xs hidden-sm"">
+            <div class="action-buttons hidden-xs hidden-sm">
                 <div class="item-list hidden-xs hidden-sm">
-                    <a class="product-url" href="$uri">Ver Produto</a>
+                    <a class="product-url" href="$uri?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d">Ver Produto</a>
                 </div>
                 <div class="item-list">
                     <a class="btn btn-fast-buy">

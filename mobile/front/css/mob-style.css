@@ -4280,6 +4280,7 @@ body.account .slider .address-display-block {
 }
 
 .slick-next {
+	right: 0;
 	display: none;
 }
 

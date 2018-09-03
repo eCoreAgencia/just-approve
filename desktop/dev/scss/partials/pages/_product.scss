@@ -78,9 +78,42 @@ body.produto {
                     }
                 }
             }
+
+            .prev-thumb,
+            .next-thumb {
+                @include font-size(2);
+                left: 38px;
+                cursor: pointer;
+                position: absolute;
+                text-align: center;
+            }
+
+            .next-thumb {
+                bottom: 0;
+            }
+
+            .prev-thumb {
+                top: 0;
+                transform: rotate(180deg);
+            }
+
             .thumbnails {
                 vertical-align: top;
                 display: inline-block;
+
+                li {
+                    list-style-type: none;
+                }
+
+                &.more-itens {
+                    padding: 30px 0;
+                    li {
+                        &:nth-child(n+9) {  
+                            display: none;
+                        }
+                    }
+                }
+
                 li.hover-video {
                     overflow: hidden;
                     position: relative;
@@ -199,7 +232,9 @@ body.produto {
                     }
                 }
                 .preco {
+                    display: none;
                     overflow: hidden;
+
                     em {
                         font-size: 0;
                         margin: 10px 0;
@@ -363,6 +398,7 @@ body.produto {
                     }
                 }
                 .composicao {
+                    display: none;
                     .main-content {
                         @include font-size(1.2);
                         line-height: 15px;
@@ -390,7 +426,7 @@ body.produto {
                 ul {
                     li {
                         width: 100%;
-                        max-width: 290px;
+                        max-width: 286px;
                     }
                 }
             }
@@ -472,5 +508,12 @@ body.produto {
             margin-bottom: 15px;
             text-transform: uppercase;
         }
+    }
+}
+
+body.produto.acessorios {
+    .tabela,
+    #bt-tabela {
+        display: none;
     }
 }

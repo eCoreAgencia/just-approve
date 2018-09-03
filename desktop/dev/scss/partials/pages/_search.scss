@@ -3,25 +3,6 @@
    ========================================================================== */
 
 body.dep-cat-bus {
-	li a.productShelf{
-		&:hover {
-			span.secundario{
-				opacity: 1;
-				@extend .transition;
-			}
-			span.principal {
-				opacity: 0;
-				@extend .transition;
-			}
-		}
-		span.secundario{
-			position: absolute;
-			top:0;
-			left: 0;
-			opacity: 0;
-			@extend .transition;
-		}
-	} 
 	.prateleira li .action-buttons {
 		bottom: 102px;
 	}
@@ -449,11 +430,6 @@ body.dep-cat-bus.resultado-busca {
 	}
 }
 
-.resultado-busca {
-	.prateleira li img:nth-child(2) {
-		display: none;
-	 }
-}
 body.busca-vazia {
 	main {
 		padding-top: 5px;

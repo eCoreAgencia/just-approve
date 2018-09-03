@@ -69,8 +69,8 @@ $("#___rc-p-id").each(function(index) {
         $.each(data, function(key, val) {
 
             // Catch Composition Val //
-                var composicao = val.Elementos[0];
-                $('.specification .main-content').text(composicao);
+                //var composicao = val.Elementos[0];
+               // $('.specification .main-content').text(composicao);
             // Catch Composition Val //
 
 

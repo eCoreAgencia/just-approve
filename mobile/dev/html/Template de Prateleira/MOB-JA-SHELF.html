@@ -6,10 +6,9 @@
 <a title="$escapedName" href="$uri" class="productShelf">
 
     <span class="principal">
-        <span class="label-Feminino">$product.GetImageTag(30,"principalfeminino")</span>
-    </span>
-    <span class="secundario">
-        <span class="label-Masculino">$product.GetImageTag(30,"principalmasculino")</span>
+        $product.GetImageTag(30,"masculinoprincipal")
+        $product.GetImageTag(30,"femininoprincipal")
+        $product.GetImageTag(30,"principal")
     </span>
     <article>
         <h4>$product.Name</h4>
@@ -31,7 +30,7 @@
                 #end
             </em>
 
-            <div class="action-buttons"">
+            <div class="action-buttons">
                 <div class="item-list">
                     <a class="product-url" href="$uri">Comprar</a>
                 </div>

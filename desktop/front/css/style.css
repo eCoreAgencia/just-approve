@@ -271,9 +271,6 @@ body.produto main .product-view .buy-box .bt-comprar:hover,
 body.produto main .product-view .buy-box .choose-skus .skuList,
 body.produto main .product-view .buy-box .choose-skus .skuList:hover,
 body.produto main .product-view .buy-box .choose-skus .skuList.sku-picked,
-body.dep-cat-bus li a.productShelf:hover span.secundario,
-body.dep-cat-bus li a.productShelf:hover span.principal,
-body.dep-cat-bus li a.productShelf span.secundario,
 body.dep-cat-bus .sidebar li a,
 body.dep-cat-bus .sidebar li a:hover,
 body.dep-cat-bus .sidebar .search-multiple-navigator fieldset label,
@@ -1099,7 +1096,10 @@ footer .disclaimer .empresas li a svg {
 }
 
 .prateleira li img:nth-child(2) {
-	display: none;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	position: absolute;
 }
 
 .prateleira li a {
@@ -1112,23 +1112,14 @@ footer .disclaimer .empresas li a svg {
 }
 
 .prateleira li a.productShelf span.principal {
+	position: relative;
 	text-align: center;
 	margin-bottom: 10px;
 }
 
-.prateleira li a.productShelf:hover span.secundario {
+.prateleira li a.productShelf span.principal:hover img:nth-child(2) {
 	transition: all 0.3s ease-in-out;
 	opacity: 1;
-}
-
-.prateleira li a.productShelf span.secundario {
-	transition: all 0.3s ease-in-out;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	width: 260px;
-	height: 405px;
-	position: absolute;
 }
 
 .prateleira li h4 {
@@ -2675,9 +2666,40 @@ body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow 
 	display: none;
 }
 
+body.produto main .product-view .prev-thumb,
+body.produto main .product-view .next-thumb {
+	font-size: 20px;
+	left: 38px;
+	cursor: pointer;
+	position: absolute;
+	text-align: center;
+}
+
+body.produto main .product-view .next-thumb {
+	bottom: 0;
+}
+
+body.produto main .product-view .prev-thumb {
+	top: 0;
+	-ms-transform: rotate(180deg);
+	    transform: rotate(180deg);
+}
+
 body.produto main .product-view .thumbnails {
 	vertical-align: top;
 	display: inline-block;
+}
+
+body.produto main .product-view .thumbnails li {
+	list-style-type: none;
+}
+
+body.produto main .product-view .thumbnails.more-itens {
+	padding: 30px 0;
+}
+
+body.produto main .product-view .thumbnails.more-itens li:nth-child(n+9) {
+	display: none;
 }
 
 body.produto main .product-view .thumbnails li.hover-video {
@@ -2810,6 +2832,7 @@ body.produto main .product-view .buy-box .price-info .productPrice .economia-de 
 }
 
 body.produto main .product-view .buy-box .preco {
+	display: none;
 	overflow: hidden;
 }
 
@@ -2988,6 +3011,10 @@ body.produto main .product-view .buy-box .specification .productDescription {
 	line-height: 15px;
 }
 
+body.produto main .product-view .buy-box .composicao {
+	display: none;
+}
+
 body.produto main .product-view .buy-box .composicao .main-content {
 	font-size: 12px;
 	line-height: 15px;
@@ -3014,7 +3041,7 @@ body.produto main .shelfRelacionados .prateleira h2 {
 
 body.produto main .shelfRelacionados .prateleira ul li {
 	width: 100%;
-	max-width: 290px;
+	max-width: 286px;
 }
 
 body.produto .plugin-preco {
@@ -3093,24 +3120,14 @@ body.produto .tabela h3 {
 	text-transform: uppercase;
 }
 
+body.produto.acessorios .tabela,
+body.produto.acessorios #bt-tabela {
+	display: none;
+}
+
 /* ==========================================================================
    Página de Busca, Categorias e Departamentos
    ========================================================================== */
-
-body.dep-cat-bus li a.productShelf:hover span.secundario {
-	opacity: 1;
-}
-
-body.dep-cat-bus li a.productShelf:hover span.principal {
-	opacity: 0;
-}
-
-body.dep-cat-bus li a.productShelf span.secundario {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-}
 
 body.dep-cat-bus .prateleira li .action-buttons {
 	bottom: 102px;
@@ -3654,10 +3671,6 @@ body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 a {
 	margin-bottom: 0;
 	padding-bottom: 0;
 	font-weight: normal;
-}
-
-.resultado-busca .prateleira li img:nth-child(2) {
-	display: none;
 }
 
 body.busca-vazia main {
