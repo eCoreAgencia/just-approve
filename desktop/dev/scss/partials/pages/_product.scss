@@ -90,11 +90,12 @@ body.produto {
 
             .next-thumb {
                 bottom: 0;
+                transform: rotate(90deg);
             }
 
             .prev-thumb {
                 top: 0;
-                transform: rotate(180deg);
+                transform: rotate(270deg);
             }
 
             .thumbnails {

@@ -2091,7 +2091,9 @@ header.sticky .main-header .menu-header ul li.has-sub:hover .submenu {
 }
 
 header.sticky .main-header .logo {
+	z-index: 1;
 	height: 63px;
+	position: relative;
 	margin: -6px 0 10px -20px;
 }
 
@@ -2677,12 +2679,14 @@ body.produto main .product-view .next-thumb {
 
 body.produto main .product-view .next-thumb {
 	bottom: 0;
+	-ms-transform: rotate(90deg);
+	    transform: rotate(90deg);
 }
 
 body.produto main .product-view .prev-thumb {
 	top: 0;
-	-ms-transform: rotate(180deg);
-	    transform: rotate(180deg);
+	-ms-transform: rotate(270deg);
+	    transform: rotate(270deg);
 }
 
 body.produto main .product-view .thumbnails {
