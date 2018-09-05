@@ -14,30 +14,26 @@
         <main>
 
             <div class="container">
-
-                <section class="breadcrumb row">
-                    <div class="col-xs-12">
-                        <vtex.cmc:breadCrumb />
-                    </div>
-                </section>
-
                 <section class="product-view row">
-                    <section class="product-box col-xs-12 col-md-6">
-                        <!-- Mounting With API -->
-                        <ul class="thumbnails"></ul>
-                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
-                    </section><!-- product-box END -->
-
-                    <section class="buy-box col-xs-12 col-md-6">
+                    <section class="top-view">
                         <vtex.cmc:productName />
+                    </section>
 
+                    <div class="choose-skus">
+                        <vtex.cmc:skuRichSelection changeImage="1" />
+                    </div>
+
+                    <section class="product-box col-xs-12">
+                        <!-- Mounting With API -->
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
+                        <ul class="thumbnails"></ul>
+                    </section>    
+
+                    <!--a id="id3"></a -->
+                    <section class="buy-box col-xs-12 col-md-6">
                         <div class="prod-similares">
                             <vtex:contentPlaceHolder id="Similares" />
                         </div><!-- prod-similares END -->
-
-                        <div class="choose-skus">
-                            <vtex.cmc:skuRichSelection changeImage="1" />
-                        </div>
 
                         <a class="bt-comprar">Adicionar ao Carrinho</a>
 
@@ -45,23 +41,18 @@
                             <h3>Descrição do produto</h3>
                             <vtex.cmc:ProductDescription/>
                         </div>
-
-                        <div class="specification composicao">
-                            <h3>Composição</h3>
-                            <div class="main-content"></div>
-                        </div>
                     </section><!-- buy-box END -->
                 </section><!-- product-view END -->
 
-                <section class="tabela row">
+                <!--section class="tabela row">
                     <h3>Tabela de Medidas</h3>
-                    <div class="pic-tabela hidden-xs col-md-5">
-                        <img src="/arquivos/tabela-medidas.jpg" />
+                    <div class="pic-tabela col-xs-12">
+                        <vtex:contentPlaceHolder id="tabela-medidas-image" />
                     </div>
-                    <div class="col-xs-12 col-md-7">
+                    <div class="col-xs-12">
                         <table class="comprimento">
                             <tr class="my-thead">
-                                <th>Comprimento (A)</th>
+                                <th>Comp (A)</th>
                             </tr>
                         </table>
                         <table class="quadril">
@@ -75,19 +66,33 @@
                             </tr>
                         </table>
                     </div>
-                </section>
+                </section -->
 
-                <section class="shelf shelfRelacionados">
-                    <vtex:contentPlaceHolder id="voce-vai-gostar" />
-                </section><!-- shelfRelacionados END -->
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf shelfRelacionados">
+                            <vtex:contentPlaceHolder id="voce-vai-gostar" />
+                        </section><!-- shelfRelacionados END -->
+                    </div>
+                </div>
 
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf use-com">
+                            <vtex:contentPlaceHolder id="use-com" />
+                        </section><!-- use-com END -->
+                    </div>
+                </div>
             </div>
+
+            <span class="compra-persistente-bt">Adicionar ao Carrinho</span>
+            <div class="opacity-all"></div>
         </main>
 
         <vtex:template id="MOB-JA-FOOTER" />
-        <script type="text/javascript" src="/arquivos/easyzoom.js"></script>
         <vtex:template id="MOB-JA-COMMONSCRIPTS" />
-        <script type="text/javascript" src="/arquivos/product-v9.js"></script>
+        <script type="text/javascript" src="/arquivos/slick.js"></script>
+        <script type="text/javascript" src="/arquivos/mob-product-v15.js"></script>
 
     </body>
 </html>

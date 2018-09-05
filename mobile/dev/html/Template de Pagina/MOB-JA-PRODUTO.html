@@ -17,14 +17,19 @@
                 <section class="product-view row">
                     <section class="top-view">
                         <vtex.cmc:productName />
-                        <section class="product-box col-xs-12">
-                            <!-- Mounting With API -->
-                            <ul class="thumbnails"></ul>
-                            <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
-                        </section>    
                     </section>
 
-                    <a id="id3"></a>
+                    <div class="choose-skus">
+                        <vtex.cmc:skuRichSelection changeImage="1" />
+                    </div>
+
+                    <section class="product-box col-xs-12">
+                        <!-- Mounting With API -->
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"></div>
+                        <ul class="thumbnails"></ul>
+                    </section>    
+
+                    <!--a id="id3"></a -->
                     <section class="buy-box col-xs-12 col-md-6">
                         <div class="prod-similares">
                             <vtex:contentPlaceHolder id="Similares" />
@@ -36,15 +41,10 @@
                             <h3>Descrição do produto</h3>
                             <vtex.cmc:ProductDescription/>
                         </div>
-
-                        <!--div class="specification composicao">
-                            <h3>Composição</h3>
-                            <div class="main-content"></div>
-                        </div -->
                     </section><!-- buy-box END -->
                 </section><!-- product-view END -->
 
-                <section class="tabela row">
+                <!--section class="tabela row">
                     <h3>Tabela de Medidas</h3>
                     <div class="pic-tabela col-xs-12">
                         <vtex:contentPlaceHolder id="tabela-medidas-image" />
@@ -66,11 +66,23 @@
                             </tr>
                         </table>
                     </div>
-                </section>
+                </section -->
 
-                <section class="shelf shelfRelacionados">
-                    <vtex:contentPlaceHolder id="voce-vai-gostar" />
-                </section><!-- shelfRelacionados END -->
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf shelfRelacionados">
+                            <vtex:contentPlaceHolder id="voce-vai-gostar" />
+                        </section><!-- shelfRelacionados END -->
+                    </div>
+                </div>
+
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf use-com">
+                            <vtex:contentPlaceHolder id="use-com" />
+                        </section><!-- use-com END -->
+                    </div>
+                </div>
             </div>
 
             <span class="compra-persistente-bt">Adicionar ao Carrinho</span>
@@ -80,7 +92,7 @@
         <vtex:template id="MOB-JA-FOOTER" />
         <vtex:template id="MOB-JA-COMMONSCRIPTS" />
         <script type="text/javascript" src="/arquivos/slick.js"></script>
-        <script type="text/javascript" src="/arquivos/mob-product-v13.js"></script>
+        <script type="text/javascript" src="/arquivos/mob-product-v15.js"></script>
 
     </body>
 </html>

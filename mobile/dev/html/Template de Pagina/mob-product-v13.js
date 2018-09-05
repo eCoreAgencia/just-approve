@@ -13,10 +13,13 @@ $(document).ready(function(){
         // Sku's Not Choice //
             $('#sku-not-add').click(function(){
                 $('.modal-container').remove('.new-modal-content');
-                $('<div class="new-modal-content news-element error-add"><h3>Ã‰ preciso escolher uma variaÃ§Ã£o de Tamanho para poder finalizar a compra.</h3></div>').appendTo('.modal-container');
+                $('<div class="new-modal-content news-element error-add"><h3>Ãƒâ€° preciso escolher uma variaÃƒÂ§ÃƒÂ£o de Tamanho para poder finalizar a compra.</h3></div>').appendTo('.modal-container');
                 $('body').addClass('modal-active product-popup');
             });
         // Sku's Not Choice //
+
+        $('.choose-skus').insertAfter('.ProductImage');
+        $('.preco').insertAfter('.top-view');
 
         $('.choose-skus .skuList').each(function(){
             var inactive = $(this).find('.inactive');
@@ -25,8 +28,7 @@ $(document).ready(function(){
             cloneAndShow.insertBefore('.choose-skus');
         });
     
-        $('.product-view .preco').first().show();
-        $('.choose-skus').insertAfter('.product-box');
+        $('.buy-box .preco').first().show();
 
         $('.compra-persistente-bt').on('click', function(event){
             var myBtLink = $('.buy-box .bt-comprar');
@@ -77,7 +79,7 @@ $(document).ready(function(){
         // Pick SKU //
             $('.skuList.inactive').click(function(){
                 $('.modal-container').remove('.new-modal-content');
-                $('<div class="new-modal-content news-element error-add"><h3>Esse produto estÃ¡ temporariamente sem estoque.</h3></div>').appendTo('.modal-container');
+                $('<div class="new-modal-content news-element error-add"><h3>Esse produto estÃƒÂ¡ temporariamente sem estoque.</h3></div>').appendTo('.modal-container');
                 $('body').addClass('modal-active product-popup');
                 $('.inactive-modal').addClass('modal-box');
                 $('.modal-box').removeClass('inactive-modal');
@@ -104,71 +106,3 @@ $(document).ready(function(){
         // Pick SKU //
     // Manipulating BuyButton //
 });
-
-// Specifications Catch //
-$("#___rc-p-id").each(function(index) {
-    var id = $(this).attr("value");
-    var data = "/api/catalog_system/pub/products/search/?fq=productId:"+id+"";
-
-    $.getJSON(data, function(data) {
-        $.each(data, function(key, val) {
-
-            // Catch Composition Val //
-                //var composicao = val.Elementos[0];
-               // $('.specification .main-content').text(composicao);
-            // Catch Composition Val //
-
-
-            // Catch Cintura Val //
-                var valCinturaPP = val.CinturaPP[0];
-                var valCinturaP = val.CinturaP[0];
-                var valCinturaM = val.CinturaM[0];
-                var valCinturaG = val.CinturaG[0];
-                var valCinturaGG = val.CinturaGG[0];
-
-                $('<tr idVal="'+valCinturaPP+'"></tr>').insertAfter('.tabela .cintura tr.my-thead');
-                $('<tr idVal="'+valCinturaP+'"></tr>').insertAfter('.tabela .cintura tr.my-thead');
-                $('<tr idVal="'+valCinturaM+'"></tr>').insertAfter('.tabela .cintura tr.my-thead');
-                $('<tr idVal="'+valCinturaG+'"></tr>').insertAfter('.tabela .cintura tr.my-thead');
-                $('<tr idVal="'+valCinturaGG+'"></tr>').insertAfter('.tabela .cintura tr.my-thead');
-
-            // Catch Cintura Val //
-
-
-            // Catch Comprimento Val //
-                var valComprimentoPP = val.ComprimentoPP[0];
-                var valComprimentoP = val.ComprimentoP[0];
-                var valComprimentoM = val.ComprimentoM[0];
-                var valComprimentoG = val.ComprimentoG[0];
-                var valComprimentoGG = val.ComprimentoGG[0];
-
-                $('<tr idVal="'+valComprimentoPP+'"></tr>').insertAfter('.tabela .comprimento tr.my-thead');
-                $('<tr idVal="'+valComprimentoP+'"></tr>').insertAfter('.tabela .comprimento tr.my-thead');
-                $('<tr idVal="'+valComprimentoM+'"></tr>').insertAfter('.tabela .comprimento tr.my-thead');
-                $('<tr idVal="'+valComprimentoG+'"></tr>').insertAfter('.tabela .comprimento tr.my-thead');
-                $('<tr idVal="'+valComprimentoGG+'"></tr>').insertAfter('.tabela .comprimento tr.my-thead');
-            // Catch Comprimento Val //
-
-
-            // Catch Comprimento Val //
-                var valQuadrilPP = val.QuadrilPP[0];
-                var valQuadrilP = val.QuadrilP[0];
-                var valQuadrilM = val.QuadrilM[0];
-                var valQuadrilG = val.QuadrilG[0];
-                var valQuadrilGG = val.QuadrilGG[0];
-
-                $('<tr idVal="'+valQuadrilPP+'"></tr>').insertAfter('.tabela .quadril tr.my-thead');
-                $('<tr idVal="'+valQuadrilP+'"></tr>').insertAfter('.tabela .quadril tr.my-thead');
-                $('<tr idVal="'+valQuadrilM+'"></tr>').insertAfter('.tabela .quadril tr.my-thead');
-                $('<tr idVal="'+valQuadrilG+'"></tr>').insertAfter('.tabela .quadril tr.my-thead');
-                $('<tr idVal="'+valQuadrilGG+'"></tr>').insertAfter('.tabela .quadril tr.my-thead');
-            // Catch Comprimento Val //
-
-            $('.tabela tr').each(function(){
-                var myTxt = $(this).attr('idVal');
-                $(this).text(myTxt);
-            });
-        });
-    });
-});
-// Specifications Catch //

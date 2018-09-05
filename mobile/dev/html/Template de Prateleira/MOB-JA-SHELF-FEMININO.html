@@ -1,0 +1,43 @@
+#set($id = $product.Id)
+#set($idSku = $product.productVariantId)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+
+<a title="$escapedName" href="$uri?lid=b400cf2e-bb14-415c-be8a-bc3cb338b9b2" class="productShelf">
+
+    <span class="principal">
+        <span class="label-Feminino">
+            $product.GetImageTag(30,"femininoprincipal")
+        </span>
+    </span>
+    <article>
+        <h4>$product.Name</h4>
+
+        #if ($product.IsInStock)
+            #if ($product.HasBestPrice)
+                <span class="precos">
+                    <span class="oldPrice">$product.ListPrice</span>
+                    <span class="bestPrice redPrice">$product.BestPrice</span>
+                </span>
+            #else
+                <span class="bestPrice">$product.BestPrice</span>
+            #end
+            <em class="installment">
+                #if ($product.NumbersOfInstallment > 1)
+                    ou <strong>${product.NumbersOfInstallment}X</strong> de <strong>$product.InstallmentValue</strong>
+                #else
+                    <span class="vista">à vista</span>
+                #end
+            </em>
+
+            <div class="action-buttons"">
+                <div class="item-list">
+                    <a class="product-url" href="$uri?lid=964936be-981b-430e-acb4-e38fae874cbc">Comprar</a>
+                </div>
+            </div>
+        #else
+            <span class="outOfStock">Produto esgotado</span>
+        #end
+    </article>
+
+</a>

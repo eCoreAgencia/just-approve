@@ -1071,9 +1071,9 @@ footer .disclaimer .empresas li a svg {
     width: 100%;
     bottom: 97px;
     opacity: .9;
-    padding: 10px 20px;
     position: absolute;
-    background-color: #fff
+    background-color: #fff;
+    padding: 10px 18px 10px 10px;
 }
 
 .prateleira li .action-buttons .item-list {
@@ -1142,14 +1142,6 @@ body.dep-cat-bus .prateleira li a.productShelf span.secundario {
 
 body.produto .prateleira li {
     width: 175px
-}
-
-body.produto .product-view .preco {
-    display: none;
-}
-
-body.produto .product-view .preco:nth-of-type(1) {
-    display: block;
 }
 
 .prod-similares .prateleira li {
@@ -2232,8 +2224,16 @@ body.home main section.banner-bottom .box-banner:first-of-type {
 
 body.home main section.shelf-colecoes,
 body.home main section.shelf-destaques {
-    margin-top: 40px
+    margin-top: 40px;
 }
+
+body.home main section.shelf-colecoes,
+body.home main section.shelf-destaques,
+body.home main section.shelf-mais-vendidos,
+body.home main section.shelf-sale {
+    padding-left: 9px;
+}
+
 
 body.home main section.banner-faixa,
 body.home main section.banners-duplos,
@@ -2277,8 +2277,9 @@ body.produto .top-view {
 }
 
 body.produto .preco {
+    display: none;
     padding: 0 11px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 body.produto .preco br {
@@ -2324,8 +2325,9 @@ body.produto .choose-skus {
     clear: both;
     float: left;
     width: 100%;
-    margin: 20px 0 0;
+    margin: 20px 0;
     overflow: hidden;
+    padding-left: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #dbd7d7
 }
@@ -2596,22 +2598,55 @@ body.produto main .product-view .product-box .apresentacao .zoomPad .zoomWindow 
     display: none
 }
 
+body.produto main .product-view .thumbnails li img {
+    width: 100%;
+    height: auto;
+}
+
+body.produto .prev-thumb,
+body.produto .next-thumb {
+    left: 10px;
+    bottom: 45px;
+    display: none;
+    position: absolute;
+}
+
+body.produto .prev-thumb {
+    transform: rotate(180deg);
+}
+
+body.produto .next-thumb {
+    left: auto;
+    right: 10px;
+}
+
+body.produto .next-thumb:last-of-type {
+    display: none !important;
+}
+
 body.produto main .product-view .thumbnails {
     left: 0;
     z-index: 1;
     width: 100%;
     bottom: -1px;
-    padding: 10px;
-    position: absolute;
+    height: 117px;
+    overflow: hidden;
+    padding: 10px 10px;
     text-align: center;
     vertical-align: top;
     display: inline-block;
     background-color: #fff
 }
 
+body.produto main .product-view .thumbnails li:nth-child(4) {
+    margin-right: 0;
+}
+
 body.produto main .product-view .thumbnails li {
+    max-width: 70px;
+    margin-right: 10px;
     vertical-align: top;
-    display: inline-block
+    display: inline-block;
 }
 
 body.produto main .product-view .thumbnails li.hover-video {
@@ -2640,7 +2675,9 @@ body.produto main .product-view .thumbnails li.hover-video span {
 }
 
 body.produto main .product-view .buy-box {
-    overflow: hidden
+    margin-top: 20px;
+    padding-top: 5px;
+    overflow: hidden;
 }
 
 body.produto main .product-view .buy-box .prod-similares {
@@ -2909,6 +2946,14 @@ body.dep-cat-bus .sidebar .search-single-navigator {
     margin-top: 10px
 }
 
+body.dep-cat-bus .sidebar fieldset {
+    margin-bottom: 10px;
+}
+
+body.dep-cat-bus .sidebar fieldset label:first-of-type {
+    margin-top: 10px;
+}
+
 body.dep-cat-bus .sidebar .search-multiple-navigator h3,
 body.dep-cat-bus .sidebar .search-multiple-navigator h4,
 body.dep-cat-bus .sidebar .search-multiple-navigator h5,
@@ -2919,9 +2964,33 @@ body.dep-cat-bus .sidebar .search-single-navigator h5 {
     display: none;
     color: #232325;
     font-weight: 900;
+    position: relative;
+    text-transform: uppercase;
     font-family: Cairo, sans-serif;
-    margin: 20px 0 10px;
-    text-transform: uppercase
+}
+
+body.dep-cat-bus .sidebar .search-multiple-navigator h3:after,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4:after,
+body.dep-cat-bus .sidebar .search-multiple-navigator h5:after,
+body.dep-cat-bus .sidebar .search-single-navigator h3:after,
+body.dep-cat-bus .sidebar .search-single-navigator h4:after,
+body.dep-cat-bus .sidebar .search-single-navigator h5:after {
+    top: 5px;
+    right: 10px;
+    content: '+';
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    position: absolute;
+}
+
+body.dep-cat-bus .sidebar .search-multiple-navigator h3.active:after,
+body.dep-cat-bus .sidebar .search-multiple-navigator h4.active:after,
+body.dep-cat-bus .sidebar .search-multiple-navigator h5.active:after,
+body.dep-cat-bus .sidebar .search-single-navigator h3.active:after,
+body.dep-cat-bus .sidebar .search-single-navigator h4.active:after,
+body.dep-cat-bus .sidebar .search-single-navigator h5.active:after {
+    content: '-';
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator h3 a,
@@ -2940,6 +3009,28 @@ body.dep-cat-bus .sidebar .search-single-navigator h5 a {
     font-family: Cairo, sans-serif;
     font-weight: 900;
     text-decoration: none
+}
+
+body.dep-cat-bus main .mainShelf {
+    padding: 10px 18px;
+}
+
+body.dep-cat-bus .prateleira li {
+    margin-right: 0;
+}
+
+body.dep-cat-bus .prateleira li .action-buttons {
+    left: -3px;
+    width: 100%;
+    bottom: 97px;
+    opacity: .9;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px 4px 10px 10px;
+}
+
+body.dep-cat-bus .prateleira li:nth-child(n-1):nth-child(odd) {
+    margin-right: 0;
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator fieldset.filtro_marca,
@@ -4189,9 +4280,13 @@ body.account .slider .profile-detail-display {
 .slick-dots li,
 .slick-dots li button {
     padding: 0;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     cursor: pointer
+}
+
+.easyzoom li {
+    list-style-type: none;
 }
 
 .easyzoom,
@@ -4201,7 +4296,8 @@ body.account .slider .profile-detail-display {
 }
 
 .slick-dots li {
-    margin: 0 5px
+    margin: 0 5px;
+    overflow: visible;
 }
 
 .slick-dots li button {
