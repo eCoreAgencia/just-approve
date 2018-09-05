@@ -86,9 +86,6 @@ $(function() {
 	});
 	var myBg = $('.promoBox #img--box img').attr('src');
 	$('.promoBox').css("background-image", "url("+myBg+")");
-	
-	
-	
 
 	// Verificacao Genero Departamento-Categoria-Busca //
 		// if($(depCatBus).length > 0){

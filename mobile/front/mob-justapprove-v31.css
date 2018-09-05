@@ -2922,6 +2922,10 @@ body.dep-cat-bus .sidebar .search-single-navigator .qtd-filter {
     display: none
 }
 
+body.dep-cat-bus .sidebar .search-multiple-navigator ul {
+    display: none;
+}
+
 body.dep-cat-bus .category-spec {
     font-size: 12px;
     line-height: 20px;
@@ -3489,6 +3493,7 @@ body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5 {
 
 body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3,
 body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5.Tabela,
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5.HideMarca,
 body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5.HideGenero,
 body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5.HidePosicao,
 body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5.HideMeuVideo,
@@ -3504,6 +3509,10 @@ body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5 a {
     margin-bottom: 0;
     padding-bottom: 0;
     font-weight: 400
+}
+
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator ul {
+    display: none;
 }
 
 body.busca-vazia .mainShelf {

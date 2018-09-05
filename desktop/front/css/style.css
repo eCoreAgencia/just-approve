@@ -3601,10 +3601,12 @@ body.dep-cat-bus .mainShelf .searchResultsTime {
 }
 
 body.dep-cat-bus .mainShelf .pager {
-	overflow: hidden;
 	margin: 6% 0;
-	display: block;
 	overflow: hidden;
+}
+
+body.dep-cat-bus .mainShelf .pager.bottom {
+	display: block !important;
 }
 
 body.dep-cat-bus .mainShelf .pager ul li {

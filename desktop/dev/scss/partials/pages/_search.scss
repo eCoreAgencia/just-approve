@@ -351,10 +351,13 @@ body.dep-cat-bus {
 			display: none;
 		}
 		.pager {
-			overflow: hidden;
 			margin: 6% 0;
-			display: block;
 			overflow: hidden;
+
+			&.bottom {
+				display: block !important;
+			}
+			
 			ul {
 				li {
 					@include font-size(1.6);

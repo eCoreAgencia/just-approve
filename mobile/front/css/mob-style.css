@@ -3416,13 +3416,17 @@ body.dep-cat-bus.resultado-busca header {
 	margin-bottom: 30px;
 }
 
-body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 {
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3,
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h4,
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5 {
 	display: block;
 	padding: 10px 15px;
 	background-color: #000;
 }
 
-body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 a {
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h3 a,
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h4 a,
+body.dep-cat-bus.resultado-busca .sidebar .search-single-navigator h5 a {
 	font-size: 12px;
 	color: #fff;
 	margin-bottom: 0;
