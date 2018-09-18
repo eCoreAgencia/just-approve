@@ -10,36 +10,6 @@ $(document).ready(function(){
     // Remanegement Pricing //
 
     // Manipulating BuyButton //
-        // Sku's Not Choice //
-            $('#sku-not-add').click(function(){
-                $('.modal-container').remove('.new-modal-content');
-                $('<div class="new-modal-content news-element error-add"><h3>É preciso escolher uma variação de Tamanho para poder finalizar a compra.</h3></div>').appendTo('.modal-container');
-                $('body').addClass('modal-active product-popup');
-            });
-        // Sku's Not Choice //
-
-        $('.choose-skus .skuList').each(function(){
-            var inactive = $(this).find('.inactive');
-            var myPrice = $(this).next().find('.preco');
-            var cloneAndShow = myPrice.clone();
-            cloneAndShow.insertBefore('.choose-skus');
-        });
-    
-        $('.product-view .preco').first().show();
-        $('.choose-skus').insertAfter('.product-box');
-
-        $('.compra-persistente-bt').on('click', function(event){
-            var myBtLink = $('.buy-box .bt-comprar');
-            if($(myBtLink).attr('id') == "sku-not-add" ) {
-                $('.close-bt-opacity').toggleClass('active');
-                $('body').toggleClass('opacity-active');
-                document.querySelector('#id3').scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            } else {
-                $('.bt-comprar').simulateClick('click');
-            }
-        });
 
         $('.close-bt-opacity').on('click', function(event){
             $('body').removeClass('opacity-active');
@@ -84,23 +54,54 @@ $(document).ready(function(){
                 $('.buy-box .bt-comprar').attr('id', 'sku-not-add');
             });
 
-            $('.skuList .nomeSku').each(function(){
-                $(this).click(function(){
+            $('.skuList .nomeSku').click(function(){
 
-                    $('.skuList').removeClass('sku-picked');
-                    $(this).addClass('sku-picked');
-                    
-                    // Save myLink //
-                    var myLink = $(this).next().attr('href');
-                    
-                    $('.modal-box').addClass('inactive-modal');
-                    $('.inactive-modal').removeClass('modal-box');
+                $('.skuList').removeClass('sku-picked');
+                $(this).addClass('sku-picked');
+                
+                // Save myLink //
+                var myNext = $(this).next();
+                var myLink = $(myNext).next().attr('href');
+                
+                $('.modal-box').addClass('inactive-modal');
+                $('.inactive-modal').removeClass('modal-box');
 
-                    // Removing ID attr and change Buy Button URL
-                    $('.buy-box .bt-comprar').removeAttr('id');
-                    $('.buy-box .bt-comprar').attr('href', myLink);
-                });
+                // Removing ID attr and change Buy Button URL
+                $('.buy-box .bt-comprar').removeAttr('id');
+                $('.buy-box .bt-comprar').attr('href', myLink);
             });
         // Pick SKU //
     // Manipulating BuyButton //
+
+        // Sku's Not Choice //
+        $('#sku-not-add').click(function(){
+            $('.modal-container').remove('.new-modal-content');
+            $('<div class="new-modal-content news-element error-add"><h3>É preciso escolher uma variação de Tamanho para poder finalizar a compra.</h3></div>').appendTo('.modal-container');
+            $('body').addClass('modal-active product-popup');
+        });
+    // Sku's Not Choice //
+
+    $('.choose-skus .skuList').each(function(){
+        var inactive = $(this).find('.inactive');
+        var myPrice = $(this).next().find('.preco');
+        var cloneAndShow = myPrice.clone();
+        cloneAndShow.insertBefore('.choose-skus');
+    });
+
+    $('.product-view .preco').first().show();
+    $('.choose-skus').insertAfter('.product-box');
+
+    $('.compra-persistente-bt').on('click', function(event){
+        var myBtLink = $('.buy-box .bt-comprar');
+        if($(myBtLink).attr('id') == "sku-not-add" ) {
+            $('.close-bt-opacity').toggleClass('active');
+            $('body').toggleClass('opacity-active');
+            document.querySelector('#id3').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        } else {
+            $('.bt-comprar').simulateClick('click');
+        }
+    });
+
 });

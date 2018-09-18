@@ -875,14 +875,14 @@ h1#orderform-title {
 /* ==========================================================================
    Checkout Buttons
    ========================================================================== */
-.coupon-data {
-  background-color: #ccc;
-  padding: 10px; }
-  .coupon-data a.link-coupon-add {
-    color: #fff; }
-    .coupon-data a.link-coupon-add span {
-      color: #fff;
-      text-transform: uppercase; }
+.coupon-data a.link-coupon-add {
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  background-color: #ccc; }
+  .coupon-data a.link-coupon-add span {
+    color: #fff;
+    text-transform: uppercase; }
 
 .summary-coupon {
   width: 100%; }
@@ -906,6 +906,10 @@ h1#orderform-title {
     color: #fff;
     background-image: none;
     padding: 5px 15px; }
+  .summary-coupon .coupon-fields:after {
+    display: block;
+    margin-top: 10px;
+    content: 'É preciso estar logado para que os cupons funcionem.'; }
 
 .link-choose-more-products {
   font-size: 13px;

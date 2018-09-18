@@ -281,7 +281,10 @@ body.dep-cat-bus .sidebar .search-multiple-navigator ul.Tamanho li a,
 body.dep-cat-bus .sidebar .search-single-navigator ul.Tamanho li a,
 body.dep-cat-bus .sidebar .search-multiple-navigator ul.Cor li a,
 body.dep-cat-bus .sidebar .search-single-navigator ul.Cor li a,
-body.account [data-toggle="modal"],
+body.account.top-height-active .modal form,
+body.account #form-submit:hover,
+body.account #profile-submit:hover,
+body.account .modal form,
 body.institucional main form button,
 body.favoritos main ul#favList li a.productShelf span.prod-image,
 body.favoritos main ul#favList button.remove,
@@ -393,8 +396,6 @@ main {
 .col-md-11,
 .col-lg-11,
 .col-xs-12,
-body.account .profile-detail-display,
-body.account .address-display-block,
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
@@ -415,9 +416,7 @@ body.account .address-display-block,
 .col-xs-9,
 .col-xs-10,
 .col-xs-11,
-.col-xs-12,
-body.account .profile-detail-display,
-body.account .address-display-block {
+.col-xs-12 {
 	float: left;
 }
 
@@ -465,9 +464,7 @@ body.account .address-display-block {
 	width: 91.6666666667%;
 }
 
-.col-xs-12,
-body.account .profile-detail-display,
-body.account .address-display-block {
+.col-xs-12 {
 	width: 100%;
 }
 
@@ -771,15 +768,19 @@ header .main-header .menu-header ul li {
 
 header .main-header .menu-header ul li a {
 	font-size: 12px;
+	height: 100%;
 	color: #000;
-	font-weight: normal;
-	text-decoration: none;
-	text-transform: uppercase;
 	display: -ms-flexbox;
 	display: flex;
+	font-weight: normal;
 	-ms-flex-align: center;
 	    align-items: center;
-	height: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+header .main-header .menu-header ul li a.first-menu {
+	padding: 0 55px;
 }
 
 header .main-header .menu-header ul li .menu-item {
@@ -2456,7 +2457,7 @@ body.modal-active .modal-box .modal-container {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	top: -10000px;
+	top: -30000px;
 	min-height: 4500px;
 	position: absolute;
 }
@@ -3059,6 +3060,14 @@ body.produto .tabela {
 	padding: 20px 30px 40px;
 	border-top: 1px solid #d2d2d2;
 	border-bottom: 1px solid #d2d2d2;
+}
+
+body.produto .tabela svg {
+	max-width: 200px;
+}
+
+body.produto .tabela .st0 {
+	fill: #eaeaea;
 }
 
 body.produto .tabela table {
@@ -3709,8 +3718,45 @@ body.busca-vazia .shelf-vazio h3 {
    Minha Conta
    ========================================================================== */
 
+body.account .menu-header .menu-item:hover .submenu {
+	z-index: 2;
+}
+
+body.account header {
+	z-index: 1;
+	position: relative;
+}
+
+body.account .delete {
+	display: none !important;
+}
+
 body.account .modal-backdrop {
 	display: none;
+}
+
+body.account.top-height-active .modal form {
+	top: 70px;
+}
+
+body.account #box-bread-brumb {
+	width: 100%;
+	margin: 10px 0;
+}
+
+body.account #box-bread-brumb li {
+	display: inline-block;
+}
+
+body.account #box-bread-brumb li a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+body.account #box-bread-brumb li a:after {
+	margin-left: 5px;
+	display: inline-block;
+	content: '> Minha Conta';
 }
 
 body.account #form-submit,
@@ -3721,39 +3767,51 @@ body.account #profile-submit {
 	margin-top: 5px;
 	line-height: 10px;
 	padding: 10px 20px;
-	background-color: #fff;
 	color: #000 !important;
+	background-color: #eaeaea;
+}
+
+body.account #form-submit:hover,
+body.account #profile-submit:hover {
+	color: #fff !important;
+	background-color: #000;
 }
 
 body.account main {
-	background-color: #f0f0f0;
+	z-index: 0;
+	padding-top: 0;
 	overflow: hidden;
-	padding: 5% 0 15%;
+	background-color: #fff;
 }
 
 body.account main .container {
+	display: -ms-flexbox;
+	display: flex;
 	padding: 0 10px;
-}
-
-body.account main .container .row {
-	width: 100%;
-	margin: 0;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-align: stretch;
+	    align-items: stretch;
 }
 
 body.account main .container h3 {
-	font-size: 20px;
-	color: #333;
-	font-weight: bolder;
+	width: 100%;
 	margin: 20px 0;
-	text-transform: uppercase;
+	padding: 10px 0;
+	border-color: #9e9ea6;
+}
+
+body.account main .container h3#myModalLabel {
+	margin: 0;
+	padding: 10px 0;
 }
 
 body.account .profile-detail-display,
 body.account .address-display-block {
 	font-size: 13px;
-	background-color: #fff;
-	padding: 20px 40px;
 	margin-top: 20px;
+	padding: 20px 40px;
+	border: 1px solid #9e9ea6;
 }
 
 body.account .profile-detail-display h5,
@@ -3763,29 +3821,20 @@ body.account .address-display-block h5 {
 
 body.account .profile-detail-display h4,
 body.account .address-display-block h4 {
-	font-size: 18px;
-	color: #333;
-	font-weight: 900;
-	margin: 40px 0 20px;
-	text-transform: uppercase;
+	font-size: 30px;
+	clear: both;
+	color: #000;
+	margin: 20px 0;
+	min-width: 225px;
+	padding: 10px 40px;
+	display: inline-block;
+	-ms-transform: translateX(-40px);
+	    transform: translateX(-40px);
 }
 
-body.account .profile-detail-display h5,
 body.account .profile-detail-display .profile-detail-display-email,
-body.account .address-display-block h5,
 body.account .address-display-block .profile-detail-display-email {
-	font-size: 13px;
-	margin-bottom: 0;
-	font-weight: normal;
-}
-
-body.account .profile-detail-display .title,
-body.account .profile-detail-display .data,
-body.account .address-display-block .title,
-body.account .address-display-block .data {
-	font-size: 13px;
-	border: none;
-	font-weight: normal !important;
+	padding: 5px 0;
 }
 
 body.account .profile-detail-display .new-address-link,
@@ -3793,49 +3842,81 @@ body.account .address-display-block .new-address-link {
 	margin-top: 0;
 }
 
+body.account .profile-detail-display-info br {
+	display: none;
+}
+
+body.account .profile-detail-display-info > span {
+	width: 100%;
+	padding: 5px 0;
+	display: block;
+}
+
 body.account .profile-detail-display-info,
 body.account .address-display-unit-info {
 	line-height: 1.5;
 }
 
-body.account .edit-address-link {
-	margin: 40px 0 15px;
-	color: #000;
+body.account .edit-profile-link {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	margin-right: 36px !important;
 }
 
-body.account .edit-address-link a {
-	font-size: 9px;
+body.account .logout-button a {
+	font-size: 18px;
+	color: #fff;
+	line-height: 30px;
+	padding: 4px 20px;
+	text-align: center;
+	background: #8E8E8E;
+	border: 0 !important;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: lowercase;
+	padding: 4px 47px;
 }
 
-body.account .edit-address-link a.delete {
-	color: #939598;
-	font-weight: 400;
-	background: none;
+body.account .logout-button a:hover {
+	background: #ff5c5c;
 }
 
 body.account .edit-profile-link,
-body.account .new-address-link {
+body.account .logout-button,
+body.account .new-address-link,
+body.account .edit-address-link {
 	margin: 15px 0;
 	overflow: hidden;
 }
 
-body.account [data-toggle="modal"] {
-	font-size: 14px;
-	text-decoration: none;
-	background-image: none;
-	display: inline-block;
-	text-align: center;
+body.account #edit-data-link,
+body.account .new-address-link a {
+	font-size: 18px;
+	color: #fff;
 	line-height: 30px;
 	padding: 4px 20px;
 	text-align: center;
+	background: #18318F;
+	border: 0 !important;
+	display: inline-block;
+	text-decoration: none;
+	background-image: none;
 	text-transform: lowercase;
-	border: 1px solid #2e2b3e;
-	background-color: #2e2b3e;
-	color: #fff;
 }
 
-body.account [data-toggle="modal"].delete {
-	border: none;
+body.account #edit-data-link:hover,
+body.account .new-address-link a:hover {
+	color: #18318F;
+	border: 0 !important;
+	background: #e6e6e6 !important;
+}
+
+body.account .edit-address-link a {
+	text-decoration: none;
+}
+
+body.account .edit-address-link a:hover {
+	text-decoration: underline;
 }
 
 body.account .data {
@@ -3855,22 +3936,22 @@ body.account .modal {
 }
 
 body.account .modal form {
-	position: absolute;
-	top: 0;
 	left: 50%;
+	top: 70px;
 	width: 100%;
-	max-width: 390px;
-	margin-left: -160px;
+	max-width: 600px;
+	position: absolute;
+	margin-left: -300px;
 }
 
 body.account .modal-header {
-	-ms-flex-direction: row-reverse;
-	    flex-direction: row-reverse;
+	height: 38px;
+	padding: 0 15px;
 	-ms-flex-align: center;
 	    align-items: center;
-	height: 58px;
-	padding: 0 15px;
 	background-color: #fff;
+	-ms-flex-direction: row-reverse;
+	    flex-direction: row-reverse;
 }
 
 body.account .modal-header h3 {
@@ -3878,20 +3959,21 @@ body.account .modal-header h3 {
 	-ms-flex: 1;
 	    flex: 1;
 	margin: 0;
-	padding-top: 20px;
+	padding-top: 15px;
 	display: block;
 	font-size: 1.6em;
 }
 
 body.account .modal-header .close {
-	color: #000;
-	float: right;
-	width: 28px;
-	height: 35px;
-	margin-top: 8px;
-	padding: 0;
-	border: 0;
 	font-size: 40px;
+	border: 0;
+	padding: 0;
+	width: 28px;
+	float: right;
+	height: 35px;
+	color: #000;
+	line-height: 0;
+	margin-top: 0px;
 	cursor: pointer;
 	background-color: transparent;
 	background-repeat: no-repeat;
@@ -3918,12 +4000,15 @@ body.account .modal-body h5 {
 }
 
 body.account .modal-body .control-group {
-	margin-bottom: 1em;
 	font-size: 13px;
+	width: 49%;
+	margin-right: 5px;
+	margin-bottom: 8px;
+	display: inline-block;
 }
 
 body.account .modal-body .control-group label {
-	display: inline-block;
+	display: block;
 }
 
 body.account .modal-body .control-group select {
@@ -4000,9 +4085,203 @@ body.account .modal-footer .btn-link {
 	cursor: pointer;
 }
 
+body.account .modal #form-address {
+	top: 80px;
+}
+
+body.account .modal #form-address .address-form .row {
+	width: 100%;
+}
+
+body.account .modal #form-address .address-form .row div {
+	width: 49%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+body.account .modal #form-address .address-form div {
+	float: left;
+}
+
+body.account .modal #form-address .address-form .control-group {
+	width: 49%;
+	float: none;
+}
+
+body.account .modal #form-address .address-form .control-group.address-form-number,
+body.account .modal #form-address .address-form .control-group.address-form-reference,
+body.account .modal #form-address .address-form .control-group.address-form-complement,
+body.account .modal #form-address .address-form .control-group.address-form-street-name,
+body.account .modal #form-address .address-form .control-group.address-form-neighborhood {
+	width: 98.5%;
+}
+
+body.account .modal #form-address .address-form .control-group select {
+	width: 100%;
+	height: 35px;
+	border: 1px solid #eaeaea;
+}
+
+body.account .modal #form-address .address-form .control-group label {
+	display: block;
+}
+
+body.account .modal #form-address .address-form .control-group .controls {
+	width: 100%;
+}
+
 /* ==========================================================================
    Meus Pedidos
    ========================================================================== */
+
+body.orders .container,
+.vtex-bootstrap .container {
+	width: 100% !important;
+}
+
+body.orders header,
+body.orders footer,
+.vtex-bootstrap header,
+.vtex-bootstrap footer {
+	line-height: 18px;
+	font-size: 14px !important;
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+body.orders header a,
+body.orders footer a,
+.vtex-bootstrap header a,
+.vtex-bootstrap footer a {
+	font-size: inherit;
+}
+
+body.orders header .menu-header,
+body.orders footer .menu-header,
+.vtex-bootstrap header .menu-header,
+.vtex-bootstrap footer .menu-header {
+	font-size: inherit;
+}
+
+body.orders header select,
+body.orders header textarea,
+body.orders header input[type="text"],
+body.orders header input[type="password"],
+body.orders header input[type="datetime"],
+body.orders header input[type="datetime-local"],
+body.orders header input[type="date"],
+body.orders header input[type="month"],
+body.orders header input[type="time"],
+body.orders header input[type="week"],
+body.orders header input[type="number"],
+body.orders header input[type="email"],
+body.orders header input[type="url"],
+body.orders header input[type="search"],
+body.orders header input[type="tel"],
+body.orders header input[type="color"],
+body.orders header .uneditable-input,
+body.orders footer select,
+body.orders footer textarea,
+body.orders footer input[type="text"],
+body.orders footer input[type="password"],
+body.orders footer input[type="datetime"],
+body.orders footer input[type="datetime-local"],
+body.orders footer input[type="date"],
+body.orders footer input[type="month"],
+body.orders footer input[type="time"],
+body.orders footer input[type="week"],
+body.orders footer input[type="number"],
+body.orders footer input[type="email"],
+body.orders footer input[type="url"],
+body.orders footer input[type="search"],
+body.orders footer input[type="tel"],
+body.orders footer input[type="color"],
+body.orders footer .uneditable-input,
+.vtex-bootstrap header select,
+.vtex-bootstrap header textarea,
+.vtex-bootstrap header input[type="text"],
+.vtex-bootstrap header input[type="password"],
+.vtex-bootstrap header input[type="datetime"],
+.vtex-bootstrap header input[type="datetime-local"],
+.vtex-bootstrap header input[type="date"],
+.vtex-bootstrap header input[type="month"],
+.vtex-bootstrap header input[type="time"],
+.vtex-bootstrap header input[type="week"],
+.vtex-bootstrap header input[type="number"],
+.vtex-bootstrap header input[type="email"],
+.vtex-bootstrap header input[type="url"],
+.vtex-bootstrap header input[type="search"],
+.vtex-bootstrap header input[type="tel"],
+.vtex-bootstrap header input[type="color"],
+.vtex-bootstrap header .uneditable-input,
+.vtex-bootstrap footer select,
+.vtex-bootstrap footer textarea,
+.vtex-bootstrap footer input[type="text"],
+.vtex-bootstrap footer input[type="password"],
+.vtex-bootstrap footer input[type="datetime"],
+.vtex-bootstrap footer input[type="datetime-local"],
+.vtex-bootstrap footer input[type="date"],
+.vtex-bootstrap footer input[type="month"],
+.vtex-bootstrap footer input[type="time"],
+.vtex-bootstrap footer input[type="week"],
+.vtex-bootstrap footer input[type="number"],
+.vtex-bootstrap footer input[type="email"],
+.vtex-bootstrap footer input[type="url"],
+.vtex-bootstrap footer input[type="search"],
+.vtex-bootstrap footer input[type="tel"],
+.vtex-bootstrap footer input[type="color"],
+.vtex-bootstrap footer .uneditable-input {
+	margin: 0;
+	height: auto;
+	border-radius: 0;
+	line-height: initial;
+}
+
+body.orders header h1,
+body.orders header h2,
+body.orders header h3,
+body.orders header h4,
+body.orders header h5,
+body.orders header h6,
+body.orders footer h1,
+body.orders footer h2,
+body.orders footer h3,
+body.orders footer h4,
+body.orders footer h5,
+body.orders footer h6,
+.vtex-bootstrap header h1,
+.vtex-bootstrap header h2,
+.vtex-bootstrap header h3,
+.vtex-bootstrap header h4,
+.vtex-bootstrap header h5,
+.vtex-bootstrap header h6,
+.vtex-bootstrap footer h1,
+.vtex-bootstrap footer h2,
+.vtex-bootstrap footer h3,
+.vtex-bootstrap footer h4,
+.vtex-bootstrap footer h5,
+.vtex-bootstrap footer h6 {
+	margin: 0;
+	line-height: initial;
+}
+
+body.orders header ul,
+body.orders header ol,
+body.orders header form,
+body.orders header figure,
+body.orders footer ul,
+body.orders footer ol,
+body.orders footer form,
+body.orders footer figure,
+.vtex-bootstrap header ul,
+.vtex-bootstrap header ol,
+.vtex-bootstrap header form,
+.vtex-bootstrap header figure,
+.vtex-bootstrap footer ul,
+.vtex-bootstrap footer ol,
+.vtex-bootstrap footer form,
+.vtex-bootstrap footer figure {
+	margin: 0;
+}
 
 body.orders .nav-pills,
 body.orders #locale-select,
@@ -4011,30 +4290,38 @@ body.orders #locale-select,
 	display: none;
 }
 
-body.orders header fieldset,
-.vtex-bootstrap header fieldset {
-	padding: 0;
+body.orders header h1.logo,
+.vtex-bootstrap header h1.logo {
+	margin: 0;
 }
 
 body.orders main,
 .vtex-bootstrap main {
-	overflow: hidden;
-	padding: 4% 0;
+	padding: 40px 0 100px;
 }
 
-body.orders main .container,
-.vtex-bootstrap main .container {
-	padding: 0 5px;
+body.orders footer h3,
+.vtex-bootstrap footer h3 {
+	font-size: 24px;
 }
 
-body.orders main h1.title,
-.vtex-bootstrap main h1.title {
-	text-transform: uppercase;
+body.orders footer h4,
+.vtex-bootstrap footer h4 {
+	margin-bottom: 10px;
 }
 
-body.orders main a,
-.vtex-bootstrap main a {
-	color: #000;
+body.orders footer .form-newsletter input,
+.vtex-bootstrap footer .form-newsletter input {
+	margin: 2px 0;
+}
+
+body.orders h2.page-title {
+	font-size: 30px;
+	color: #F68026;
+	text-align: left;
+	min-width: 1000px;
+	display: inline-block;
+	background: none !important;
 }
 
 /* ==========================================================================
@@ -4436,12 +4723,7 @@ body.favoritos main ul#favList button.remove:hover:after {
 	z-index: 1;
 }
 
-.slider .col-xs-12,
-.slider body.account .profile-detail-display,
-body.account .slider .profile-detail-display,
-.slider
-  body.account .address-display-block,
-body.account .slider .address-display-block {
+.slider .col-xs-12 {
 	padding-right: 0;
 }
 
@@ -4786,14 +5068,6 @@ body.continuous {
 	display: none;
 }
 
-@media screen and (min-width: 414px) {
-
-body.account .modal form {
-	margin-left: -195px;
-}
-
-}
-
 @media (min-width: 768px) and (max-width: 1169px) {
 
 .visible-sm {
@@ -5071,10 +5345,6 @@ body.dep-cat-bus .mainShelf .pager ul li.last {
 	display: inline-block;
 }
 
-body.account .edit-address-link a {
-	font-size: 12px;
-}
-
 body.account .modal-body .control-group input:not([type="radio"]) {
 	height: 35px;
 }
@@ -5085,12 +5355,7 @@ body.favoritos main ul#favList li {
 	margin: 0 0.5%;
 }
 
-.slider .col-xs-12,
-.slider body.account .profile-detail-display,
-body.account .slider .profile-detail-display,
-.slider
-      body.account .address-display-block,
-body.account .slider .address-display-block {
+.slider .col-xs-12 {
 	padding-right: 7px;
 }
 
@@ -5464,10 +5729,6 @@ body.dep-cat-bus .sidebar {
 	padding-right: 4%;
 }
 
-body.account main {
-	padding: 3% 0 5%;
-}
-
 body.account .profile-detail-display,
 body.account .address-display-block {
 	margin-top: 0;
@@ -5475,11 +5736,6 @@ body.account .address-display-block {
 	margin-right: 2%;
 	min-height: 370px;
 	margin-bottom: 60px;
-}
-
-body.orders main .container,
-.vtex-bootstrap main .container {
-	padding: 0;
 }
 
 body.institucional main .content {

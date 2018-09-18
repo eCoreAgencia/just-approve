@@ -121,7 +121,8 @@
  			}
  			.container {
  				position: relative;
- 			}
+			 }
+			 
  			ul {
  				display: flex;
  				justify-content: space-evenly;
@@ -139,13 +140,17 @@
  					}
  					a {
  						@include font-size(1.2);
- 						color: #000;
- 						font-weight: normal;
- 						text-decoration: none;
- 						text-transform: uppercase;
- 						display: flex;
- 						align-items: center;
  						height: 100%;
+ 						color: #000;
+						display: flex;
+ 						font-weight: normal;
+ 						align-items: center;
+ 						text-decoration: none;
+						 text-transform: uppercase;
+						 
+						 &.first-menu {
+							padding: 0 55px;
+						 }
  					}
  					.menu-item {
  						border-bottom: 1px solid transparent;

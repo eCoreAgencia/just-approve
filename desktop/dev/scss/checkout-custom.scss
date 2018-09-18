@@ -222,11 +222,11 @@ h1#orderform-title{
    Checkout Buttons
    ========================================================================== */
 .coupon-data{
-	background-color: #ccc;
-	padding: 10px;
-
 	a.link-coupon-add{
 		color: #fff;
+		padding: 10px;
+		display: inline-block;
+		background-color: #ccc;
 
 		span{
 			color: #fff;
@@ -264,6 +264,12 @@ h1#orderform-title{
 			color: #fff;
 			background-image: none;
 			padding: 5px 15px;
+		}
+
+		&:after {
+			display: block;
+			margin-top: 10px;
+			content: 'É preciso estar logado para que os cupons funcionem.';
 		}
 	}
 }

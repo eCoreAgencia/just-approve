@@ -80,37 +80,37 @@ $(function() {
 	}
 
 	// Verificacao Genero Departamento-Categoria-Busca //
-		if($(depCatBus).length > 0){
-			var myGen = $('.bread-crumb .last a').text();
-			shelf.addClass(myGen);
+		// if($(depCatBus).length > 0){
+			// var myGen = $('.bread-crumb .last a').text();
+			// shelf.addClass(myGen);
 
-			var fem = $('.prateleira.Feminino');
-			var masc = $('.prateleira.Masculino');
+			// var fem = $('.prateleira.Feminino');
+			// var masc = $('.prateleira.Masculino');
 			
-			fem.each(function(){
-				$(this).find('.secundario').remove();
-				$(this).find('.principal span.label-Masculino').remove();
-				$(this).find('.secundario span.label-Masculino').remove();
+			// fem.each(function(){
+				// $(this).find('.secundario').remove();
+				// $(this).find('.principal span.label-Masculino').remove();
+				// $(this).find('.secundario span.label-Masculino').remove();
 			
-				var myRealLink = $(this).find('li a.productShelf').attr('href');
-				var myParam = myRealLink+'?lid=f777d960-5de6-496f-825e-c417d3012f69###';
+				// var myRealLink = $(this).find('li a.productShelf').attr('href');
+				// var myParam = myRealLink+'?lid=f777d960-5de6-496f-825e-c417d3012f69###';
 			
-				$('li a.productShelf').attr('href', myParam+'/#');
-				$('li a.product-url').attr('href', myParam+'/#');
-			});
+				// $('li a.productShelf').attr('href', myParam+'/#');
+				// $('li a.product-url').attr('href', myParam+'/#');
+			// });
 
-			masc.each(function(){
-				$(this).find('.principal').remove();
-				$(this).find('.principal span.label-Feminino').remove();
-				$(this).find('.secundario span.label-Feminino').remove();
+			// masc.each(function(){
+				// $(this).find('.principal').remove();
+				// $(this).find('.principal span.label-Feminino').remove();
+				// $(this).find('.secundario span.label-Feminino').remove();
 
-				var myRealLink = $(this).find('li a.productShelf').attr('href');
-				var myParam = myRealLink+'?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d###';
+				// var myRealLink = $(this).find('li a.productShelf').attr('href');
+				// var myParam = myRealLink+'?lid=1ff1c8cc-1219-400e-a404-3a693e0cf84d###';
 
-				$('li a.productShelf').attr('href', myParam+'/#');
-				$('li a.product-url').attr('href', myParam+'/#');
-			});
-		}
+				// $('li a.productShelf').attr('href', myParam+'/#');
+				// $('li a.product-url').attr('href', myParam+'/#');
+			// });
+		// }
 	// Verificacao Genero Departamento-Categoria-Busca //
 
 
@@ -134,7 +134,7 @@ $(function() {
 									var myLabel = val.imageLabel;
 									var myImageID = val.imageId;
 									var myImageName = val.imageText;
-									$('<li class="'+myLabel+'"><img src="/arquivos/ids/'+myImageID+'-467-700/'+myImageName+'.jpg" /></li>').appendTo('ul.thumbnails');
+									$('<li class="'+myLabel+'"><img src="/arquivos/ids/'+myImageID+'-467-700/'+myImageName+'.jpg" /></li>').appendTo('.slider');
 								// Take Image Thumbs //
 
 								// Masc Rules //
@@ -144,49 +144,18 @@ $(function() {
 								// Fem Rules //
 									$('body.fem-experience').find('.thumbnails li.principal, .thumbnails li.masculino, .thumbnails li.masculinoprincipal').remove();
 								// Fem Rules //
-
-								var myFirst = $('.thumbnails li').first().clone();
-								myFirst.addClass('first-thumb');
-
-								myFirst.appendTo('.easyzoom');
-								$('.easyzoom li:first-of-type').nextAll().remove();
-
-								if($('.thumbnails li').length > 4){
-									$('.thumbnails').addClass('more-itens');
-									$('<span class="prev-thumb"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 451.846 451.847"><path d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z"></path></svg></span>').insertBefore('.thumbnails');
-									$('<span class="next-thumb"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 451.846 451.847"><path d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z"></path></svg></span>').insertAfter('.thumbnails');
-								}
-
-								$('.prev-thumb').on('click', function(event){
-									var myLast = $('.thumbnails li:last-child');
-									var myFirst = $('.thumbnails li:first-child');
-									myFirst.insertAfter(myLast);
-								});
-
-								$('.next-thumb').on('click', function(event){
-									var myLast = $('.thumbnails li:last-child');
-									var myFirst = $('.thumbnails li:first-child');
-									myLast.insertBefore(myFirst);
-								});
-
-								$('.prev-thumb').first().show();
-								$('.next-thumb').first().show();
-
-								// Setup thumbnails example
-								$('.thumbnails').on('click', 'li', function(e) {
-									var myimg = $(this).find('img').clone();
-									$('.easyzoom img').remove();
-									myimg.appendTo('.easyzoom');
-								});
 							});
 
-							//$('<li class="hover-video"><span></span><video width="80" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
-							//$('<div class="my-video-position inactive"><video width="470" controls><source src="http://api.vtex.com/justapproveinfra/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'</video></div>').insertBefore('.easyzoom');
-						
-							$('.hover-video span').on('click', function(e){
-								$('.my-video-position').removeClass('inactive');
-								var myvideo = $('.my-video-position video');
-								$(myvideo).trigger('play');
+							$('.easyzoom .slider').slick({
+								dots: true,
+								arrows: false,
+								draggable: true,
+								touchMove: true,
+								autoplay: false,
+								slidesToShow: 1,
+								mobileFirst: true,
+								slidesToScroll: 1,
+								adaptiveHeight: true
 							});
 						});
 					});
@@ -399,7 +368,7 @@ $(function() {
 	// Compra Rapida //
 
 	// Sidebar Filtros //
-	$(document).ajaxStop(function(event){
+	$(document).ready(function(event){
 		$('.sidebar fieldset div').hide();
 		
 		$('.sidebar h5').on('click', function(event){

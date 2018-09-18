@@ -443,6 +443,15 @@ body.produto {
         padding: 20px 30px 40px;
         border-top: 1px solid #d2d2d2;
         border-bottom: 1px solid #d2d2d2;
+
+        svg {
+            max-width: 200px;
+        }
+
+        .st0 {
+            fill: #eaeaea;
+        }
+        
         table {
             @include font-size(1.2);
             display: inline-block;

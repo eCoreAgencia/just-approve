@@ -133,13 +133,6 @@ $(function() {
 					$.getJSON(data, function(data) {
 						$.each(data, function(key, val) {
 							var elements = val.items[0].images;
-							///var myVideo = val.MeuVideo;
-							//console.log(myVideo);
-							//var myPosition = val.Posicao;
-							//console.log(myPosition);
-							//var myIdVideo = val.IdDocumento;
-							//console.log(myIdVideo);
-
 							$(elements).each(function(data, val){
 								// Take Image Thumbs //
 									var myLabel = val.imageLabel;
@@ -195,18 +188,25 @@ $(function() {
 									// Use EasyZoom's `swap` method
 									api1.swap($this.data('standard'), $this.attr('href'));
 								});
+								
+								$('.thumbnails li.first-thumb a').simulateClick('click');
 							});
 
-							//$('<li class="hover-video"><span></span><video width="80"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
-							//$('<div class="my-video-position inactive"><video width="470"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></div>').insertBefore('.easyzoom');
-						
-							//$('.hover-video span').on('mouseover', function(e){
-								//$('.my-video-position').removeClass('inactive');
-								//var myvideo = $('.my-video-position video');
-								//$(myvideo).trigger('play');
-							//});
+							if(val.MeuVideo) {
+								var myVideo = val.MeuVideo;
+								var myPosition = val.Posicao;
+								var myIdVideo = val.IdDocumento;
+		
+								$('<li class="hover-video"><span></span><video width="80"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></li>').insertBefore('.thumbnails li:nth-child('+myPosition+')');
+								$('<div class="my-video-position inactive"><video width="470"><source src="https://justapproveinfra.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/video/attachments/'+myVideo+'"></video></div>').insertBefore('.easyzoom');
+							
+								$('.hover-video span').on('mouseover', function(e){
+									$('.my-video-position').removeClass('inactive');
+									var myvideo = $('.my-video-position video');
+									$(myvideo).trigger('play');
+								});
+							}
 						});
-
 					});
 				});
 			// Controller Image Thumbs, Featured and SuperZoom //
@@ -511,6 +511,16 @@ $(function() {
 		try {
 			$document.ajaxStop(function() {
 				orderList.parents('html').removeClass('is-loading');
+
+				$('body.dep-cat-bus .prateleira li').each(function(){
+					var me = $(this);
+					var myImg = $(this).find('.label-Feminino img');
+					
+					if($(myImg).length == false){
+						me.remove();
+					}
+				});
+
 			});
 		} catch(e) {}
     // Remocao Loading Meus Pedidos//

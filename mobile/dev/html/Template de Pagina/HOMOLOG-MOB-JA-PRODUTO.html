@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title><vtex.cmc:productPageTitle /> | Just Approve</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="MOB-JA-COMMONSTYLES" />
+    </head>
+    <body>
+        
+        <vtex:template id="MOB-JA-HEADER" />
+
+        <main>
+
+            <div class="container">
+                <section class="product-view row">
+                    <section class="top-view">
+                        <vtex.cmc:productName />
+                    </section>
+
+                    <div class="choose-skus">
+                        <vtex.cmc:skuRichSelection changeImage="1" />
+                    </div>
+
+                    <a id="id3"></a>
+                    <section class="product-box col-xs-12">
+                        <!-- Mounting With API -->
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+                            <div class="slider">
+                                
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="buy-box col-xs-12 col-md-6">
+                        <div class="prod-similares">
+                            <vtex:contentPlaceHolder id="Similares" />
+                        </div><!-- prod-similares END -->
+
+                        <a class="bt-comprar">Adicionar ao Carrinho</a>
+
+                        <div class="description">
+                            <h3>Descrição do produto</h3>
+                            <vtex.cmc:ProductDescription/>
+                        </div>
+                    </section><!-- buy-box END -->
+                </section><!-- product-view END -->
+
+                <!--section class="tabela row">
+                    <h3>Tabela de Medidas</h3>
+                    <div class="pic-tabela col-xs-12">
+                        <vtex:contentPlaceHolder id="tabela-medidas-image" />
+                    </div>
+                    <div class="col-xs-12">
+                        <table class="comprimento">
+                            <tr class="my-thead">
+                                <th>Comp (A)</th>
+                            </tr>
+                        </table>
+                        <table class="quadril">
+                            <tr class="my-thead">
+                                <th>Quadril (B)</th>
+                            </tr>
+                        </table>
+                        <table class="cintura">
+                            <tr class="my-thead">
+                                <th>Cintura (C)</th>
+                            </tr>
+                        </table>
+                    </div>
+                </section -->
+
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf shelfRelacionados">
+                            <vtex:contentPlaceHolder id="voce-vai-gostar" />
+                        </section><!-- shelfRelacionados END -->
+                    </div>
+                </div>
+
+                <div class="slide slide-wrap">
+                    <div class="slideShelf">
+                        <section class="shelf use-com">
+                            <vtex:contentPlaceHolder id="use-com" />
+                        </section><!-- use-com END -->
+                    </div>
+                </div>
+            </div>
+
+            <span class="compra-persistente-bt">Adicionar ao Carrinho</span>
+            <div class="opacity-all"></div>
+        </main>
+
+        <vtex:template id="MOB-JA-FOOTER" />
+        <vtex:template id="MOB-JA-COMMONSCRIPTS" />
+        <script type="text/javascript" src="/arquivos/slick.js"></script>
+        <script type="text/javascript" src="/arquivos/mob-product-v17.js"></script>
+
+    </body>
+</html>

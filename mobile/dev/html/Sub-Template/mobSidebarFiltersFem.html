@@ -1,6 +1,8 @@
 <script type="text/javascript">
     $(document).ajaxStop(function(){
-        var myLink = $('.sidebar h3 a').attr('href');
-        var refact = $('.sidebar h3 a').attr('href', myLink+'&lid=0b3ef5d8-e696-4b6a-83aa-a7c3bb8c62a1');
+        $('.sidebar h3 a').each(function(event){
+            var myLink = $(this).attr('href');
+            var refact = $(this).attr('href', myLink+'&lid=0b3ef5d8-e696-4b6a-83aa-a7c3bb8c62a1');
+        });
     });
 </script>
