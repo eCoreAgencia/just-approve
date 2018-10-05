@@ -5,12 +5,7 @@ $("#___rc-p-id").each(function(index) {
 
     $.getJSON(data, function(data) {
         $.each(data, function(key, val) {
-
-            // Catch Composition Val //
-                //var composicao = val.Elementos[0];
-                // $('.specification .main-content').text(composicao);
-            // Catch Composition Val //
-
+            
 
             // Catch Cintura Val //
                 var valCinturaPP = val.CinturaPP[0];
@@ -125,8 +120,8 @@ $("#___rc-p-id").each(function(index) {
                 var valLarguraGG = val.LarguraGG[0];
 
                 $('<tr class="'+valLarguraGG+'" idVal="'+valLarguraGG+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
-                $('<tr class="'+valLarguraM+'" idVal="'+valLarguraM+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
                 $('<tr class="'+valLarguraG+'" idVal="'+valLarguraG+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
+                $('<tr class="'+valLarguraM+'" idVal="'+valLarguraM+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
                 $('<tr class="'+valLarguraP+'" idVal="'+valLarguraP+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
                 $('<tr class="'+valLarguraPP+'" idVal="'+valLarguraPP+'"></tr>').insertAfter('.tabela .largura tr.my-thead');
             // Catch Largura Val //
@@ -164,7 +159,7 @@ $("#___rc-p-id").each(function(index) {
             });
 
             var tabelaSVG = val.SVGTabela[0];
-            $('.pic-tabela').html(+tabelaSVG);
+            $('.pic-tabela').html('<div>'+tabelaSVG+'</div>');
 
         });
     });
