@@ -640,6 +640,11 @@ header {
 	background-color: #000;
 }
 
+header #account-ico-mobile {
+	float: left;
+	margin-right: 2px;
+}
+
 header svg {
 	fill: #fff !important;
 }
@@ -1306,6 +1311,7 @@ body.home .prateleira li {
 }
 
 #mini-cart {
+	float: right;
 	cursor: pointer;
 	position: relative;
 }

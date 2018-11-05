@@ -416,6 +416,11 @@ body.account .profile-detail-display {
     width: 91.6666666667%
 }
 
+.tool-tip-element {
+    padding: 0 20px;
+    line-height: 20px;
+}
+
 .col-xs-12,
 body.account .address-display-block,
 body.account .profile-detail-display,
@@ -889,10 +894,9 @@ footer .disclaimer .empresas li a svg {
 }
 
 .prateleira li {
-    width: 188px;
-    padding: 0 10px;
+    width: 50%;
+    padding: 0px 5px;
     overflow: hidden;
-    margin-right: 5px;
     position: relative;
     text-align: center;
     margin-bottom: 20px;
@@ -903,12 +907,6 @@ footer .disclaimer .empresas li a svg {
 .prateleira li img {
     width: 100%;
     height: auto;
-    min-width: 170%;
-    margin-left: -46px
-}
-
-.prateleira li img:nth-child(2) {
-    display: none
 }
 
 .prateleira li a {
@@ -1063,13 +1061,13 @@ footer .disclaimer .empresas li a svg {
 }
 
 .prateleira li .action-buttons {
-    left: 0;
+    /* left: 0; */
     width: 100%;
-    bottom: 97px;
-    opacity: .9;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px 18px 10px 10px;
+    /* bottom: 97px; */
+    /* opacity: .9; */
+    /* position: absolute; */
+    /* background-color: #fff; */
+    /* padding: 10px 18px 10px 10px; */
 }
 
 .prateleira li .action-buttons .item-list {
@@ -1204,12 +1202,18 @@ body.home .prateleira li {
     padding-top: 20px
 }
 
+.account-ico-mobile {
+    float: left;
+    margin-right: 2px;
+}
+
 .account-cart .icon-bag svg {
-    width: 50px;
+    width: 20px;
     height: 30px
 }
 
 #mini-cart {
+    float: right;
     cursor: pointer;
     position: relative
 }
@@ -1239,17 +1243,16 @@ body.home .prateleira li {
 }
 
 #mini-cart .portal-totalizers-ref .cart-info li.amount-items em {
-    font-size: 9px;
+    left: 50%;
+    width: 20px;
+    bottom: 8px;
     color: #fff;
-    border-radius: 50%;
-    line-height: 13px;
-    font-style: normal;
+    font-size: 9px;
     font-weight: 600;
-    text-transform: uppercase;
+    font-style: normal;
+    text-align: center;
+    margin-left: -10px;
     position: absolute;
-    right: 3px;
-    bottom: 19px;
-    padding: 3px 7px
 }
 
 #mini-cart #mini-cart-custom.active,
@@ -1904,14 +1907,19 @@ body.dep-cat-bus .breadcrumb {
     transition: left .3s ease
 }
 
+.tipbar button {
+    display: none !important;
+}
+
 .tipbar {
     float: left;
     width: 100%;
     clear: both;
     padding: 10px 0;
+    margin-top: 132px;
     text-align: center;
     background-color: #f5f5f5;
-    box-shadow: inset 0 7px 26px -1px #ccc
+    box-shadow: inset 0 7px 26px -1px #ccc;
 }
 
 .tipbar.fundo-submenu {
@@ -2100,8 +2108,16 @@ body.modal-active .modal-box .modal-container {
     width: 100%;
     height: 100%;
     top: -10000px;
+    position: absolute;
     min-height: 4500px;
-    position: absolute
+}
+
+body.dep-cat-bus .modal-box {
+    display: none;
+}
+
+body.modal-active.dep-cat-bus .modal-box {
+    display: block;
 }
 
 .modal-box .close-modal {
@@ -2219,14 +2235,6 @@ body.home main section.shelf-destaques {
     margin-top: 40px;
 }
 
-body.home main section.shelf-colecoes,
-body.home main section.shelf-destaques,
-body.home main section.shelf-mais-vendidos,
-body.home main section.shelf-sale {
-    padding-left: 9px;
-}
-
-
 body.home main section.banner-faixa,
 body.home main section.banners-duplos,
 body.home main section.banners-duplos-bottom,
@@ -2257,10 +2265,15 @@ body.produto footer {
 }
 
 body.produto.opacity-active .choose-skus {
+    top: 40%;
+    left: 50%;
+    width: 80%;
     z-index: 99999;
-    position: relative;
+    position: fixed;
+    margin-left: -40%;
+    text-align: center;
+    padding: 10px 10px 20px;
     background-color: #fff;
-    padding: 10px 10px 20px
 }
 
 body.produto .top-view {
@@ -2523,6 +2536,15 @@ body.produto main .product-view {
 
 body.produto main .product-view .product-box {
     position: relative
+}
+
+body.produto .product-box .easyzoom .slick-list {
+    height: auto !important;
+}
+
+body.produto .product-box .easyzoom {
+    max-width: 100%;
+    width: 100% !important;
 }
 
 body.produto main .product-view .product-box .ProductImage {
@@ -2829,10 +2851,6 @@ body.produto .slide {
     padding: 10px 8px;
 }
 
-body.produto .slide li {
-    margin-right: 0;
-}
-
 body.produto .slide li .action-buttons {
     left: -3px;
     width: 100%;
@@ -2841,14 +2859,6 @@ body.produto .slide li .action-buttons {
     position: absolute;
     background-color: #fff;
     padding: 10px 4px 10px 10px;
-}
-
-body.produto .prateleira li a.productShelf {
-    max-width: 170px;
-}
-
-body.produto .slide li:nth-child(n-1):nth-child(odd) {
-    margin-right: 0;
 }
 
 body.produto .tabela table.comprimento tr:nth-child(2):after,
@@ -3033,34 +3043,9 @@ body.dep-cat-bus .sidebar .search-single-navigator h5 a {
     text-decoration: none
 }
 
-body.dep-cat-bus main .mainShelf {
-    padding: 10px 18px;
-}
-
-body.dep-cat-bus .prateleira li {
-    width: 50%;
-    margin-right: 0;
-}
-
-body.dep-cat-bus .prateleira li img {
-    width: 100%;
-    height: auto;
-    min-width: 170%;
-    margin-left: -46px;
-}
-
 body.dep-cat-bus .prateleira li .action-buttons {
-    left: 0;
     width: 100%;
-    bottom: 97px;
-    opacity: .9;
-    position: absolute;
     background-color: #fff;
-    padding: 10px 4px 10px 10px;
-}
-
-body.dep-cat-bus .prateleira li:nth-child(n-1):nth-child(odd) {
-    margin-right: 0;
 }
 
 body.dep-cat-bus .sidebar .search-multiple-navigator fieldset.filtro_marca,
@@ -4446,7 +4431,7 @@ html {
 
 main {
     clear: both;
-    padding-top: 131px
+    padding-top: 20px
 }
 
 .opacity-menu {

@@ -1202,13 +1202,18 @@ body.home .prateleira li {
     padding-top: 20px
 }
 
+.account-ico-mobile {
+    float: left;
+    margin-right: 2px;
+}
+
 .account-cart .icon-bag svg {
-    width: 50px;
+    width: 20px;
     height: 30px
 }
 
 #mini-cart {
-    width: 54px;
+    float: right;
     cursor: pointer;
     position: relative
 }
@@ -2532,7 +2537,7 @@ body.produto main .product-view {
 body.produto main .product-view .product-box {
     position: relative
 }
-    
+
 body.produto .product-box .easyzoom .slick-list {
     height: auto !important;
 }
